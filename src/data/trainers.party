@@ -1429,7 +1429,7 @@ EVs: 252 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 - MOVE_AURORA_VEIL
 
 SPECIES_SWINUB @ ITEM_QUICK_CLAW
-Level: 12
+Level: 13
 Ability: ABILITY_THICK_FAT
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Adamant

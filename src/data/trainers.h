@@ -3370,7 +3370,7 @@ F_TRAINER_FEMALE |
 #line 1433
             .ability = ABILITY_THICK_FAT,
 #line 1432
-            .lvl = 12,
+            .lvl = 13,
 #line 1435
             .nature = NATURE_ADAMANT,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,

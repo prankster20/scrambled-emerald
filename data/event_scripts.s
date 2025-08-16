@@ -1273,6 +1273,7 @@ Common_EventScript_RerollNaturePage1::
 	setvar VAR_RESULT, 0
 	msgbox Common_Text_RerollNature, MSGBOX_DEFAULT
 	multichoicegrid 20, 0, MULTI_REROLL_NATURE_1, 4, TRUE
+	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, Common_EventScript_RerollLoop
 	goto_if_eq VAR_RESULT, 15, Common_EventScript_RerollNaturePage2
 	closemessage
 	callnative Script_SetNature
@@ -1285,6 +1286,7 @@ Common_EventScript_RerollNaturePage2::
 	setvar VAR_RESULT, 0
 	msgbox Common_Text_RerollNature, MSGBOX_DEFAULT
 	multichoicegrid 20, 0, MULTI_REROLL_NATURE_2, 4, TRUE
+	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, Common_EventScript_RerollLoop
 	goto_if_eq VAR_RESULT, 11, Common_EventScript_RerollNaturePage1
 	closemessage
 	callnative Script_SetNature
@@ -1295,6 +1297,7 @@ Common_EventScript_RerollNaturePage2::
 Common_EventScript_RerollTeraType::
 	msgbox Common_Text_RerollTeraType, MSGBOX_DEFAULT
 	multichoicegrid 20, 0, MULTI_REROLL_TERATYPE, 4, TRUE
+	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, Common_EventScript_RerollLoop
 	goto_if_eq VAR_RESULT, 19, Common_EventScript_RerollTeraType
 	closemessage
 	callnative Script_SetTeraType
@@ -1321,6 +1324,7 @@ Common_EventScript_ChangePokeballPage1::
 	setvar VAR_RESULT, 0
 	msgbox Common_Text_RerollPokeball, MSGBOX_DEFAULT
 	multichoicegrid 20, 0, MULTI_REROLL_POKEBALL_1, 3, TRUE
+	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, Common_EventScript_RerollLoop
 	goto_if_eq VAR_RESULT, 17, Common_EventScript_ChangePokeballPage2
 	closemessage
 	callnative Script_SetPokeball
@@ -1333,6 +1337,7 @@ Common_EventScript_ChangePokeballPage2::
 	setvar VAR_RESULT, 0
 	msgbox Common_Text_RerollPokeball, MSGBOX_DEFAULT
 	multichoicegrid 20, 0, MULTI_REROLL_POKEBALL_2, 3, TRUE
+	goto_if_eq VAR_RESULT, MULTI_B_PRESSED, Common_EventScript_RerollLoop
 	goto_if_eq VAR_RESULT, 11, Common_EventScript_ChangePokeballPage1
 	closemessage
 	callnative Script_SetPokeball

@@ -5535,7 +5535,7 @@ BattleScript_LocalBattleWonReward::
 	printstring STRINGID_PLAYERGOTMONEY
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_PayDayMoneyAndPickUpItems::
-	givepaydaymoney
+	@ givepaydaymoney
 	pickup
 	end2
 

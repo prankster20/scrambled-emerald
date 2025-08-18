@@ -213,7 +213,7 @@ LittlerootTown_EventScript_GoInsideWithMom::
 		// setvar VAR_PETALBURG_GYM_STATE, 2
 		setvar VAR_PETALBURG_WOODS_STATE, 1
 
-	// PLOTLESS
+	// PLOTLESS - see Intro for Key Items being given to the Player
 	setvar VAR_SCOTT_PETALBURG_ENCOUNTER, 1
 	setvar VAR_PETALBURG_GYM_STATE, 6
 	call Common_EventScript_ReadyPetalburgGymForBattle
@@ -234,6 +234,7 @@ LittlerootTown_EventScript_GoInsideWithMom::
 	setflag FLAG_HIDE_METEOR_FALLS_TEAM_AQUA
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
+	setflag FLAG_SYS_NATIONAL_DEX
 	return
 
 LittlerootTown_EventScript_ScrambledVanillaPath::

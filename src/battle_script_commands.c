@@ -3055,6 +3055,12 @@ void SetMoveEffect(bool32 primary, bool32 certain, u8 argument)
                 break;
             if (!CanBeSlept(gEffectBattler, GetBattlerAbility(gEffectBattler)))
                 break;
+            if (gCurrentMove == MOVE_MEAN_LOOK && IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GHOST))
+            {
+                gMoveResultFlags |= MOVE_RESULT_DOESNT_AFFECT_FOE;
+                gBattlescriptCurrInstr = BattleScript_ButItFailed;
+                return;
+            }
 
             cancelMultiTurnMovesResult = CancelMultiTurnMoves(gEffectBattler);
             if (cancelMultiTurnMovesResult)

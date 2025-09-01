@@ -559,29 +559,29 @@ static inline void CalcDynamicMoveDamage(struct DamageCalculationData *damageCal
     case EFFECT_FIXED_DAMAGE_ARG:
         expected = minimum = gMovesInfo[move].argument * (abilityAtk == ABILITY_PARENTAL_BOND ? 2 : 1);
         break;
-    case EFFECT_MULTI_HIT:
-        if (move == MOVE_WATER_SHURIKEN && gBattleMons[damageCalcData->battlerAtk].species == SPECIES_GRENINJA_ASH)
-        {
-            expected *= 3;
-            minimum *= 3;
-        }
-        else if (abilityAtk == ABILITY_SKILL_LINK)
-        {
-            expected *= 5;
-            minimum *= 5;
-        }
-        else if (holdEffectAtk == HOLD_EFFECT_LOADED_DICE)
-        {
-            expected *= 9;
-            expected /= 2;
-            minimum *= 4;
-        }
-        else
-        {
-            expected *= 3;
-            minimum *= 2;
-        }
-        break;
+    // case EFFECT_MULTI_HIT:
+    //     if (move == MOVE_WATER_SHURIKEN && gBattleMons[damageCalcData->battlerAtk].species == SPECIES_GRENINJA_ASH)
+    //     {
+    //         expected *= 3;
+    //         minimum *= 3;
+    //     }
+    //     else if (abilityAtk == ABILITY_SKILL_LINK)
+    //     {
+    //         expected *= 5;
+    //         minimum *= 5;
+    //     }
+    //     else if (holdEffectAtk == HOLD_EFFECT_LOADED_DICE)
+    //     {
+    //         expected *= 9;
+    //         expected /= 2;
+    //         minimum *= 4;
+    //     }
+    //     else
+    //     {
+    //         expected *= 3;
+    //         minimum *= 2;
+    //     }
+    //     break;
     case EFFECT_ENDEAVOR:
         // If target has less HP than user, Endeavor does no damage
         expected = minimum = max(0, gBattleMons[damageCalcData->battlerDef].hp - gBattleMons[damageCalcData->battlerAtk].hp);
@@ -611,11 +611,11 @@ static inline void CalcDynamicMoveDamage(struct DamageCalculationData *damageCal
     }
 
     // Handle other multi-strike moves
-    if (gMovesInfo[move].strikeCount > 1 && gMovesInfo[move].effect != EFFECT_TRIPLE_KICK)
-    {
-        expected *= gMovesInfo[move].strikeCount;
-        minimum *= gMovesInfo[move].strikeCount;
-    }
+    // if (gMovesInfo[move].strikeCount > 1 && gMovesInfo[move].effect != EFFECT_TRIPLE_KICK)
+    // {
+    //     expected *= gMovesInfo[move].strikeCount;
+    //     minimum *= gMovesInfo[move].strikeCount;
+    // }
 
     if (expected == 0)
         expected = 1;
@@ -677,61 +677,61 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
         damageCalcData.updateFlags = FALSE;
 
         critChanceIndex = CalcCritChanceStageArgs(battlerAtk, battlerDef, move, FALSE, aiData->abilities[battlerAtk], aiData->abilities[battlerDef], aiData->holdEffects[battlerAtk]);
-        if (critChanceIndex > 1) // Consider crit damage only if a move has at least +2 crit chance
-        {
-            damageCalcData.isCrit = FALSE;
-            s32 nonCritDmg = CalculateMoveDamageVars(&damageCalcData, fixedBasePower,
-                                                     effectivenessMultiplier, weather,
-                                                     aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef],
-                                                     aiData->abilities[battlerAtk], aiData->abilities[battlerDef]);
-            damageCalcData.isCrit = TRUE;
-            s32 critDmg = CalculateMoveDamageVars(&damageCalcData, fixedBasePower,
-                                                  effectivenessMultiplier, weather,
-                                                  aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef],
-                                                  aiData->abilities[battlerAtk], aiData->abilities[battlerDef]);
+        // if (critChanceIndex > 1) // Consider crit damage only if a move has at least +2 crit chance
+        // {
+        //     damageCalcData.isCrit = FALSE;
+        //     s32 nonCritDmg = CalculateMoveDamageVars(&damageCalcData, fixedBasePower,
+        //                                              effectivenessMultiplier, weather,
+        //                                              aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef],
+        //                                              aiData->abilities[battlerAtk], aiData->abilities[battlerDef]);
+        //     damageCalcData.isCrit = TRUE;
+        //     s32 critDmg = CalculateMoveDamageVars(&damageCalcData, fixedBasePower,
+        //                                           effectivenessMultiplier, weather,
+        //                                           aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef],
+        //                                           aiData->abilities[battlerAtk], aiData->abilities[battlerDef]);
 
-            u32 critOdds = GetCritHitOdds(critChanceIndex);
-            // With critOdds getting closer to 1, dmg gets closer to critDmg.
-            simDamage.expected = GetDamageByRollType((critDmg + nonCritDmg * (critOdds - 1)) / critOdds, rollType);
-            if (critOdds == 1)
-                simDamage.minimum = LowestRollDmg(critDmg);
-            else
-                simDamage.minimum = LowestRollDmg(nonCritDmg);
-        }
-        else if (critChanceIndex == -2) // Guaranteed critical
-        {
-            damageCalcData.isCrit = TRUE;
-            s32 critDmg = CalculateMoveDamageVars(&damageCalcData, fixedBasePower,
-                                                  effectivenessMultiplier, weather,
-                                                  aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef],
-                                                  aiData->abilities[battlerAtk], aiData->abilities[battlerDef]);
+        //     u32 critOdds = GetCritHitOdds(critChanceIndex);
+        //     // With critOdds getting closer to 1, dmg gets closer to critDmg.
+        //     simDamage.expected = GetDamageByRollType((critDmg + nonCritDmg * (critOdds - 1)) / critOdds, rollType);
+        //     if (critOdds == 1)
+        //         simDamage.minimum = LowestRollDmg(critDmg);
+        //     else
+        //         simDamage.minimum = LowestRollDmg(nonCritDmg);
+        // }
+        // else if (critChanceIndex == -2) // Guaranteed critical
+        // {
+        //     damageCalcData.isCrit = TRUE;
+        //     s32 critDmg = CalculateMoveDamageVars(&damageCalcData, fixedBasePower,
+        //                                           effectivenessMultiplier, weather,
+        //                                           aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef],
+        //                                           aiData->abilities[battlerAtk], aiData->abilities[battlerDef]);
 
-            simDamage.expected = GetDamageByRollType(critDmg, rollType);
-            simDamage.minimum = LowestRollDmg(critDmg);
-        }
-        else
-        {
+        //     simDamage.expected = GetDamageByRollType(critDmg, rollType);
+        //     simDamage.minimum = LowestRollDmg(critDmg);
+        // }
+        // else
+        // {
             s32 nonCritDmg = 0;
-            if (moveEffect == EFFECT_TRIPLE_KICK)
-            {
-                for (gMultiHitCounter = gMovesInfo[move].strikeCount; gMultiHitCounter > 0; gMultiHitCounter--) // The global is used to simulate actual damage done
-                {
-                    nonCritDmg += CalculateMoveDamageVars(&damageCalcData, fixedBasePower,
-                                                          effectivenessMultiplier, weather,
-                                                          aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef],
-                                                          aiData->abilities[battlerAtk], aiData->abilities[battlerDef]);
-                }
-            }
-            else
-            {
+            // if (moveEffect == EFFECT_TRIPLE_KICK)
+            // {
+            //     for (gMultiHitCounter = gMovesInfo[move].strikeCount; gMultiHitCounter > 0; gMultiHitCounter--) // The global is used to simulate actual damage done
+            //     {
+            //         nonCritDmg += CalculateMoveDamageVars(&damageCalcData, fixedBasePower,
+            //                                               effectivenessMultiplier, weather,
+            //                                               aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef],
+            //                                               aiData->abilities[battlerAtk], aiData->abilities[battlerDef]);
+            //     }
+            // }
+            // else
+            // {
                 nonCritDmg = CalculateMoveDamageVars(&damageCalcData, fixedBasePower,
                                                      effectivenessMultiplier, weather,
                                                      aiData->holdEffects[battlerAtk], aiData->holdEffects[battlerDef],
                                                      aiData->abilities[battlerAtk], aiData->abilities[battlerDef]);
-            }
+            // }
             simDamage.expected = GetDamageByRollType(nonCritDmg, rollType);
             simDamage.minimum = LowestRollDmg(nonCritDmg);
-        }
+        // }
 
         if (GetActiveGimmick(battlerAtk) != GIMMICK_Z_MOVE)
         {

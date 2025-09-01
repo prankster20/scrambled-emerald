@@ -3068,104 +3068,47 @@ static inline bool32 ShouldUseSpreadDamageMove(u32 battlerAtk, u32 move, u32 mov
          && noOfHitsToFaintPartner < 7);
 }
 
+// changed least hits algo to best damage 
 static s32 AI_CompareDamagingMoves(u32 battlerAtk, u32 battlerDef, u32 currId)
 {
-    u32 i;
-    bool32 multipleBestMoves = FALSE;
-    s32 viableMoveScores[MAX_MON_MOVES];
-    s32 bestViableMoveScore;
-    s32 noOfHits[MAX_MON_MOVES];
     s32 score = 0;
-    s32 leastHits = 1000;
     u16 *moves = GetMovesArray(battlerAtk);
-    bool8 isTwoTurnNotSemiInvulnerableMove[MAX_MON_MOVES];
 
-    for (i = 0; i < MAX_MON_MOVES; i++)
+    // Get the move that does the highest expected damage
+    u16 bestMove = GetBestDmgMoveFromBattler(battlerAtk, battlerDef);
+
+    // Check if current move is the best damage move
+    if (moves[currId] == bestMove)
     {
-        if (moves[i] != MOVE_NONE && gMovesInfo[moves[i]].power)
-        {
-            noOfHits[i] = GetNoOfHitsToKOBattler(battlerAtk, battlerDef, i);
-            if (ShouldUseSpreadDamageMove(battlerAtk,moves[i], i, noOfHits[i]))
-            {
-                noOfHits[i] = -1;
-                viableMoveScores[i] = 0;
-                isTwoTurnNotSemiInvulnerableMove[i] = FALSE;
-            }
-            else if (noOfHits[i] < leastHits && noOfHits[i] != 0)
-            {
-                leastHits = noOfHits[i];
-            }
-            viableMoveScores[i] = AI_SCORE_DEFAULT;
-            isTwoTurnNotSemiInvulnerableMove[i] = IsTwoTurnNotSemiInvulnerableMove(battlerAtk, moves[i]);
-        }
-        else
-        {
-            noOfHits[i] = -1;
-            viableMoveScores[i] = 0;
-            isTwoTurnNotSemiInvulnerableMove[i] = FALSE;
-        }
-        /*
-            Test_MgbaPrintf("%S: required hits: %d Dmg: %d", gMoveNames[moves[i]], noOfHits[i], AI_DATA->simulatedDmg[battlerAtk][battlerDef][i]);
-        */
-    }
-
-    // Priority list:
-    // 1. Less no of hits to ko
-    // 2. Not charging
-    // 3. More accuracy
-    // 4. Better effect
-
-    // Current move requires the least hits to KO. Compare with other moves.
-    if (leastHits == noOfHits[currId])
-    {
+        // If multiple moves deal the same damage, do a coin flip
+        u32 i;
+        bool32 tie = FALSE;
         for (i = 0; i < MAX_MON_MOVES; i++)
         {
             if (i == currId)
                 continue;
-            if (noOfHits[currId] == noOfHits[i])
-            {
-                multipleBestMoves = TRUE;
-                // We need to make sure it's the current move which is objectively better.
-                if (isTwoTurnNotSemiInvulnerableMove[i] && !isTwoTurnNotSemiInvulnerableMove[currId])
-                    viableMoveScores[i] -= 3;
-                else if (!isTwoTurnNotSemiInvulnerableMove[i] && isTwoTurnNotSemiInvulnerableMove[currId])
-                    viableMoveScores[currId] -= 3;
 
-                switch (CompareMoveAccuracies(battlerAtk, battlerDef, currId, i))
-                {
-                case 1:
-                    viableMoveScores[i] -= 2;
-                    break;
-                case -1:
-                    viableMoveScores[currId] -= 2;
-                    break;
-                }
-                switch (AI_WhichMoveBetter(moves[currId], moves[i], battlerAtk, battlerDef, noOfHits[currId]))
-                {
-                case 1:
-                    viableMoveScores[i] -= 1;
-                    break;
-                case -1:
-                    viableMoveScores[currId] -= 1;
-                    break;
-                }
-            }
-        }
-        // Turns out the current move deals the most dmg compared to the other 3.
-        if (!multipleBestMoves)
-            ADJUST_SCORE(BEST_DAMAGE_MOVE);
-        else
-        {
-            bestViableMoveScore = 0;
-            for (i = 0; i < MAX_MON_MOVES; i++)
+            if (moves[i] != MOVE_NONE && moves[i] != MOVE_UNAVAILABLE &&
+                AI_DATA->simulatedDmg[battlerAtk][battlerDef][i].minimum ==
+                AI_DATA->simulatedDmg[battlerAtk][battlerDef][currId].minimum)
             {
-                if (viableMoveScores[i] > bestViableMoveScore)
-                    bestViableMoveScore = viableMoveScores[i];
+                tie = TRUE;
+                // Coin flip: randomly give advantage to either move
+                if (Random() % 2 == 0)
+                    score += BEST_DAMAGE_MOVE;
+                else
+                    score -= 1; // small penalty for losing the coin flip
+                break;
             }
-            // Unless a better move was found increase score of current move
-            if (viableMoveScores[currId] == bestViableMoveScore)
-                ADJUST_SCORE(BEST_DAMAGE_MOVE);
         }
+        // No tie, current move is clearly the best
+        if (!tie)
+            score += BEST_DAMAGE_MOVE;
+    }
+    else
+    {
+        // Not the best damage move, optionally penalize
+        score -= 1;
     }
 
     return score;

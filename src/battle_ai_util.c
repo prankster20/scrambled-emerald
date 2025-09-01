@@ -976,15 +976,15 @@ s32 AI_WhichMoveBetter(u32 move1, u32 move2, u32 battlerAtk, u32 battlerDef, s32
     u32 atkAbility = AI_DATA->abilities[battlerAtk];
 
     // Check if physical moves hurt.
-    if (AI_DATA->holdEffects[battlerAtk] != HOLD_EFFECT_PROTECTIVE_PADS && atkAbility != ABILITY_LONG_REACH
-        && (AI_DATA->holdEffects[battlerDef] == HOLD_EFFECT_ROCKY_HELMET
-        || defAbility == ABILITY_IRON_BARBS || defAbility == ABILITY_ROUGH_SKIN))
-    {
-        if (gMovesInfo[move1].makesContact && !gMovesInfo[move2].makesContact)
-            return -1;
-        if (gMovesInfo[move2].makesContact && !gMovesInfo[move1].makesContact)
-            return 1;
-    }
+    // if (AI_DATA->holdEffects[battlerAtk] != HOLD_EFFECT_PROTECTIVE_PADS && atkAbility != ABILITY_LONG_REACH
+    //     && (AI_DATA->holdEffects[battlerDef] == HOLD_EFFECT_ROCKY_HELMET
+    //     || defAbility == ABILITY_IRON_BARBS || defAbility == ABILITY_ROUGH_SKIN))
+    // {
+    //     if (gMovesInfo[move1].makesContact && !gMovesInfo[move2].makesContact)
+    //         return -1;
+    //     if (gMovesInfo[move2].makesContact && !gMovesInfo[move1].makesContact)
+    //         return 1;
+    // }
 
     // Check additional effects.
     effect1 = AI_IsMoveEffectInMinus(battlerAtk, battlerDef, move1, noOfHitsToKo);

@@ -4984,6 +4984,9 @@ s8 GetMovePriority(u32 battler, u16 move)
     if (gProtectStructs[battler].quash)
         priority = -8;
 
+    if (IsStarmobile(battler))
+        priority = -1;
+
     return priority;
 }
 

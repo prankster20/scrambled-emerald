@@ -11986,6 +11986,10 @@ bool8 IsStarmobile(u32 battler) {
         case SPECIES_STARMOBILE_POISON:
         case SPECIES_STARMOBILE_FAIRY:
         case SPECIES_STARMOBILE_FIGHTING:
+        case SPECIES_STARMOBILE_FIGHTING_REVERSE:
+        case SPECIES_STARMOBILE_FAIRY_REVERSE:
+        case SPECIES_STARMOBILE_FIRE_REVERSE:
+        case SPECIES_STARMOBILE_DARK_REVERSE:
             return TRUE;
         default:
             return FALSE;

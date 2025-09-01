@@ -14,7 +14,7 @@ static struct Trainer trainers[] = {
             {
                 .species = SPECIES_OGERPON_HEARTHFLAME,
                 .lvl = 50,
-                .ability = ABILITY_DEFIANT,
+                .ability = ABILITY_FLASH_FIRE,
                 .heldItem = ITEM_HEARTHFLAME_MASK,
                 .teraType = TYPE_FIRE,
                 .nature = NATURE_JOLLY,
@@ -30,12 +30,12 @@ static struct Trainer trainers[] = {
             {
                 .species = SPECIES_OGERPON_WELLSPRING,
                 .lvl = 50,
-                .ability = ABILITY_DEFIANT,
+                .ability = ABILITY_QUEENLY_MAJESTY,
                 .heldItem = ITEM_WELLSPRING_MASK,
                 .teraType = TYPE_WATER,
                 .nature = NATURE_JOLLY,
                 .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-                .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 0),
+                .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
                 .moves = {
                     MOVE_IVY_CUDGEL,
                     MOVE_HORN_LEECH,
@@ -46,12 +46,12 @@ static struct Trainer trainers[] = {
             {
                 .species = SPECIES_OGERPON_CORNERSTONE,
                 .lvl = 50,
-                .ability = ABILITY_DEFIANT,
+                .ability = ABILITY_STURDY,
                 .heldItem = ITEM_CORNERSTONE_MASK,
                 .teraType = TYPE_ROCK,
                 .nature = NATURE_JOLLY,
                 .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-                .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 0),
+                .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 0),
                 .moves = {
                     MOVE_IVY_CUDGEL,
                     MOVE_HORN_LEECH,
@@ -62,12 +62,12 @@ static struct Trainer trainers[] = {
             {
                 .species = SPECIES_OGERPON_TEAL,
                 .lvl = 50,
-                .ability = ABILITY_DEFIANT,
+                .ability = ABILITY_QUICK_FEET,
                 .heldItem = ITEM_NONE,
                 .teraType = TYPE_GRASS,
                 .nature = NATURE_JOLLY,
                 .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-                .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 0),
+                .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 0),
                 .moves = {
                     MOVE_THRASH,
                     MOVE_HORN_LEECH,

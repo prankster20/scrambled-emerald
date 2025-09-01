@@ -6826,7 +6826,7 @@ static void Cmd_moveend(void)
                 }
             }
 
-            if (!(gBattleTypeFlags & BATTLE_TYPE_TITAN)) {
+            if (!(gBattleTypeFlags & (BATTLE_TYPE_TITAN | BATTLE_TYPE_OGERPON))) {
                 gBattleScripting.moveendState++;
                 break;
             }

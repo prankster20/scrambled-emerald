@@ -11637,6 +11637,22 @@ void RecalcBattlerStats(u32 battler, struct Pokemon *mon, bool32 isDynamaxing)
             }
         }
     }
+    else if (gBattleTypeFlags & BATTLE_TYPE_OGERPON) {
+        DebugPrintfLevel(MGBA_LOG_WARN, "Trying to set Ogerpon's stats...");
+        u32 currentHP = GetMonData(mon, MON_DATA_HP);
+        u32 currentMaxHP = GetMonData(mon, MON_DATA_MAX_HP);
+        DebugPrintfLevel(MGBA_LOG_WARN, "HP THEN: %d/%d", currentHP, currentMaxHP);
+        
+        // Simple integer math instead of fixed point
+        u32 newMaxHP = (currentMaxHP * 170) / 100;
+        u32 newHP = (currentHP * 170) / 100;
+        
+        DebugPrintfLevel(MGBA_LOG_WARN, "HP NOW: %d/%d", newHP, newMaxHP);
+        
+        SetMonData(mon, MON_DATA_HP, &newHP);
+        SetMonData(mon, MON_DATA_MAX_HP, &newMaxHP);
+        DebugPrintfLevel(MGBA_LOG_WARN, "Ogerpon's stats SHOULD be set correctly now...");
+    }
     CopyMonLevelAndBaseStatsToBattleMon(battler, mon);
     CopyMonAbilityAndTypesToBattleMon(battler, mon);
 }

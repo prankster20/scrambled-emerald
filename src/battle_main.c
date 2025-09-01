@@ -2107,9 +2107,8 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 SetMonData(&party[i], MON_DATA_POKEBALL, &ball);
             }
             if (gBattleTypeFlags & BATTLE_TYPE_OGERPON) {
-                u32 maxHP =  party[i].maxHP;
-                party[i].maxHP = maxHP * 170 / 100;
-                party[i].hp = maxHP * 170 / 100;
+                party[i].maxHP = (u16)((u32)party[i].maxHP * 170 / 100);
+                party[i].hp = party[i].maxHP;
             }
         }
     }

@@ -30,6 +30,7 @@ static bool32 AI_ShouldHeal(u32 battler, u32 healAmount);
 static bool32 AI_OpponentCanFaintAiWithMod(u32 battler, u32 healAmount);
 static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon);
 static bool32 CanAbilityTrapOpponent(u16 ability, u32 opponent);
+static u32 GetBasePowerWithEffectiveness(u32 battlerAtk, u32 battlerDef, u32 move);
 
 static void InitializeSwitchinCandidate(struct Pokemon *mon)
 {
@@ -1236,7 +1237,7 @@ static u32 GetBestMonDmg(struct Pokemon *party, int firstId, int lastId, u8 inva
             if (aiMove != MOVE_NONE && !IS_MOVE_STATUS(aiMove))
             {
                 aiMove = GetMonData(&party[i], MON_DATA_MOVE1 + j);
-                dmg = AI_CalcPartyMonDamage(aiMove, battler, opposingBattler, AI_DATA->switchinCandidate.battleMon, TRUE, rollType);
+                dmg = GetBasePowerWithEffectiveness(battler, opposingBattler, aiMove);
                 if (bestDmg < dmg)
                 {
                     bestDmg = dmg;
@@ -2218,4 +2219,45 @@ static bool32 AI_OpponentCanFaintAiWithMod(u32 battler, u32 healAmount)
         }
     }
     return FALSE;
+}
+
+// Basic calc: base power * effectiveness
+static u32 GetBasePowerWithEffectiveness(u32 battlerAtk, u32 battlerDef, u32 move)
+{
+    u32 power = gMovesInfo[move].power;
+    u32 defType1 = gBattleMons[battlerDef].types[0];
+    u32 defType2 = gBattleMons[battlerDef].types[1];
+    u32 moveType = gMovesInfo[move].type;
+
+    // Get the attacking mon name (from the switchin candidate)
+    u32 atkSpecies = AI_DATA->switchinCandidate.battleMon.species;
+    // Get the defending mon name
+    u32 defSpecies = gBattleMons[battlerDef].species;
+
+    // DebugPrintfLevel(MGBA_LOG_WARN, "%s's %s (power %d, type %d) vs %s (types %d/%d)", 
+        //    GetSpeciesName(atkSpecies), gMovesInfo[move].name, power, moveType, 
+        //    GetSpeciesName(defSpecies), defType1, defType2);
+
+    u32 effectiveness;
+    
+    if (GetActiveGimmick(battlerDef) == GIMMICK_TERA) {
+        u32 teraType = GetBattlerTeraType(battlerDef);
+        effectiveness = GetTypeModifier(moveType, teraType);
+        // DebugPrintfLevel(MGBA_LOG_WARN, "Tera active on %s, tera type %d, effectiveness %d", 
+            //    GetSpeciesName(defSpecies), teraType, effectiveness);
+    }
+    else {
+        u32 eff1 = GetTypeModifier(moveType, defType1);
+        u32 eff2 = (defType1 != defType2) ? GetTypeModifier(moveType, defType2) : UQ_4_12(1.0);
+        effectiveness = eff1 * eff2 / UQ_4_12(1.0);
+        // DebugPrintfLevel(MGBA_LOG_WARN, "No tera on %s, type1 eff %d, type2 eff %d, combined %d", 
+        //        GetSpeciesName(defSpecies), eff1, eff2, effectiveness);
+    }
+
+    u32 result = power * effectiveness / UQ_4_12(1.0);
+    // DebugPrintfLevel(MGBA_LOG_WARN, "%s vs %s final calc: %d * %d / %d = %d", 
+    //        GetSpeciesName(atkSpecies), GetSpeciesName(defSpecies), 
+    //        power, effectiveness, UQ_4_12(1.0), result);
+    
+    return result;
 }

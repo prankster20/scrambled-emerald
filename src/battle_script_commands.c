@@ -2427,7 +2427,25 @@ static void Cmd_datahpupdate(void)
             else
                 gBattleMons[battler].species = SPECIES_MIMIKYU_BUSTED;
             if (B_DISGUISE_HP_LOSS >= GEN_8)
+            {
                 gBattleMoveDamage = GetNonDynamaxMaxHP(battler) / 8;
+                if (gBattleMoveDamage == 0)
+                    gBattleMoveDamage = 1;
+                // Apply the damage directly (copied from the else branch below)
+                if (gBattleMons[battler].hp > gBattleMoveDamage)
+                {
+                    gBattleMons[battler].hp -= gBattleMoveDamage;
+                    gHpDealt = gBattleMoveDamage;
+                }
+                else
+                {
+                    gHpDealt = gBattleMons[battler].hp;
+                    gBattleMons[battler].hp = 1; // Don't let Disguise kill the Pokemon
+                }
+                // Send updated HP
+                BtlController_EmitSetMonData(battler, BUFFER_A, REQUEST_HP_BATTLE, 0, sizeof(gBattleMons[battler].hp), &gBattleMons[battler].hp);
+                MarkBattlerForControllerExec(battler);
+            }
             BattleScriptPush(cmd->nextInstr);
             gBattlescriptCurrInstr = BattleScript_TargetFormChange;
             return;

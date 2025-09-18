@@ -424,6 +424,7 @@ const struct EggPool gEggPools[] = {
             SPECIES_ROTOM,
             SPECIES_DONDOZO,
             SPECIES_OKIDOGI,
+            SPECIES_MEW,
             SPECIES_NONE,
         },
     },

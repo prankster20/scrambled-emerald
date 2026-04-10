@@ -154,7 +154,7 @@ static const struct TrainerMon FEZANDIPITI = {
     .iv = MAX_IVS,
     .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
     .moves = {
-        MOVE_ALLURING_VOICE,
+        MOVE_DAZZLING_GLEAM,
         MOVE_VENOSHOCK,
         MOVE_PSYCHIC,
         MOVE_HEAT_WAVE,

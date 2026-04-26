@@ -2009,15 +2009,16 @@ static const u16 sRaichu1TeachableLearnset[] = {
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sSandshrew0LevelUpLearnset[] = {
+    {.move = MOVE_SEDIMEND, .level = 1},
     {.move = MOVE_DEFENSE_CURL, .level = 1},
-    {.move = MOVE_SHORE_UP, .level = 1},
+    {.move = MOVE_SPIKES, .level = 1},
     {.move = MOVE_PROTECT, .level = 1},
-    {.move = MOVE_HEADBUTT, .level = 1},
     {.move = MOVE_RAPID_SPIN, .level = 5},
-    {.move = MOVE_COVET, .level = 13},
+    {.move = MOVE_HEADBUTT, .level = 10},
+    {.move = MOVE_HOODWINK, .level = 13},
     {.move = MOVE_COUNTER, .level = 23},
-    {.move = MOVE_POUND, .level = 35},
-    {.move = MOVE_TACKLE, .level = 35},
+    {.move = MOVE_WALLOP, .level = 35},
+    {.move = MOVE_PUMMEL, .level = 35},
     {.move = MOVE_SPIN_OUT, .level = 50},
     {.move = MOVE_HEADLONG_RUSH, .level = 55},
 
@@ -2161,25 +2162,25 @@ static const u16 sSandshrew1TeachableLearnset[] = {
 static const struct LevelUpMove sSandslash0LevelUpLearnset[] = {
     {.move = MOVE_SPIKY_SHIELD, .level = 0},
     {.move = MOVE_ACCELEROCK, .level = 0},
-    {.move = MOVE_SPIKES, .level = 0},
     {.move = MOVE_SLASH, .level = 0},
     {.move = MOVE_FLAME_WHEEL, .level = 0},
+    {.move = MOVE_SEDIMEND, .level = 1},
     {.move = MOVE_DEFENSE_CURL, .level = 1},
-    {.move = MOVE_SHORE_UP, .level = 1},
+    {.move = MOVE_SPIKES, .level = 1},
     {.move = MOVE_PROTECT, .level = 1},
-    {.move = MOVE_HEADBUTT, .level = 1},
     {.move = MOVE_RAPID_SPIN, .level = 5},
-    {.move = MOVE_COVET, .level = 13},
+    {.move = MOVE_HEADBUTT, .level = 10},
+    {.move = MOVE_HOODWINK, .level = 13},
     {.move = MOVE_COUNTER, .level = 23},
-    {.move = MOVE_CROSS_POISON, .level = 30},
-    {.move = MOVE_CRUSH_CLAW, .level = 30},
     {.move = MOVE_NIGHT_SLASH, .level = 30},
+    {.move = MOVE_JAGGED_EDGE, .level = 30},
+    {.move = MOVE_CROSS_POISON, .level = 30},
     {.move = MOVE_PIN_MISSILE, .level = 35},
-    {.move = MOVE_FURY_ATTACK, .level = 35},
     {.move = MOVE_FURY_SWIPES, .level = 35},
-    {.move = MOVE_POUND, .level = 35},
-    {.move = MOVE_TACKLE, .level = 35},
-    {.move = MOVE_SACRED_SWORD, .level = 40},
+    {.move = MOVE_WALLOP, .level = 35},
+    {.move = MOVE_PUMMEL, .level = 35},
+    {.move = MOVE_SPIKE_CANNON_SCRAMBLED, .level = 35},
+    {.move = MOVE_SACRED_SLASH, .level = 40},
     {.move = MOVE_SPIN_OUT, .level = 50},
     {.move = MOVE_HEADLONG_RUSH, .level = 55},
 
@@ -3185,7 +3186,7 @@ static const u16 sWigglytuff0TeachableLearnset[] = {
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sOddish0LevelUpLearnset[] = {
-    {.move = MOVE_SYNTHESIS, .level = 1},
+    {.move = MOVE_MOONLIGHT, .level = 1},
     {.move = MOVE_FLORAL_HEALING, .level = 1},
     {.move = MOVE_STUN_SPORE, .level = 1},
     {.move = MOVE_POISON_POWDER, .level = 1},
@@ -3269,11 +3270,12 @@ static const u16 sOddish0TeachableLearnset[] = {
     MOVE_GRASSY_GLIDE,
     MOVE_TERA_BLAST,
     MOVE_TRAILBLAZE,
+    MOVE_SNARL,
 
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sGloom0LevelUpLearnset[] = {
-    {.move = MOVE_SYNTHESIS, .level = 1},
+    {.move = MOVE_MOONLIGHT, .level = 1},
     {.move = MOVE_FLORAL_HEALING, .level = 1},
     {.move = MOVE_STUN_SPORE, .level = 1},
     {.move = MOVE_POISON_POWDER, .level = 1},
@@ -3357,12 +3359,13 @@ static const u16 sGloom0TeachableLearnset[] = {
     MOVE_GRASSY_GLIDE,
     MOVE_TERA_BLAST,
     MOVE_TRAILBLAZE,
+    MOVE_SNARL,
 
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sVileplume0LevelUpLearnset[] = {
     {.move = MOVE_LUNAR_BLESSING, .level = 0},
-    {.move = MOVE_SYNTHESIS, .level = 1},
+    {.move = MOVE_MOONLIGHT, .level = 1},
     {.move = MOVE_FLORAL_HEALING, .level = 1},
     {.move = MOVE_STUN_SPORE, .level = 1},
     {.move = MOVE_POISON_POWDER, .level = 1},
@@ -3446,6 +3449,7 @@ static const u16 sVileplume0TeachableLearnset[] = {
     MOVE_GRASSY_GLIDE,
     MOVE_TERA_BLAST,
     MOVE_TRAILBLAZE,
+    MOVE_SNARL,
 
     MOVE_UNAVAILABLE
 };
@@ -3959,6 +3963,7 @@ static const u16 sMeowth0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
     MOVE_CHILLING_WATER,
+    MOVE_TRICK,
 
     MOVE_UNAVAILABLE
 };
@@ -4288,6 +4293,7 @@ static const u16 sPersian0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
     MOVE_CHILLING_WATER,
+    MOVE_TRICK,
 
     MOVE_UNAVAILABLE
 };
@@ -4314,9 +4320,9 @@ static const struct LevelUpMove sPersian1LevelUpLearnset[] = {
     {.move = MOVE_BEAT_UP, .level = 25},
     {.move = MOVE_NIGHT_SLASH, .level = 30},
     {.move = MOVE_COMEUPPANCE, .level = 35},
-    {.move = MOVE_HYPNOSIS, .level = 40},
-    {.move = MOVE_NIGHT_DAZE, .level = 45},
-    {.move = MOVE_BLOOD_MOON, .level = 50},
+    {.move = MOVE_BLOOD_MOON, .level = 40},
+    {.move = MOVE_HYPNOSIS, .level = 45},
+    {.move = MOVE_FIERY_WRATH, .level = 50},
     {.move = MOVE_HAPPY_HOUR, .level = 55},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
@@ -4849,15 +4855,17 @@ static const u16 sPrimeape0TeachableLearnset[] = {
 };
 static const struct LevelUpMove sGrowlithe0LevelUpLearnset[] = {
     {.move = MOVE_MORNING_SUN, .level = 1},
-    {.move = MOVE_QUICK_ATTACK, .level = 1},
+    {.move = MOVE_GROWL, .level = 1},
     {.move = MOVE_HAZE, .level = 1},
     {.move = MOVE_AURORA_VEIL, .level = 1},
+    {.move = MOVE_QUICK_ATTACK, .level = 3},
     {.move = MOVE_FLAME_CHARGE, .level = 5},
     {.move = MOVE_EMBER, .level = 5},
     {.move = MOVE_ICE_SHARD, .level = 5},
     {.move = MOVE_POWDER_SNOW, .level = 5},
     {.move = MOVE_DOUBLE_KICK, .level = 7},
     {.move = MOVE_COVET, .level = 9},
+    {.move = MOVE_BITE, .level = 9},
     {.move = MOVE_FIRE_SPIN, .level = 11},
     {.move = MOVE_HEADBUTT, .level = 13},
     {.move = MOVE_AURORA_BEAM, .level = 15},
@@ -4866,8 +4874,10 @@ static const struct LevelUpMove sGrowlithe0LevelUpLearnset[] = {
     {.move = MOVE_FROST_BREATH, .level = 28},
     {.move = MOVE_ICICLE_CRASH, .level = 33},
     {.move = MOVE_NOBLE_ROAR, .level = 35},
+    {.move = MOVE_EXTREME_SPEED, .level = 45},
     {.move = MOVE_DOUBLE_EDGE, .level = 50},
     {.move = MOVE_FLARE_BLITZ, .level = 50},
+    {.move = MOVE_OVERHEAT, .level = 50},
     {.move = MOVE_GLACIATE, .level = 53},
     {.move = MOVE_FUSION_FLARE, .level = 53},
     {.move = MOVE_GLACIAL_LANCE, .level = 53},
@@ -4976,10 +4986,10 @@ static const struct LevelUpMove sGrowlithe1LevelUpLearnset[] = {
     {.move = MOVE_ROCK_WRECKER, .level = 50},
     {.move = MOVE_V_CREATE, .level = 50},
     {.move = MOVE_HEADLONG_RUSH, .level = 52},
-    {.move = MOVE_FLARE_BLITZ, .level = 55},
-    {.move = MOVE_STRENGTH, .level = 55},
-    {.move = MOVE_HOWL, .level = 60},
-    {.move = MOVE_HEAD_SMASH, .level = 65},
+    {.move = MOVE_FLARE_BLITZ, .level = 54},
+    {.move = MOVE_STRENGTH, .level = 54},
+    {.move = MOVE_HOWL, .level = 58},
+    {.move = MOVE_HEAD_SMASH, .level = 60},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -5063,15 +5073,17 @@ static const u16 sGrowlithe1TeachableLearnset[] = {
 };
 static const struct LevelUpMove sArcanine0LevelUpLearnset[] = {
     {.move = MOVE_MORNING_SUN, .level = 1},
-    {.move = MOVE_QUICK_ATTACK, .level = 1},
+    {.move = MOVE_GROWL, .level = 1},
     {.move = MOVE_HAZE, .level = 1},
     {.move = MOVE_AURORA_VEIL, .level = 1},
+    {.move = MOVE_QUICK_ATTACK, .level = 3},
     {.move = MOVE_FLAME_CHARGE, .level = 5},
     {.move = MOVE_EMBER, .level = 5},
     {.move = MOVE_ICE_SHARD, .level = 5},
     {.move = MOVE_POWDER_SNOW, .level = 5},
     {.move = MOVE_DOUBLE_KICK, .level = 7},
     {.move = MOVE_COVET, .level = 9},
+    {.move = MOVE_BITE, .level = 9},
     {.move = MOVE_FIRE_SPIN, .level = 11},
     {.move = MOVE_HEADBUTT, .level = 13},
     {.move = MOVE_AURORA_BEAM, .level = 15},
@@ -5083,6 +5095,7 @@ static const struct LevelUpMove sArcanine0LevelUpLearnset[] = {
     {.move = MOVE_EXTREME_SPEED, .level = 45},
     {.move = MOVE_DOUBLE_EDGE, .level = 50},
     {.move = MOVE_FLARE_BLITZ, .level = 50},
+    {.move = MOVE_OVERHEAT, .level = 50},
     {.move = MOVE_GLACIATE, .level = 53},
     {.move = MOVE_FUSION_FLARE, .level = 53},
     {.move = MOVE_GLACIAL_LANCE, .level = 53},
@@ -5169,6 +5182,7 @@ static const struct LevelUpMove sArcanine1LevelUpLearnset[] = {
     {.move = MOVE_ROAR, .level = 0},
     {.move = MOVE_DRAGON_PULSE, .level = 0},
     {.move = MOVE_DRAGON_RUSH, .level = 0},
+    {.move = MOVE_MORNING_SUN, .level = 1},
     {.move = MOVE_GROWL, .level = 1},
     {.move = MOVE_HEADBUTT, .level = 1},
     {.move = MOVE_QUICK_ATTACK, .level = 1},
@@ -10410,12 +10424,12 @@ static const struct LevelUpMove sTauros0LevelUpLearnset[] = {
     {.move = MOVE_STOMP, .level = 10},
     {.move = MOVE_ENDEAVOR, .level = 20},
     {.move = MOVE_NOBLE_ROAR, .level = 30},
-    {.move = MOVE_DARKEST_LARIAT, .level = 45},
-    {.move = MOVE_HIGH_HORSEPOWER, .level = 47},
+    {.move = MOVE_DARKEST_LARIAT, .level = 40},
+    {.move = MOVE_HIGH_HORSEPOWER, .level = 45},
     {.move = MOVE_DOUBLE_EDGE, .level = 50},
-    {.move = MOVE_HEADLONG_RUSH, .level = 55},
-    {.move = MOVE_HEAD_SMASH, .level = 60},
-    {.move = MOVE_RAGING_BULL, .level = 65},
+    {.move = MOVE_HEADLONG_RUSH, .level = 52},
+    {.move = MOVE_HEAD_SMASH, .level = 55},
+    {.move = MOVE_RAGING_BULL, .level = 60},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -10486,12 +10500,12 @@ static const struct LevelUpMove sTauros1LevelUpLearnset[] = {
     {.move = MOVE_POUND, .level = 35},
     {.move = MOVE_COMEUPPANCE, .level = 40},
     {.move = MOVE_COUNTER, .level = 40},
-    {.move = MOVE_HIGH_HORSEPOWER, .level = 45},
-    {.move = MOVE_RAGING_BULL, .level = 50},
-    {.move = MOVE_DARKEST_LARIAT, .level = 50},
-    {.move = MOVE_HEADLONG_RUSH, .level = 55},
-    {.move = MOVE_HEAD_SMASH, .level = 60},
-    {.move = MOVE_SUPERPOWER, .level = 65},
+    {.move = MOVE_HIGH_HORSEPOWER, .level = 40},
+    {.move = MOVE_RAGING_BULL, .level = 45},
+    {.move = MOVE_DARKEST_LARIAT, .level = 45},
+    {.move = MOVE_HEADLONG_RUSH, .level = 50},
+    {.move = MOVE_HEAD_SMASH, .level = 52},
+    {.move = MOVE_SUPERPOWER, .level = 55},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -10570,16 +10584,16 @@ static const struct LevelUpMove sTauros2LevelUpLearnset[] = {
     {.move = MOVE_POUND, .level = 35},
     {.move = MOVE_BURN_UP, .level = 40},
     {.move = MOVE_COUNTER, .level = 40},
-    {.move = MOVE_DARKEST_LARIAT, .level = 45},
-    {.move = MOVE_HIGH_HORSEPOWER, .level = 45},
+    {.move = MOVE_DARKEST_LARIAT, .level = 40},
+    {.move = MOVE_HIGH_HORSEPOWER, .level = 40},
+    {.move = MOVE_FLARE_BLITZ, .level = 45},
     {.move = MOVE_BURNING_BULWARK, .level = 47},
-    {.move = MOVE_FLARE_BLITZ, .level = 50},
-    {.move = MOVE_HEADLONG_RUSH, .level = 55},
+    {.move = MOVE_HEADLONG_RUSH, .level = 50},
+    {.move = MOVE_HEAD_SMASH, .level = 52},
+    {.move = MOVE_V_CREATE, .level = 55},
+    {.move = MOVE_SUPERPOWER, .level = 55},
     {.move = MOVE_FIRE_LASH, .level = 58},
-    {.move = MOVE_HEAD_SMASH, .level = 60},
-    {.move = MOVE_SUPERPOWER, .level = 63},
-    {.move = MOVE_V_CREATE, .level = 63},
-    {.move = MOVE_RAGING_BULL, .level = 65},
+    {.move = MOVE_RAGING_BULL, .level = 60},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -10652,14 +10666,14 @@ static const struct LevelUpMove sTauros3LevelUpLearnset[] = {
     {.move = MOVE_NOBLE_ROAR, .level = 30},
     {.move = MOVE_POUND, .level = 35},
     {.move = MOVE_COUNTER, .level = 40},
-    {.move = MOVE_DARKEST_LARIAT, .level = 45},
-    {.move = MOVE_HIGH_HORSEPOWER, .level = 45},
-    {.move = MOVE_WAVE_CRASH, .level = 50},
-    {.move = MOVE_HEADLONG_RUSH, .level = 55},
-    {.move = MOVE_HEAD_SMASH, .level = 60},
-    {.move = MOVE_SUPERPOWER, .level = 63},
-    {.move = MOVE_WATERFALL, .level = 63},
-    {.move = MOVE_RAGING_BULL, .level = 65},
+    {.move = MOVE_DARKEST_LARIAT, .level = 40},
+    {.move = MOVE_HIGH_HORSEPOWER, .level = 40},
+    {.move = MOVE_WAVE_CRASH, .level = 45},
+    {.move = MOVE_HEADLONG_RUSH, .level = 50},
+    {.move = MOVE_HEAD_SMASH, .level = 52},
+    {.move = MOVE_WATERFALL, .level = 55},
+    {.move = MOVE_SUPERPOWER, .level = 55},
+    {.move = MOVE_RAGING_BULL, .level = 60},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -11506,6 +11520,7 @@ static const u16 sSnorlax0TeachableLearnset[] = {
     MOVE_HARD_PRESS,
     MOVE_SUPERCELL_SLAM,
     MOVE_MEGA_PUNCH,
+    MOVE_SEED_BOMB,
 
     MOVE_UNAVAILABLE
 };
@@ -13288,20 +13303,22 @@ static const struct LevelUpMove sTotodile0LevelUpLearnset[] = {
     {.move = MOVE_LEER, .level = 1},
     {.move = MOVE_DRAGON_TAIL, .level = 1},
     {.move = MOVE_AQUA_JET, .level = 5},
-    {.move = MOVE_SCRATCH, .level = 10},
-    {.move = MOVE_BITE, .level = 13},
-    {.move = MOVE_JAW_LOCK, .level = 15},
-    {.move = MOVE_FURY_SWIPES, .level = 20},
-    {.move = MOVE_POUND, .level = 20},
-    {.move = MOVE_TACKLE, .level = 20},
-    {.move = MOVE_NIGHT_SLASH, .level = 25},
-    {.move = MOVE_DRAGON_RUSH, .level = 30},
-    {.move = MOVE_NOBLE_ROAR, .level = 35},
-    {.move = MOVE_DRAGON_HAMMER, .level = 40},
-    {.move = MOVE_SUPERPOWER, .level = 45},
+    {.move = MOVE_FURY_SWIPES, .level = 7},
+    {.move = MOVE_POUND, .level = 7},
+    {.move = MOVE_TACKLE, .level = 7},
+    {.move = MOVE_SCRATCH, .level = 9},
+    {.move = MOVE_BITE, .level = 11},
+    {.move = MOVE_JAW_LOCK, .level = 13},
+    {.move = MOVE_DIVE, .level = 15},
+    {.move = MOVE_ICE_FANG, .level = 18},
+    {.move = MOVE_NIGHT_SLASH, .level = 20},
+    {.move = MOVE_DRAGON_RUSH, .level = 25},
+    {.move = MOVE_NOBLE_ROAR, .level = 30},
+    {.move = MOVE_DRAGON_HAMMER, .level = 35},
+    {.move = MOVE_SUPERPOWER, .level = 40},
     {.move = MOVE_WATERFALL, .level = 50},
-    {.move = MOVE_WAVE_CRASH, .level = 55},
     {.move = MOVE_DARKEST_LARIAT, .level = 55},
+    {.move = MOVE_WAVE_CRASH, .level = 55},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -13385,20 +13402,22 @@ static const struct LevelUpMove sCroconaw0LevelUpLearnset[] = {
     {.move = MOVE_LEER, .level = 1},
     {.move = MOVE_DRAGON_TAIL, .level = 1},
     {.move = MOVE_AQUA_JET, .level = 5},
-    {.move = MOVE_SCRATCH, .level = 10},
-    {.move = MOVE_BITE, .level = 13},
-    {.move = MOVE_JAW_LOCK, .level = 15},
-    {.move = MOVE_FURY_SWIPES, .level = 20},
-    {.move = MOVE_POUND, .level = 20},
-    {.move = MOVE_TACKLE, .level = 20},
-    {.move = MOVE_NIGHT_SLASH, .level = 25},
-    {.move = MOVE_DRAGON_RUSH, .level = 30},
-    {.move = MOVE_NOBLE_ROAR, .level = 35},
-    {.move = MOVE_DRAGON_HAMMER, .level = 40},
-    {.move = MOVE_SUPERPOWER, .level = 45},
+    {.move = MOVE_FURY_SWIPES, .level = 7},
+    {.move = MOVE_POUND, .level = 7},
+    {.move = MOVE_TACKLE, .level = 7},
+    {.move = MOVE_SCRATCH, .level = 9},
+    {.move = MOVE_BITE, .level = 11},
+    {.move = MOVE_JAW_LOCK, .level = 13},
+    {.move = MOVE_DIVE, .level = 15},
+    {.move = MOVE_ICE_FANG, .level = 18},
+    {.move = MOVE_NIGHT_SLASH, .level = 20},
+    {.move = MOVE_DRAGON_RUSH, .level = 25},
+    {.move = MOVE_NOBLE_ROAR, .level = 30},
+    {.move = MOVE_DRAGON_HAMMER, .level = 35},
+    {.move = MOVE_SUPERPOWER, .level = 40},
     {.move = MOVE_WATERFALL, .level = 50},
-    {.move = MOVE_WAVE_CRASH, .level = 55},
     {.move = MOVE_DARKEST_LARIAT, .level = 55},
+    {.move = MOVE_WAVE_CRASH, .level = 55},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -13482,20 +13501,22 @@ static const struct LevelUpMove sFeraligatr0LevelUpLearnset[] = {
     {.move = MOVE_LEER, .level = 1},
     {.move = MOVE_DRAGON_TAIL, .level = 1},
     {.move = MOVE_AQUA_JET, .level = 5},
-    {.move = MOVE_SCRATCH, .level = 10},
-    {.move = MOVE_BITE, .level = 13},
-    {.move = MOVE_JAW_LOCK, .level = 15},
-    {.move = MOVE_FURY_SWIPES, .level = 20},
-    {.move = MOVE_POUND, .level = 20},
-    {.move = MOVE_TACKLE, .level = 20},
-    {.move = MOVE_NIGHT_SLASH, .level = 25},
-    {.move = MOVE_DRAGON_RUSH, .level = 30},
-    {.move = MOVE_NOBLE_ROAR, .level = 35},
-    {.move = MOVE_DRAGON_HAMMER, .level = 40},
-    {.move = MOVE_SUPERPOWER, .level = 45},
+    {.move = MOVE_FURY_SWIPES, .level = 7},
+    {.move = MOVE_POUND, .level = 7},
+    {.move = MOVE_TACKLE, .level = 7},
+    {.move = MOVE_SCRATCH, .level = 9},
+    {.move = MOVE_BITE, .level = 11},
+    {.move = MOVE_JAW_LOCK, .level = 13},
+    {.move = MOVE_DIVE, .level = 15},
+    {.move = MOVE_ICE_FANG, .level = 18},
+    {.move = MOVE_NIGHT_SLASH, .level = 20},
+    {.move = MOVE_DRAGON_RUSH, .level = 25},
+    {.move = MOVE_NOBLE_ROAR, .level = 30},
+    {.move = MOVE_DRAGON_HAMMER, .level = 35},
+    {.move = MOVE_SUPERPOWER, .level = 40},
     {.move = MOVE_WATERFALL, .level = 50},
-    {.move = MOVE_WAVE_CRASH, .level = 55},
     {.move = MOVE_DARKEST_LARIAT, .level = 55},
+    {.move = MOVE_WAVE_CRASH, .level = 55},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -13732,6 +13753,7 @@ static const u16 sFurret0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
     MOVE_CHILLING_WATER,
+    MOVE_POWER_WHIP,
 
     MOVE_UNAVAILABLE
 };
@@ -13902,6 +13924,7 @@ static const u16 sNoctowl0TeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_POUNCE,
     MOVE_PSYCHIC_NOISE,
+    MOVE_AIR_SLASH,
 
     MOVE_UNAVAILABLE
 };
@@ -14726,6 +14749,7 @@ static const u16 sFlaaffy0TeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_TRAILBLAZE,
     MOVE_SUPERCELL_SLAM,
+    MOVE_AURA_SPHERE,
 
     MOVE_UNAVAILABLE
 };
@@ -14816,13 +14840,14 @@ static const u16 sAmpharos0TeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_TRAILBLAZE,
     MOVE_SUPERCELL_SLAM,
+    MOVE_AURA_SPHERE,
 
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sBellossom0LevelUpLearnset[] = {
     {.move = MOVE_FAIRY_WIND, .level = 0},
     {.move = MOVE_RELIC_SONG, .level = 0},
-    {.move = MOVE_SYNTHESIS, .level = 1},
+    {.move = MOVE_MOONLIGHT, .level = 1},
     {.move = MOVE_FLORAL_HEALING, .level = 1},
     {.move = MOVE_STUN_SPORE, .level = 1},
     {.move = MOVE_POISON_POWDER, .level = 1},
@@ -14893,6 +14918,7 @@ static const u16 sBellossom0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
     MOVE_ALLURING_VOICE,
+    MOVE_SNARL,
 
     MOVE_UNAVAILABLE
 };
@@ -15658,7 +15684,6 @@ static const u16 sSunkern0TeachableLearnset[] = {
     MOVE_LEAF_BLADE,
     MOVE_GRASS_KNOT,
     MOVE_GRASS_PLEDGE,
-    MOVE_DISARMING_VOICE,
     MOVE_DRAINING_KISS,
     MOVE_GRASSY_TERRAIN,
     MOVE_PLAY_ROUGH,
@@ -15760,6 +15785,7 @@ static const struct LevelUpMove sYanma0LevelUpLearnset[] = {
     {.move = MOVE_ABSORB, .level = 10},
     {.move = MOVE_AIR_CUTTER, .level = 13},
     {.move = MOVE_STRUGGLE_BUG, .level = 15},
+    {.move = MOVE_FLY, .level = 18},
     {.move = MOVE_DOUBLE_EDGE, .level = 20},
     {.move = MOVE_HIGH_JUMP_KICK, .level = 23},
     {.move = MOVE_AIR_SLASH, .level = 25},
@@ -15767,10 +15793,10 @@ static const struct LevelUpMove sYanma0LevelUpLearnset[] = {
     {.move = MOVE_UPROAR, .level = 32},
     {.move = MOVE_GENESIS_SUPERNOVA, .level = 35},
     {.move = MOVE_BOOMBURST, .level = 38},
-    {.move = MOVE_AEROBLAST, .level = 43},
-    {.move = MOVE_HYPNOSIS, .level = 45},
+    {.move = MOVE_AEROBLAST, .level = 45},
+    {.move = MOVE_HYPNOSIS, .level = 47},
     {.move = MOVE_LUNGE, .level = 50},
-    {.move = MOVE_QUIVER_DANCE, .level = 57},
+    {.move = MOVE_QUIVER_DANCE, .level = 60},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -15910,26 +15936,23 @@ static const u16 sWooper0TeachableLearnset[] = {
 };
 static const struct LevelUpMove sWooper1LevelUpLearnset[] = {
     {.move = MOVE_RECOVER, .level = 1},
-    {.move = MOVE_TOXIC, .level = 1},
-    {.move = MOVE_PROTECT, .level = 1},
-    {.move = MOVE_HAZE, .level = 1},
-    {.move = MOVE_WATER_GUN, .level = 5},
-    {.move = MOVE_SLUDGE, .level = 8},
-    {.move = MOVE_ANCIENT_POWER, .level = 10},
-    {.move = MOVE_WHIRLPOOL, .level = 13},
-    {.move = MOVE_DIVE, .level = 15},
-    {.move = MOVE_CLEAR_SMOG, .level = 18},
-    {.move = MOVE_POISON_TAIL, .level = 23},
-    {.move = MOVE_YAWN, .level = 28},
-    {.move = MOVE_ACID, .level = 33},
-    {.move = MOVE_COUNTER, .level = 38},
-    {.move = MOVE_STOCKPILE, .level = 43},
-    {.move = MOVE_SWALLOW, .level = 43},
-    {.move = MOVE_SPIT_UP, .level = 43},
-    {.move = MOVE_WAVE_CRASH, .level = 48},
-    {.move = MOVE_HYDRO_CANNON, .level = 53},
-    {.move = MOVE_WATERFALL, .level = 58},
-    {.move = MOVE_ACID_ARMOR, .level = 60},
+    {.move = MOVE_AQUA_RING, .level = 1},
+    {.move = MOVE_SHORE_UP, .level = 1},
+    {.move = MOVE_SOAK, .level = 1},
+    {.move = MOVE_ACID_SPRAY, .level = 5},
+    {.move = MOVE_SLUDGE, .level = 10},
+    {.move = MOVE_TOXIC, .level = 12},
+    {.move = MOVE_HAZE, .level = 15},
+    {.move = MOVE_VENOSHOCK, .level = 17},
+    {.move = MOVE_ACID, .level = 25},
+    {.move = MOVE_YAWN, .level = 30},
+    {.move = MOVE_POISON_TAIL, .level = 35},
+    {.move = MOVE_BANEFUL_BUNKER, .level = 40},
+    {.move = MOVE_COUNTER, .level = 45},
+    {.move = MOVE_STOCKPILE, .level = 50},
+    {.move = MOVE_SWALLOW, .level = 50},
+    {.move = MOVE_SPIT_UP, .level = 50},
+    {.move = MOVE_BARB_BARRAGE, .level = 55},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -16128,7 +16151,6 @@ static const u16 sEspeon0TeachableLearnset[] = {
     MOVE_REFLECT,
     MOVE_SWIFT,
     MOVE_AMNESIA,
-    MOVE_LEECH_LIFE,
     MOVE_REST,
     MOVE_ROCK_SLIDE,
     MOVE_SUBSTITUTE,
@@ -16307,14 +16329,10 @@ static const struct LevelUpMove sMurkrow0LevelUpLearnset[] = {
     {.move = MOVE_TACKLE, .level = 35},
     {.move = MOVE_FOCUS_ENERGY, .level = 35},
     {.move = MOVE_HIGH_JUMP_KICK, .level = 40},
-    {.move = MOVE_DOOM_DESIRE, .level = 42},
-    {.move = MOVE_SPIRIT_BREAK, .level = 44},
     {.move = MOVE_SKY_ATTACK, .level = 46},
     {.move = MOVE_PERISH_SONG, .level = 48},
     {.move = MOVE_BRAVE_BIRD, .level = 50},
     {.move = MOVE_NIGHT_DAZE, .level = 52},
-    {.move = MOVE_AEROBLAST, .level = 52},
-    {.move = MOVE_WICKED_BLOW, .level = 60},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -16354,16 +16372,13 @@ static const u16 sMurkrow0TeachableLearnset[] = {
     MOVE_CALM_MIND,
     MOVE_TAILWIND,
     MOVE_U_TURN,
-    MOVE_CLOSE_COMBAT,
     MOVE_SUCKER_PUNCH,
     MOVE_POISON_JAB,
     MOVE_DARK_PULSE,
     MOVE_FIRST_IMPRESSION,
-    MOVE_FOCUS_BLAST,
     MOVE_GIGA_IMPACT,
     MOVE_NASTY_PLOT,
     MOVE_SHADOW_CLAW,
-    MOVE_GUNK_SHOT,
     MOVE_MEGA_KICK,
     MOVE_FOUL_PLAY,
     MOVE_PSYCHO_CUT,
@@ -16378,7 +16393,6 @@ static const u16 sMurkrow0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
     MOVE_CHILLING_WATER,
-    MOVE_TEMPER_FLARE,
 
     MOVE_UNAVAILABLE
 };
@@ -16943,6 +16957,7 @@ static const u16 sPineco0TeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_ICE_SPINNER,
     MOVE_POUNCE,
+    MOVE_MUD_SLAP,
 
     MOVE_UNAVAILABLE
 };
@@ -17048,6 +17063,7 @@ static const u16 sForretress0TeachableLearnset[] = {
     MOVE_ICE_SPINNER,
     MOVE_POUNCE,
     MOVE_SUPERCELL_SLAM,
+    MOVE_MUD_SLAP,
 
     MOVE_UNAVAILABLE
 };
@@ -18028,6 +18044,7 @@ static const u16 sSneasel1TeachableLearnset[] = {
     MOVE_SNOWSCAPE,
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
+    MOVE_MEGA_PUNCH,
 
     MOVE_UNAVAILABLE
 };
@@ -20754,12 +20771,13 @@ static const struct LevelUpMove sTreecko0LevelUpLearnset[] = {
     {.move = MOVE_QUICK_ATTACK, .level = 3},
     {.move = MOVE_LEAFAGE, .level = 5},
     {.move = MOVE_MAGICAL_LEAF, .level = 5},
-    {.move = MOVE_DRAGON_BREATH, .level = 10},
+    {.move = MOVE_POUND, .level = 7},
+    {.move = MOVE_TACKLE, .level = 7},
+    {.move = MOVE_FOCUS_ENERGY, .level = 9},
+    {.move = MOVE_DRAGON_BREATH, .level = 11},
     {.move = MOVE_MEGA_DRAIN, .level = 13},
     {.move = MOVE_JUNGLE_HEALING, .level = 18},
     {.move = MOVE_ENDEAVOR, .level = 18},
-    {.move = MOVE_POUND, .level = 33},
-    {.move = MOVE_TACKLE, .level = 33},
     {.move = MOVE_DRAGON_RUSH, .level = 40},
     {.move = MOVE_POWER_WHIP, .level = 43},
     {.move = MOVE_SHED_TAIL, .level = 45},
@@ -20839,6 +20857,8 @@ static const u16 sTreecko0TeachableLearnset[] = {
 static const struct LevelUpMove sGrovyle0LevelUpLearnset[] = {
     {.move = MOVE_RAZOR_LEAF, .level = 0},
     {.move = MOVE_SLASH, .level = 0},
+    {.move = MOVE_FURY_SWIPES, .level = 0},
+    {.move = MOVE_SCRATCH, .level = 0},
     {.move = MOVE_LEECH_SEED, .level = 1},
     {.move = MOVE_SYNTHESIS, .level = 1},
     {.move = MOVE_WORRY_SEED, .level = 1},
@@ -20846,7 +20866,10 @@ static const struct LevelUpMove sGrovyle0LevelUpLearnset[] = {
     {.move = MOVE_QUICK_ATTACK, .level = 3},
     {.move = MOVE_LEAFAGE, .level = 5},
     {.move = MOVE_MAGICAL_LEAF, .level = 5},
-    {.move = MOVE_DRAGON_BREATH, .level = 10},
+    {.move = MOVE_POUND, .level = 7},
+    {.move = MOVE_TACKLE, .level = 7},
+    {.move = MOVE_FOCUS_ENERGY, .level = 9},
+    {.move = MOVE_DRAGON_BREATH, .level = 11},
     {.move = MOVE_MEGA_DRAIN, .level = 13},
     {.move = MOVE_JUNGLE_HEALING, .level = 18},
     {.move = MOVE_ENDEAVOR, .level = 18},
@@ -20855,12 +20878,10 @@ static const struct LevelUpMove sGrovyle0LevelUpLearnset[] = {
     {.move = MOVE_NIGHT_SLASH, .level = 27},
     {.move = MOVE_LEAF_BLADE, .level = 29},
     {.move = MOVE_FURY_SWIPES, .level = 33},
-    {.move = MOVE_POUND, .level = 33},
-    {.move = MOVE_TACKLE, .level = 33},
+    {.move = MOVE_SACRED_SWORD, .level = 38},
     {.move = MOVE_DRAGON_RUSH, .level = 40},
     {.move = MOVE_POWER_WHIP, .level = 43},
     {.move = MOVE_SHED_TAIL, .level = 45},
-    {.move = MOVE_SACRED_SWORD, .level = 47},
     {.move = MOVE_SEED_FLARE, .level = 50},
     {.move = MOVE_GROWTH, .level = 52},
     {.move = MOVE_LEAF_STORM, .level = 55},
@@ -20940,6 +20961,10 @@ static const u16 sGrovyle0TeachableLearnset[] = {
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sSceptile0LevelUpLearnset[] = {
+    {.move = MOVE_RAZOR_LEAF, .level = 0},
+    {.move = MOVE_SLASH, .level = 0},
+    {.move = MOVE_FURY_SWIPES, .level = 0},
+    {.move = MOVE_SCRATCH, .level = 0},
     {.move = MOVE_DRAGON_CLAW, .level = 0},
     {.move = MOVE_TWISTER, .level = 0},
     {.move = MOVE_DRAGON_PULSE, .level = 0},
@@ -20950,10 +20975,11 @@ static const struct LevelUpMove sSceptile0LevelUpLearnset[] = {
     {.move = MOVE_QUICK_ATTACK, .level = 3},
     {.move = MOVE_LEAFAGE, .level = 5},
     {.move = MOVE_MAGICAL_LEAF, .level = 5},
-    {.move = MOVE_DRAGON_BREATH, .level = 10},
+    {.move = MOVE_POUND, .level = 7},
+    {.move = MOVE_TACKLE, .level = 7},
+    {.move = MOVE_FOCUS_ENERGY, .level = 9},
+    {.move = MOVE_DRAGON_BREATH, .level = 11},
     {.move = MOVE_MEGA_DRAIN, .level = 13},
-    {.move = MOVE_RAZOR_LEAF, .level = 16},
-    {.move = MOVE_SLASH, .level = 16},
     {.move = MOVE_JUNGLE_HEALING, .level = 18},
     {.move = MOVE_ENDEAVOR, .level = 18},
     {.move = MOVE_AIR_SLASH, .level = 22},
@@ -20961,12 +20987,10 @@ static const struct LevelUpMove sSceptile0LevelUpLearnset[] = {
     {.move = MOVE_NIGHT_SLASH, .level = 27},
     {.move = MOVE_LEAF_BLADE, .level = 29},
     {.move = MOVE_FURY_SWIPES, .level = 33},
-    {.move = MOVE_POUND, .level = 33},
-    {.move = MOVE_TACKLE, .level = 33},
+    {.move = MOVE_SACRED_SWORD, .level = 38},
     {.move = MOVE_DRAGON_RUSH, .level = 40},
     {.move = MOVE_POWER_WHIP, .level = 43},
     {.move = MOVE_SHED_TAIL, .level = 45},
-    {.move = MOVE_SACRED_SWORD, .level = 47},
     {.move = MOVE_SEED_FLARE, .level = 50},
     {.move = MOVE_GROWTH, .level = 52},
     {.move = MOVE_LEAF_STORM, .level = 55},
@@ -21118,6 +21142,7 @@ static const u16 sTorchic0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
     MOVE_TEMPER_FLARE,
+    MOVE_ROOST,
 
     MOVE_UNAVAILABLE
 };
@@ -21222,6 +21247,7 @@ static const u16 sCombusken0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
     MOVE_TEMPER_FLARE,
+    MOVE_ROOST,
 
     MOVE_UNAVAILABLE
 };
@@ -21329,6 +21355,7 @@ static const u16 sBlaziken0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
     MOVE_TEMPER_FLARE,
+    MOVE_ROOST,
 
     MOVE_UNAVAILABLE
 };
@@ -23761,13 +23788,8 @@ static const u16 sAzurill0TeachableLearnset[] = {
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sNosepass0LevelUpLearnset[] = {
-    {.move = MOVE_TRI_ATTACK, .level = 0},
-    {.move = MOVE_METAL_SOUND, .level = 0},
-    {.move = MOVE_HARDEN, .level = 0},
-    {.move = MOVE_METAL_BURST, .level = 0},
-    {.move = MOVE_RAPID_SPIN, .level = 0},
     {.move = MOVE_CHARGE, .level = 1},
-    {.move = MOVE_THUNDER_SHOCK, .level = 1},
+    {.move = MOVE_STEALTH_ROCK, .level = 1},
     {.move = MOVE_PROTECT, .level = 1},
     {.move = MOVE_ROCK_POLISH, .level = 1},
     {.move = MOVE_ANCIENT_POWER, .level = 5},
@@ -24682,25 +24704,28 @@ static const struct LevelUpMove sNumel0LevelUpLearnset[] = {
     {.move = MOVE_DEFENSE_CURL, .level = 1},
     {.move = MOVE_ANCIENT_POWER, .level = 1},
     {.move = MOVE_EMBER, .level = 5},
+    {.move = MOVE_SMOG, .level = 8},
+    {.move = MOVE_CLEAR_SMOG, .level = 8},
     {.move = MOVE_FIRE_SPIN, .level = 10},
     {.move = MOVE_YAWN, .level = 15},
-    {.move = MOVE_INCINERATE, .level = 20},
+    {.move = MOVE_INCINERATE, .level = 18},
     {.move = MOVE_SMACK_DOWN, .level = 22},
     {.move = MOVE_LAVA_PLUME, .level = 27},
     {.move = MOVE_MORNING_SUN, .level = 32},
-    {.move = MOVE_SELF_DESTRUCT, .level = 40},
-    {.move = MOVE_OVERHEAT, .level = 42},
-    {.move = MOVE_HEADLONG_RUSH, .level = 46},
-    {.move = MOVE_ROCK_WRECKER, .level = 48},
-    {.move = MOVE_FUSION_FLARE, .level = 50},
-    {.move = MOVE_V_CREATE, .level = 52},
-    {.move = MOVE_ERUPTION, .level = 54},
-    {.move = MOVE_HIGH_HORSEPOWER, .level = 56},
-    {.move = MOVE_BURN_UP, .level = 58},
-    {.move = MOVE_BLAST_BURN, .level = 60},
-    {.move = MOVE_PRECIPICE_BLADES, .level = 63},
-    {.move = MOVE_ROCK_POLISH, .level = 65},
-    {.move = MOVE_MAGMA_STORM, .level = 100},
+    {.move = MOVE_OVERHEAT, .level = 40},
+    {.move = MOVE_FLARE_BLITZ, .level = 40},
+    {.move = MOVE_HOWL, .level = 42},
+    {.move = MOVE_HEADLONG_RUSH, .level = 44},
+    {.move = MOVE_ROCK_WRECKER, .level = 46},
+    {.move = MOVE_ERUPTION, .level = 48},
+    {.move = MOVE_V_CREATE, .level = 50},
+    {.move = MOVE_FUSION_FLARE, .level = 52},
+    {.move = MOVE_HIGH_HORSEPOWER, .level = 54},
+    {.move = MOVE_BURN_UP, .level = 56},
+    {.move = MOVE_BLAST_BURN, .level = 58},
+    {.move = MOVE_PRECIPICE_BLADES, .level = 60},
+    {.move = MOVE_MAGMA_STORM, .level = 60},
+    {.move = MOVE_ROCK_POLISH, .level = 63},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -24724,7 +24749,6 @@ static const u16 sNumel0TeachableLearnset[] = {
     MOVE_SANDSTORM,
     MOVE_ENDURE,
     MOVE_SLEEP_TALK,
-    MOVE_PAIN_SPLIT,
     MOVE_SUNNY_DAY,
     MOVE_TERRAIN_PULSE,
     MOVE_HEAT_WAVE,
@@ -24762,31 +24786,34 @@ static const u16 sNumel0TeachableLearnset[] = {
 };
 static const struct LevelUpMove sCamerupt0LevelUpLearnset[] = {
     {.move = MOVE_NOBLE_ROAR, .level = 0},
+    {.move = MOVE_SELF_DESTRUCT, .level = 0},
     {.move = MOVE_SLACK_OFF, .level = 1},
     {.move = MOVE_STEALTH_ROCK, .level = 1},
     {.move = MOVE_DEFENSE_CURL, .level = 1},
     {.move = MOVE_ANCIENT_POWER, .level = 1},
     {.move = MOVE_EMBER, .level = 5},
+    {.move = MOVE_SMOG, .level = 8},
+    {.move = MOVE_CLEAR_SMOG, .level = 8},
     {.move = MOVE_FIRE_SPIN, .level = 10},
     {.move = MOVE_YAWN, .level = 15},
-    {.move = MOVE_INCINERATE, .level = 20},
+    {.move = MOVE_INCINERATE, .level = 18},
     {.move = MOVE_SMACK_DOWN, .level = 22},
     {.move = MOVE_LAVA_PLUME, .level = 27},
     {.move = MOVE_MORNING_SUN, .level = 32},
-    {.move = MOVE_SELF_DESTRUCT, .level = 40},
-    {.move = MOVE_OVERHEAT, .level = 42},
-    {.move = MOVE_HOWL, .level = 44},
-    {.move = MOVE_HEADLONG_RUSH, .level = 46},
-    {.move = MOVE_ROCK_WRECKER, .level = 48},
-    {.move = MOVE_FUSION_FLARE, .level = 50},
-    {.move = MOVE_V_CREATE, .level = 52},
-    {.move = MOVE_ERUPTION, .level = 54},
-    {.move = MOVE_HIGH_HORSEPOWER, .level = 56},
-    {.move = MOVE_BURN_UP, .level = 58},
-    {.move = MOVE_BLAST_BURN, .level = 60},
-    {.move = MOVE_PRECIPICE_BLADES, .level = 63},
-    {.move = MOVE_ROCK_POLISH, .level = 65},
-    {.move = MOVE_MAGMA_STORM, .level = 100},
+    {.move = MOVE_OVERHEAT, .level = 40},
+    {.move = MOVE_FLARE_BLITZ, .level = 40},
+    {.move = MOVE_HOWL, .level = 42},
+    {.move = MOVE_HEADLONG_RUSH, .level = 44},
+    {.move = MOVE_ROCK_WRECKER, .level = 46},
+    {.move = MOVE_ERUPTION, .level = 48},
+    {.move = MOVE_V_CREATE, .level = 50},
+    {.move = MOVE_FUSION_FLARE, .level = 52},
+    {.move = MOVE_HIGH_HORSEPOWER, .level = 54},
+    {.move = MOVE_BURN_UP, .level = 56},
+    {.move = MOVE_BLAST_BURN, .level = 58},
+    {.move = MOVE_PRECIPICE_BLADES, .level = 60},
+    {.move = MOVE_MAGMA_STORM, .level = 60},
+    {.move = MOVE_ROCK_POLISH, .level = 63},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -24811,7 +24838,6 @@ static const u16 sCamerupt0TeachableLearnset[] = {
     MOVE_SANDSTORM,
     MOVE_ENDURE,
     MOVE_SLEEP_TALK,
-    MOVE_PAIN_SPLIT,
     MOVE_SUNNY_DAY,
     MOVE_TERRAIN_PULSE,
     MOVE_HEAT_WAVE,
@@ -26415,6 +26441,7 @@ static const struct LevelUpMove sShuppet0LevelUpLearnset[] = {
     {.move = MOVE_QUICK_ATTACK, .level = 5},
     {.move = MOVE_SHADOW_SNEAK, .level = 5},
     {.move = MOVE_ASTONISH, .level = 5},
+    {.move = MOVE_CURSE, .level = 7},
     {.move = MOVE_BITTER_MALICE, .level = 10},
     {.move = MOVE_HEADBUTT, .level = 13},
     {.move = MOVE_DESTINY_BOND, .level = 15},
@@ -26518,6 +26545,7 @@ static const struct LevelUpMove sBanette0LevelUpLearnset[] = {
     {.move = MOVE_QUICK_ATTACK, .level = 5},
     {.move = MOVE_SHADOW_SNEAK, .level = 5},
     {.move = MOVE_ASTONISH, .level = 5},
+    {.move = MOVE_CURSE, .level = 7},
     {.move = MOVE_BITTER_MALICE, .level = 10},
     {.move = MOVE_HEADBUTT, .level = 13},
     {.move = MOVE_DESTINY_BOND, .level = 15},
@@ -27014,7 +27042,7 @@ static const struct LevelUpMove sSnorunt0LevelUpLearnset[] = {
     {.move = MOVE_POWDER_SNOW, .level = 5},
     {.move = MOVE_ICE_SHARD, .level = 5},
     {.move = MOVE_DISABLE, .level = 10},
-    {.move = MOVE_AURORA_VEIL, .level = 15},
+    {.move = MOVE_AURORA_BEAM, .level = 15},
     {.move = MOVE_FREEZE_DRY, .level = 20},
     {.move = MOVE_CONTINENTAL_CRUSH, .level = 30},
     {.move = MOVE_NEVER_ENDING_NIGHTMARE, .level = 30},
@@ -27092,7 +27120,7 @@ static const struct LevelUpMove sGlalie0LevelUpLearnset[] = {
     {.move = MOVE_POWDER_SNOW, .level = 5},
     {.move = MOVE_ICE_SHARD, .level = 5},
     {.move = MOVE_DISABLE, .level = 10},
-    {.move = MOVE_AURORA_VEIL, .level = 15},
+    {.move = MOVE_AURORA_BEAM, .level = 15},
     {.move = MOVE_FREEZE_DRY, .level = 20},
     {.move = MOVE_FROST_BREATH, .level = 32},
     {.move = MOVE_ICICLE_CRASH, .level = 35},
@@ -29210,9 +29238,6 @@ static const u16 sDeoxys3TeachableLearnset[] = {
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sTurtwig0LevelUpLearnset[] = {
-    {.move = MOVE_SPIKY_SHIELD, .level = 0},
-    {.move = MOVE_BRANCH_POKE, .level = 0},
-    {.move = MOVE_STEALTH_ROCK, .level = 0},
     {.move = MOVE_LEECH_SEED, .level = 1},
     {.move = MOVE_PROTECT, .level = 1},
     {.move = MOVE_WORRY_SEED, .level = 1},
@@ -29290,9 +29315,6 @@ static const u16 sTurtwig0TeachableLearnset[] = {
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sGrotle0LevelUpLearnset[] = {
-    {.move = MOVE_SPIKY_SHIELD, .level = 0},
-    {.move = MOVE_BRANCH_POKE, .level = 0},
-    {.move = MOVE_STEALTH_ROCK, .level = 0},
     {.move = MOVE_LEECH_SEED, .level = 1},
     {.move = MOVE_PROTECT, .level = 1},
     {.move = MOVE_WORRY_SEED, .level = 1},
@@ -30357,6 +30379,8 @@ static const u16 sKricketot0TeachableLearnset[] = {
     MOVE_TRAILBLAZE,
     MOVE_ALLURING_VOICE,
     MOVE_PSYCHIC_NOISE,
+    MOVE_MUD_SHOT,
+    MOVE_LUNGE,
 
     MOVE_UNAVAILABLE
 };
@@ -30448,6 +30472,8 @@ static const u16 sKricketune0TeachableLearnset[] = {
     MOVE_TRAILBLAZE,
     MOVE_ALLURING_VOICE,
     MOVE_PSYCHIC_NOISE,
+    MOVE_MUD_SHOT,
+    MOVE_LUNGE,
 
     MOVE_UNAVAILABLE
 };
@@ -30530,6 +30556,7 @@ static const u16 sShinx0TeachableLearnset[] = {
     MOVE_TRAILBLAZE,
     MOVE_TEMPER_FLARE,
     MOVE_SUPERCELL_SLAM,
+    MOVE_SKITTER_SMACK,
 
     MOVE_UNAVAILABLE
 };
@@ -30629,6 +30656,7 @@ static const u16 sLuxio0TeachableLearnset[] = {
     MOVE_TRAILBLAZE,
     MOVE_TEMPER_FLARE,
     MOVE_SUPERCELL_SLAM,
+    MOVE_SKITTER_SMACK,
 
     MOVE_UNAVAILABLE
 };
@@ -30729,6 +30757,7 @@ static const u16 sLuxray0TeachableLearnset[] = {
     MOVE_TRAILBLAZE,
     MOVE_TEMPER_FLARE,
     MOVE_SUPERCELL_SLAM,
+    MOVE_SKITTER_SMACK,
 
     MOVE_UNAVAILABLE
 };
@@ -32454,35 +32483,35 @@ static const struct LevelUpMove sStunky0LevelUpLearnset[] = {
     {.move = MOVE_TORMENT, .level = 1},
     {.move = MOVE_SCREECH, .level = 1},
     {.move = MOVE_LEER, .level = 1},
+    {.move = MOVE_SLACK_OFF, .level = 3},
     {.move = MOVE_BRUTAL_SWING, .level = 5},
     {.move = MOVE_ACID_SPRAY, .level = 5},
     {.move = MOVE_EMBER, .level = 5},
     {.move = MOVE_FIRE_SPIN, .level = 7},
     {.move = MOVE_CLEAR_SMOG, .level = 9},
     {.move = MOVE_SLASH, .level = 11},
+    {.move = MOVE_FURY_SWIPES, .level = 11},
+    {.move = MOVE_POUND, .level = 11},
+    {.move = MOVE_TACKLE, .level = 11},
     {.move = MOVE_SMOG, .level = 13},
     {.move = MOVE_SLUDGE, .level = 15},
     {.move = MOVE_COVET, .level = 17},
     {.move = MOVE_INCINERATE, .level = 19},
-    {.move = MOVE_CONFIDE, .level = 21},
-    {.move = MOVE_TOXIC, .level = 23},
-    {.move = MOVE_VENOSHOCK, .level = 23},
-    {.move = MOVE_HAZE, .level = 25},
-    {.move = MOVE_NIGHT_SLASH, .level = 27},
-    {.move = MOVE_CROSS_POISON, .level = 27},
+    {.move = MOVE_TOXIC, .level = 21},
+    {.move = MOVE_VENOSHOCK, .level = 21},
+    {.move = MOVE_CONFIDE, .level = 23},
+    {.move = MOVE_HAZE, .level = 23},
+    {.move = MOVE_NIGHT_SLASH, .level = 25},
+    {.move = MOVE_PAYBACK, .level = 27},
+    {.move = MOVE_GUNK_SHOT, .level = 27},
     {.move = MOVE_COMEUPPANCE, .level = 29},
     {.move = MOVE_EXPLOSION, .level = 31},
     {.move = MOVE_ACID, .level = 33},
-    {.move = MOVE_FURY_SWIPES, .level = 35},
-    {.move = MOVE_POUND, .level = 35},
-    {.move = MOVE_TACKLE, .level = 35},
-    {.move = MOVE_FIERY_WRATH, .level = 38},
-    {.move = MOVE_POISON_TAIL, .level = 40},
-    {.move = MOVE_PAYBACK, .level = 42},
-    {.move = MOVE_SELF_DESTRUCT, .level = 45},
-    {.move = MOVE_CORROSIVE_GAS, .level = 50},
-    {.move = MOVE_NIGHT_DAZE, .level = 52},
-    {.move = MOVE_BLOOD_MOON, .level = 60},
+    {.move = MOVE_FIERY_WRATH, .level = 35},
+    {.move = MOVE_SELF_DESTRUCT, .level = 40},
+    {.move = MOVE_CORROSIVE_GAS, .level = 45},
+    {.move = MOVE_NIGHT_DAZE, .level = 50},
+    {.move = MOVE_BLOOD_MOON, .level = 55},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -32557,35 +32586,35 @@ static const struct LevelUpMove sSkuntank0LevelUpLearnset[] = {
     {.move = MOVE_TORMENT, .level = 1},
     {.move = MOVE_SCREECH, .level = 1},
     {.move = MOVE_LEER, .level = 1},
+    {.move = MOVE_SLACK_OFF, .level = 3},
     {.move = MOVE_BRUTAL_SWING, .level = 5},
     {.move = MOVE_ACID_SPRAY, .level = 5},
     {.move = MOVE_EMBER, .level = 5},
     {.move = MOVE_FIRE_SPIN, .level = 7},
     {.move = MOVE_CLEAR_SMOG, .level = 9},
     {.move = MOVE_SLASH, .level = 11},
+    {.move = MOVE_FURY_SWIPES, .level = 11},
+    {.move = MOVE_POUND, .level = 11},
+    {.move = MOVE_TACKLE, .level = 11},
     {.move = MOVE_SMOG, .level = 13},
     {.move = MOVE_SLUDGE, .level = 15},
     {.move = MOVE_COVET, .level = 17},
     {.move = MOVE_INCINERATE, .level = 19},
-    {.move = MOVE_CONFIDE, .level = 21},
-    {.move = MOVE_TOXIC, .level = 23},
-    {.move = MOVE_VENOSHOCK, .level = 23},
-    {.move = MOVE_HAZE, .level = 25},
-    {.move = MOVE_NIGHT_SLASH, .level = 27},
-    {.move = MOVE_CROSS_POISON, .level = 27},
+    {.move = MOVE_TOXIC, .level = 21},
+    {.move = MOVE_VENOSHOCK, .level = 21},
+    {.move = MOVE_CONFIDE, .level = 23},
+    {.move = MOVE_HAZE, .level = 23},
+    {.move = MOVE_NIGHT_SLASH, .level = 25},
+    {.move = MOVE_PAYBACK, .level = 27},
+    {.move = MOVE_GUNK_SHOT, .level = 27},
     {.move = MOVE_COMEUPPANCE, .level = 29},
     {.move = MOVE_EXPLOSION, .level = 31},
     {.move = MOVE_ACID, .level = 33},
-    {.move = MOVE_FURY_SWIPES, .level = 35},
-    {.move = MOVE_POUND, .level = 35},
-    {.move = MOVE_TACKLE, .level = 35},
-    {.move = MOVE_FIERY_WRATH, .level = 38},
-    {.move = MOVE_POISON_TAIL, .level = 40},
-    {.move = MOVE_PAYBACK, .level = 42},
-    {.move = MOVE_SELF_DESTRUCT, .level = 45},
-    {.move = MOVE_CORROSIVE_GAS, .level = 50},
-    {.move = MOVE_NIGHT_DAZE, .level = 52},
-    {.move = MOVE_BLOOD_MOON, .level = 60},
+    {.move = MOVE_FIERY_WRATH, .level = 35},
+    {.move = MOVE_SELF_DESTRUCT, .level = 40},
+    {.move = MOVE_CORROSIVE_GAS, .level = 45},
+    {.move = MOVE_NIGHT_DAZE, .level = 50},
+    {.move = MOVE_BLOOD_MOON, .level = 55},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -33480,6 +33509,7 @@ static const u16 sMunchlax0TeachableLearnset[] = {
     MOVE_HARD_PRESS,
     MOVE_SUPERCELL_SLAM,
     MOVE_MEGA_PUNCH,
+    MOVE_SEED_BOMB,
 
     MOVE_UNAVAILABLE
 };
@@ -34994,22 +35024,23 @@ static const struct LevelUpMove sYanmega0LevelUpLearnset[] = {
     {.move = MOVE_ABSORB, .level = 10},
     {.move = MOVE_AIR_CUTTER, .level = 13},
     {.move = MOVE_STRUGGLE_BUG, .level = 15},
+    {.move = MOVE_FLY, .level = 18},
     {.move = MOVE_DOUBLE_EDGE, .level = 20},
     {.move = MOVE_HIGH_JUMP_KICK, .level = 23},
     {.move = MOVE_AIR_SLASH, .level = 25},
-    {.move = MOVE_BUG_BUZZ, .level = 28},
-    {.move = MOVE_UPROAR, .level = 33},
+    {.move = MOVE_BUG_BUZZ, .level = 27},
+    {.move = MOVE_UPROAR, .level = 32},
     {.move = MOVE_BOOMBURST, .level = 38},
     {.move = MOVE_DRAGON_RUSH, .level = 40},
-    {.move = MOVE_AEROBLAST, .level = 43},
-    {.move = MOVE_HYPNOSIS, .level = 45},
-    {.move = MOVE_DRAGON_DARTS, .level = 45},
-    {.move = MOVE_DRAGON_PULSE, .level = 47},
+    {.move = MOVE_DRAGON_PULSE, .level = 43},
+    {.move = MOVE_AEROBLAST, .level = 45},
+    {.move = MOVE_HYPNOSIS, .level = 47},
+    {.move = MOVE_DRAGON_DARTS, .level = 47},
     {.move = MOVE_LUNGE, .level = 50},
-    {.move = MOVE_DRAGON_ASCENT, .level = 52},
-    {.move = MOVE_QUIVER_DANCE, .level = 57},
-    {.move = MOVE_DRACO_METEOR, .level = 60},
-    {.move = MOVE_CLANGING_SCALES, .level = 65},
+    {.move = MOVE_DRAGON_ASCENT, .level = 50},
+    {.move = MOVE_DRACO_METEOR, .level = 52},
+    {.move = MOVE_CLANGING_SCALES, .level = 55},
+    {.move = MOVE_QUIVER_DANCE, .level = 60},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -35682,7 +35713,7 @@ static const struct LevelUpMove sProbopass0LevelUpLearnset[] = {
     {.move = MOVE_METAL_BURST, .level = 0},
     {.move = MOVE_RAPID_SPIN, .level = 0},
     {.move = MOVE_CHARGE, .level = 1},
-    {.move = MOVE_THUNDER_SHOCK, .level = 1},
+    {.move = MOVE_STEALTH_ROCK, .level = 1},
     {.move = MOVE_PROTECT, .level = 1},
     {.move = MOVE_ROCK_POLISH, .level = 1},
     {.move = MOVE_ANCIENT_POWER, .level = 5},
@@ -35892,7 +35923,7 @@ static const struct LevelUpMove sFroslass0LevelUpLearnset[] = {
     {.move = MOVE_POWDER_SNOW, .level = 5},
     {.move = MOVE_ICE_SHARD, .level = 5},
     {.move = MOVE_DISABLE, .level = 10},
-    {.move = MOVE_AURORA_VEIL, .level = 15},
+    {.move = MOVE_AURORA_BEAM, .level = 15},
     {.move = MOVE_FREEZE_DRY, .level = 20},
     {.move = MOVE_FROST_BREATH, .level = 32},
     {.move = MOVE_PERISH_SONG, .level = 35},
@@ -42279,9 +42310,60 @@ static const struct LevelUpMove sSewaddle0LevelUpLearnset[] = {
 };
 
 static const u16 sSewaddle0TeachableLearnset[] = {
+    MOVE_ENCORE,
+    MOVE_CREEPING_STRIKE,
+    MOVE_ELECTROWEB,
+    MOVE_THIEF,
+    MOVE_DRAINING_KISS,
+    MOVE_GRASS_KNOT,
+    MOVE_ENDURE,
+    MOVE_SUBSTITUTE,
+    MOVE_WORK_UP,
+    MOVE_SUNNY_DAY,
+    MOVE_RAIN_DANCE,
+    MOVE_GRASSY_TERRAIN,
+    MOVE_REST,
+    MOVE_SLEEP_TALK,
+    MOVE_SNORE,
+
+    MOVE_BUG_BITE,
+    MOVE_LEECH_LIFE,
+    MOVE_BULLET_SEED,
+    MOVE_POLLEN_PUFF,
+    MOVE_U_TURN,
+    MOVE_BATON_PASS,
+    MOVE_CHARM,
+    MOVE_AGILITY,
+
+    MOVE_SEED_BOMB,
+    MOVE_TRAILBLAZE,
+    MOVE_GIGA_DRAIN,
+    MOVE_GRASS_PLEDGE,
+    MOVE_KNOCK_OFF,
+    MOVE_REFLECT,
+    MOVE_LIGHT_SCREEN,
+    MOVE_TERA_BLAST,
+
+    MOVE_GRASSY_GLIDE,
+    MOVE_POUNCE,
+    MOVE_FACADE,
+
+    MOVE_FIRST_IMPRESSION,
+    MOVE_ENERGY_BALL,
+    MOVE_WEATHER_BALL,
+    MOVE_TERRAIN_PULSE,
+
+    MOVE_SOLAR_BEAM,
+    MOVE_TAKE_DOWN,
+    MOVE_PLAY_ROUGH,
+    MOVE_CALM_MIND,
+
+    MOVE_HYPER_BEAM,
+    MOVE_GIGA_IMPACT,
 
     MOVE_UNAVAILABLE
 };
+
 static const struct LevelUpMove sSwadloon0LevelUpLearnset[] = {
     {.move = MOVE_STRING_SHOT, .level = 1},
     {.move = MOVE_LEECH_SEED, .level = 1},
@@ -42312,50 +42394,56 @@ static const struct LevelUpMove sSwadloon0LevelUpLearnset[] = {
 };
 
 static const u16 sSwadloon0TeachableLearnset[] = {
-    MOVE_TAKE_DOWN,
-    MOVE_WORK_UP,
-    MOVE_HYPER_BEAM,
-    MOVE_SOLAR_BEAM,
-    MOVE_LIGHT_SCREEN,
-    MOVE_REFLECT,
-    MOVE_LEECH_LIFE,
-    MOVE_REST,
-    MOVE_SUBSTITUTE,
-    MOVE_THIEF,
-    MOVE_GIGA_DRAIN,
-    MOVE_ENDURE,
-    MOVE_CHARM,
-    MOVE_SLEEP_TALK,
-    MOVE_BATON_PASS,
     MOVE_ENCORE,
-    MOVE_RAIN_DANCE,
+    MOVE_CREEPING_STRIKE,
+    MOVE_ELECTROWEB,
+    MOVE_THIEF,
+    MOVE_DRAINING_KISS,
+    MOVE_GRASS_KNOT,
+    MOVE_ENDURE,
+    MOVE_SUBSTITUTE,
+    MOVE_WORK_UP,
     MOVE_SUNNY_DAY,
-    MOVE_TERRAIN_PULSE,
-    MOVE_FACADE,
-    MOVE_TRICK,
-    MOVE_KNOCK_OFF,
-    MOVE_WEATHER_BALL,
+    MOVE_RAIN_DANCE,
+    MOVE_GRASSY_TERRAIN,
+    MOVE_REST,
+    MOVE_SLEEP_TALK,
     MOVE_SNORE,
+
+    MOVE_BUG_BITE,
+    MOVE_LEECH_LIFE,
     MOVE_BULLET_SEED,
-    MOVE_CALM_MIND,
+    MOVE_POLLEN_PUFF,
     MOVE_U_TURN,
+    MOVE_BATON_PASS,
+    MOVE_CHARM,
+    MOVE_AGILITY,
+
     MOVE_SEED_BOMB,
+    MOVE_TRAILBLAZE,
+    MOVE_GIGA_DRAIN,
+    MOVE_GRASS_PLEDGE,
+    MOVE_KNOCK_OFF,
+    MOVE_REFLECT,
+    MOVE_LIGHT_SCREEN,
+    MOVE_TERA_BLAST,
+
+    MOVE_GRASSY_GLIDE,
+    MOVE_POUNCE,
+    MOVE_FACADE,
+
     MOVE_FIRST_IMPRESSION,
     MOVE_ENERGY_BALL,
-    MOVE_GIGA_IMPACT,
-    MOVE_GRASS_KNOT,
-    MOVE_BUG_BITE,
-    MOVE_GRASS_PLEDGE,
-    MOVE_DRAINING_KISS,
-    MOVE_GRASSY_TERRAIN,
+    MOVE_WEATHER_BALL,
+    MOVE_TERRAIN_PULSE,
+
+    MOVE_SOLAR_BEAM,
+    MOVE_TAKE_DOWN,
     MOVE_PLAY_ROUGH,
-    MOVE_SOLAR_BLADE,
-    MOVE_POLLEN_PUFF,
-    MOVE_GRASSY_GLIDE,
-    MOVE_SKITTER_SMACK,
-    MOVE_TERA_BLAST,
-    MOVE_POUNCE,
-    MOVE_TRAILBLAZE,
+    MOVE_CALM_MIND,
+
+    MOVE_HYPER_BEAM,
+    MOVE_GIGA_IMPACT,
 
     MOVE_UNAVAILABLE
 };
@@ -44161,6 +44249,7 @@ static const u16 sMinccino0TeachableLearnset[] = {
     MOVE_TRAILBLAZE,
     MOVE_CHILLING_WATER,
     MOVE_ALLURING_VOICE,
+    MOVE_THUNDER_WAVE,
 
     MOVE_UNAVAILABLE
 };
@@ -44250,6 +44339,7 @@ static const u16 sCinccino0TeachableLearnset[] = {
     MOVE_TRAILBLAZE,
     MOVE_CHILLING_WATER,
     MOVE_ALLURING_VOICE,
+    MOVE_THUNDER_WAVE,
 
     MOVE_UNAVAILABLE
 };
@@ -44596,6 +44686,8 @@ static const struct LevelUpMove sSolosis0LevelUpLearnset[] = {
     {.move = MOVE_TOXIC, .level = 1},
     {.move = MOVE_DISABLE, .level = 1},
     {.move = MOVE_SOAK, .level = 1},
+    {.move = MOVE_PROTECT, .level = 3},
+    {.move = MOVE_INFESTATION, .level = 3},
     {.move = MOVE_TWIN_BEAM, .level = 5},
     {.move = MOVE_ACID_SPRAY, .level = 5},
     {.move = MOVE_MEGA_DRAIN, .level = 8},
@@ -44692,6 +44784,8 @@ static const struct LevelUpMove sDuosion0LevelUpLearnset[] = {
     {.move = MOVE_TOXIC, .level = 1},
     {.move = MOVE_DISABLE, .level = 1},
     {.move = MOVE_SOAK, .level = 1},
+    {.move = MOVE_PROTECT, .level = 3},
+    {.move = MOVE_INFESTATION, .level = 3},
     {.move = MOVE_TWIN_BEAM, .level = 5},
     {.move = MOVE_ACID_SPRAY, .level = 5},
     {.move = MOVE_MEGA_DRAIN, .level = 8},
@@ -44794,6 +44888,8 @@ static const struct LevelUpMove sReuniclus0LevelUpLearnset[] = {
     {.move = MOVE_TOXIC, .level = 1},
     {.move = MOVE_DISABLE, .level = 1},
     {.move = MOVE_SOAK, .level = 1},
+    {.move = MOVE_PROTECT, .level = 3},
+    {.move = MOVE_INFESTATION, .level = 3},
     {.move = MOVE_TWIN_BEAM, .level = 5},
     {.move = MOVE_ACID_SPRAY, .level = 5},
     {.move = MOVE_MEGA_DRAIN, .level = 8},
@@ -46835,7 +46931,6 @@ static const struct LevelUpMove sAxew0LevelUpLearnset[] = {
     {.move = MOVE_NIGHT_SLASH, .level = 20},
     {.move = MOVE_GLARE, .level = 22},
     {.move = MOVE_DRAGON_CLAW, .level = 24},
-    {.move = MOVE_SACRED_SWORD, .level = 25},
     {.move = MOVE_COUNTER, .level = 26},
     {.move = MOVE_BITE, .level = 30},
     {.move = MOVE_CEASELESS_EDGE, .level = 35},
@@ -46917,6 +47012,7 @@ static const u16 sAxew0TeachableLearnset[] = {
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sFraxure0LevelUpLearnset[] = {
+    {.move = MOVE_SACRED_SWORD, .level = 0},
     {.move = MOVE_SHELTER, .level = 1},
     {.move = MOVE_LEER, .level = 1},
     {.move = MOVE_FOCUS_ENERGY, .level = 1},
@@ -46930,7 +47026,6 @@ static const struct LevelUpMove sFraxure0LevelUpLearnset[] = {
     {.move = MOVE_NIGHT_SLASH, .level = 20},
     {.move = MOVE_GLARE, .level = 22},
     {.move = MOVE_DRAGON_CLAW, .level = 24},
-    {.move = MOVE_SACRED_SWORD, .level = 25},
     {.move = MOVE_COUNTER, .level = 26},
     {.move = MOVE_BITE, .level = 30},
     {.move = MOVE_CEASELESS_EDGE, .level = 35},
@@ -47013,6 +47108,7 @@ static const u16 sFraxure0TeachableLearnset[] = {
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sHaxorus0LevelUpLearnset[] = {
+    {.move = MOVE_SACRED_SWORD, .level = 0},
     {.move = MOVE_SHELTER, .level = 1},
     {.move = MOVE_LEER, .level = 1},
     {.move = MOVE_FOCUS_ENERGY, .level = 1},
@@ -47026,7 +47122,6 @@ static const struct LevelUpMove sHaxorus0LevelUpLearnset[] = {
     {.move = MOVE_NIGHT_SLASH, .level = 20},
     {.move = MOVE_GLARE, .level = 22},
     {.move = MOVE_DRAGON_CLAW, .level = 24},
-    {.move = MOVE_SACRED_SWORD, .level = 25},
     {.move = MOVE_COUNTER, .level = 26},
     {.move = MOVE_BITE, .level = 30},
     {.move = MOVE_CEASELESS_EDGE, .level = 35},
@@ -47572,9 +47667,9 @@ static const u16 sMienshao0TeachableLearnset[] = {
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sGolett0LevelUpLearnset[] = {
-    {.move = MOVE_CURSE, .level = 1},
     {.move = MOVE_DEFENSE_CURL, .level = 1},
     {.move = MOVE_SHORE_UP, .level = 1},
+    {.move = MOVE_CURSE, .level = 1},
     {.move = MOVE_STEALTH_ROCK, .level = 1},
     {.move = MOVE_BULLET_PUNCH, .level = 5},
     {.move = MOVE_MACH_PUNCH, .level = 5},
@@ -47582,11 +47677,13 @@ static const struct LevelUpMove sGolett0LevelUpLearnset[] = {
     {.move = MOVE_TACKLE, .level = 10},
     {.move = MOVE_SHADOW_SNEAK, .level = 15},
     {.move = MOVE_ASTONISH, .level = 15},
+    {.move = MOVE_SMACK_DOWN, .level = 15},
     {.move = MOVE_ROCK_SMASH, .level = 20},
     {.move = MOVE_NIGHT_SHADE, .level = 25},
+    {.move = MOVE_DOUBLE_EDGE, .level = 25},
     {.move = MOVE_DYNAMIC_PUNCH, .level = 30},
     {.move = MOVE_STRENGTH, .level = 35},
-    {.move = MOVE_HAMMER_ARM, .level = 47},
+    {.move = MOVE_HAMMER_ARM, .level = 45},
     {.move = MOVE_ASTRAL_BARRAGE, .level = 50},
     {.move = MOVE_PHANTOM_FORCE, .level = 52},
     {.move = MOVE_ROCK_WRECKER, .level = 54},
@@ -47682,6 +47779,7 @@ static const u16 sGolett0TeachableLearnset[] = {
     MOVE_TEMPER_FLARE,
     MOVE_SUPERCELL_SLAM,
     MOVE_MEGA_PUNCH,
+    MOVE_THIEF,
 
     MOVE_UNAVAILABLE
 };
@@ -47689,24 +47787,26 @@ static const struct LevelUpMove sGolurk0LevelUpLearnset[] = {
     {.move = MOVE_SEISMIC_TOSS, .level = 0},
     {.move = MOVE_MOONGEIST_BEAM, .level = 0},
     {.move = MOVE_JUDGMENT, .level = 0},
+    {.move = MOVE_ACCELEROCK, .level = 0},
     {.move = MOVE_HIGH_JUMP_KICK, .level = 0},
     {.move = MOVE_FLY, .level = 0},
-    {.move = MOVE_ACCELEROCK, .level = 0},
-    {.move = MOVE_CURSE, .level = 1},
     {.move = MOVE_DEFENSE_CURL, .level = 1},
     {.move = MOVE_SHORE_UP, .level = 1},
+    {.move = MOVE_CURSE, .level = 1},
     {.move = MOVE_STEALTH_ROCK, .level = 1},
     {.move = MOVE_BULLET_PUNCH, .level = 5},
     {.move = MOVE_MACH_PUNCH, .level = 5},
-    {.move = MOVE_SHADOW_SNEAK, .level = 5},
     {.move = MOVE_POUND, .level = 10},
     {.move = MOVE_TACKLE, .level = 10},
     {.move = MOVE_SHADOW_SNEAK, .level = 15},
     {.move = MOVE_ASTONISH, .level = 15},
+    {.move = MOVE_SMACK_DOWN, .level = 15},
     {.move = MOVE_ROCK_SMASH, .level = 20},
+    {.move = MOVE_NIGHT_SHADE, .level = 25},
+    {.move = MOVE_DOUBLE_EDGE, .level = 25},
     {.move = MOVE_DYNAMIC_PUNCH, .level = 30},
     {.move = MOVE_STRENGTH, .level = 35},
-    {.move = MOVE_HAMMER_ARM, .level = 47},
+    {.move = MOVE_HAMMER_ARM, .level = 45},
     {.move = MOVE_ASTRAL_BARRAGE, .level = 50},
     {.move = MOVE_PHANTOM_FORCE, .level = 52},
     {.move = MOVE_ROCK_WRECKER, .level = 54},
@@ -47802,6 +47902,7 @@ static const u16 sGolurk0TeachableLearnset[] = {
     MOVE_TEMPER_FLARE,
     MOVE_SUPERCELL_SLAM,
     MOVE_MEGA_PUNCH,
+    MOVE_THIEF,
 
     MOVE_UNAVAILABLE
 };
@@ -56546,6 +56647,8 @@ static const u16 sClauncher0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_CHILLING_WATER,
     MOVE_HARD_PRESS,
+    MOVE_KNOCK_OFF,
+    MOVE_MUD_SLAP,
 
     MOVE_UNAVAILABLE
 };
@@ -56635,6 +56738,8 @@ static const u16 sClawitzer0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_CHILLING_WATER,
     MOVE_HARD_PRESS,
+    MOVE_KNOCK_OFF,
+    MOVE_MUD_SLAP,
 
     MOVE_UNAVAILABLE
 };
@@ -56894,6 +56999,7 @@ static const u16 sDedenne0TeachableLearnset[] = {
     MOVE_TRAILBLAZE,
     MOVE_ALLURING_VOICE,
     MOVE_SUPERCELL_SLAM,
+    MOVE_TRICK,
 
     MOVE_UNAVAILABLE
 };
@@ -58565,7 +58671,6 @@ static const struct LevelUpMove sRowlet0LevelUpLearnset[] = {
     {.move = MOVE_PLUCK, .level = 12},
     {.move = MOVE_MIST_BALL, .level = 14},
     {.move = MOVE_MEGA_DRAIN, .level = 16},
-    {.move = MOVE_MEGA_DRAIN, .level = 16},
     {.move = MOVE_WING_ATTACK, .level = 18},
     {.move = MOVE_PECK, .level = 23},
     {.move = MOVE_AIR_SLASH, .level = 28},
@@ -58574,9 +58679,9 @@ static const struct LevelUpMove sRowlet0LevelUpLearnset[] = {
     {.move = MOVE_BRAVE_BIRD, .level = 38},
     {.move = MOVE_GROWTH, .level = 42},
     {.move = MOVE_AEROBLAST, .level = 47},
-    {.move = MOVE_LEAF_STORM, .level = 52},
-    {.move = MOVE_FRENZY_PLANT, .level = 52},
-    {.move = MOVE_SKY_ATTACK, .level = 55},
+    {.move = MOVE_LEAF_STORM, .level = 50},
+    {.move = MOVE_FRENZY_PLANT, .level = 50},
+    {.move = MOVE_SKY_ATTACK, .level = 53},
     {.move = MOVE_SEED_FLARE, .level = 57},
     {.move = MOVE_CHLOROBLAST, .level = 65},
 
@@ -58644,6 +58749,7 @@ static const u16 sRowlet0TeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
+    MOVE_ENERGY_BALL,
 
     MOVE_UNAVAILABLE
 };
@@ -58663,7 +58769,6 @@ static const struct LevelUpMove sDartrix0LevelUpLearnset[] = {
     {.move = MOVE_PLUCK, .level = 12},
     {.move = MOVE_MIST_BALL, .level = 14},
     {.move = MOVE_MEGA_DRAIN, .level = 16},
-    {.move = MOVE_MEGA_DRAIN, .level = 16},
     {.move = MOVE_WING_ATTACK, .level = 18},
     {.move = MOVE_PECK, .level = 23},
     {.move = MOVE_AIR_SLASH, .level = 28},
@@ -58674,9 +58779,9 @@ static const struct LevelUpMove sDartrix0LevelUpLearnset[] = {
     {.move = MOVE_BRAVE_BIRD, .level = 38},
     {.move = MOVE_GROWTH, .level = 42},
     {.move = MOVE_AEROBLAST, .level = 47},
-    {.move = MOVE_LEAF_STORM, .level = 52},
-    {.move = MOVE_FRENZY_PLANT, .level = 52},
-    {.move = MOVE_SKY_ATTACK, .level = 55},
+    {.move = MOVE_LEAF_STORM, .level = 50},
+    {.move = MOVE_FRENZY_PLANT, .level = 50},
+    {.move = MOVE_SKY_ATTACK, .level = 53},
     {.move = MOVE_SEED_FLARE, .level = 57},
     {.move = MOVE_CHLOROBLAST, .level = 65},
 
@@ -58744,6 +58849,7 @@ static const u16 sDartrix0TeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
+    MOVE_ENERGY_BALL,
 
     MOVE_UNAVAILABLE
 };
@@ -58767,7 +58873,6 @@ static const struct LevelUpMove sDecidueye0LevelUpLearnset[] = {
     {.move = MOVE_RAZOR_LEAF, .level = 12},
     {.move = MOVE_PLUCK, .level = 12},
     {.move = MOVE_MIST_BALL, .level = 14},
-    {.move = MOVE_MEGA_DRAIN, .level = 16},
     {.move = MOVE_MEGA_DRAIN, .level = 16},
     {.move = MOVE_WING_ATTACK, .level = 18},
     {.move = MOVE_PECK, .level = 23},
@@ -58859,6 +58964,7 @@ static const u16 sDecidueye0TeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
+    MOVE_ENERGY_BALL,
 
     MOVE_UNAVAILABLE
 };
@@ -58881,7 +58987,6 @@ static const struct LevelUpMove sDecidueye1LevelUpLearnset[] = {
     {.move = MOVE_PLUCK, .level = 12},
     {.move = MOVE_MIST_BALL, .level = 14},
     {.move = MOVE_MEGA_DRAIN, .level = 16},
-    {.move = MOVE_MEGA_DRAIN, .level = 16},
     {.move = MOVE_WING_ATTACK, .level = 18},
     {.move = MOVE_PECK, .level = 23},
     {.move = MOVE_AIR_SLASH, .level = 28},
@@ -58902,9 +59007,90 @@ static const struct LevelUpMove sDecidueye1LevelUpLearnset[] = {
 };
 
 static const u16 sDecidueye1TeachableLearnset[] = {
+    MOVE_ROOST,
+    MOVE_LOW_KICK,
+    MOVE_GRASS_KNOT,
+    MOVE_AERIAL_ACE,
+    MOVE_SKITTER_SMACK,
+    MOVE_THIEF,
+    MOVE_ROCK_TOMB,
+    MOVE_VACUUM_WAVE,
+    MOVE_ICY_WIND,
+    MOVE_SNARL,
+    MOVE_DISARMING_VOICE,
+    MOVE_SWIFT,
+    MOVE_ENDURE,
+    MOVE_SUBSTITUTE,
+    MOVE_WORK_UP,
+    MOVE_ENCORE,
+    MOVE_TRICK,
+    MOVE_SUNNY_DAY,
+    MOVE_RAIN_DANCE,
+    MOVE_SNOWSCAPE,
+    MOVE_GRASSY_TERRAIN,
+    MOVE_REST,
+    MOVE_SLEEP_TALK,
+
+    MOVE_U_TURN,
+    MOVE_BATON_PASS,
+    MOVE_TAUNT,
+    MOVE_AGILITY,
+    MOVE_TAILWIND,
+    MOVE_BULLET_SEED,
+
+    MOVE_BRICK_BREAK,
+    MOVE_SEED_BOMB,
+    MOVE_STOMPING_TANTRUM,
+    MOVE_GIGA_DRAIN,
+    MOVE_GRASS_PLEDGE,
+    MOVE_KNOCK_OFF,
+    MOVE_LIGHT_SCREEN,
+    MOVE_REFLECT,
+    MOVE_SCARY_FACE,
+    MOVE_BODY_PRESS,
+    MOVE_TRAILBLAZE,
+    MOVE_TERA_BLAST,
+
+    MOVE_SUCKER_PUNCH,
+    MOVE_POUNCE,
+    MOVE_FACADE,
+    MOVE_GRASSY_GLIDE,
+    MOVE_AURA_SPHERE,
+    MOVE_DARK_PULSE,
+
+    MOVE_ENERGY_BALL,
+    MOVE_WEATHER_BALL,
+    MOVE_TERRAIN_PULSE,
+    MOVE_LEAF_BLADE,
+    MOVE_SHADOW_CLAW,
+    MOVE_METAL_CLAW,
+    MOVE_PSYCHO_CUT,
+    MOVE_BLAZE_KICK,
+    MOVE_ACROBATICS,
+    MOVE_FIRST_IMPRESSION,
+
+    MOVE_TAKE_DOWN,
+    MOVE_PLAY_ROUGH,
+    MOVE_FALSE_SURRENDER,
+    MOVE_RETALIATE,
+    MOVE_BULK_UP,
+    MOVE_SOLAR_BLADE,
+    MOVE_SOLAR_BEAM,
+
+    MOVE_MEGA_KICK,
+    MOVE_TRIPLE_AXEL,
+    MOVE_HURRICANE,
+    MOVE_FOCUS_BLAST,
+
+    MOVE_CLOSE_COMBAT,
+    MOVE_SWORDS_DANCE,
+    MOVE_NASTY_PLOT,
+    MOVE_HYPER_BEAM,
+    MOVE_GIGA_IMPACT,
 
     MOVE_UNAVAILABLE
 };
+
 static const struct LevelUpMove sLitten0LevelUpLearnset[] = {
     {.move = MOVE_MORNING_SUN, .level = 1},
     {.move = MOVE_GROWL, .level = 1},
@@ -60038,6 +60224,7 @@ static const u16 sGrubbin0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_HARD_PRESS,
     MOVE_SUPERCELL_SLAM,
+    MOVE_THUNDER_FANG,
 
     MOVE_UNAVAILABLE
 };
@@ -60123,6 +60310,7 @@ static const u16 sCharjabug0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_HARD_PRESS,
     MOVE_SUPERCELL_SLAM,
+    MOVE_THUNDER_FANG,
 
     MOVE_UNAVAILABLE
 };
@@ -60225,6 +60413,7 @@ static const u16 sVikavolt0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_HARD_PRESS,
     MOVE_SUPERCELL_SLAM,
+    MOVE_THUNDER_FANG,
 
     MOVE_UNAVAILABLE
 };
@@ -61368,7 +61557,6 @@ static const u16 sLycanroc2TeachableLearnset[] = {
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sMareanie0LevelUpLearnset[] = {
-    {.move = MOVE_CROSS_POISON, .level = 0},
     {.move = MOVE_SPIKY_SHIELD, .level = 1},
     {.move = MOVE_INFESTATION, .level = 1},
     {.move = MOVE_RECOVER, .level = 1},
@@ -68594,7 +68782,6 @@ static const u16 sBarraskewda0TeachableLearnset[] = {
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sToxel0LevelUpLearnset[] = {
-    {.move = MOVE_OVERDRIVE, .level = 0},
     {.move = MOVE_SWAGGER, .level = 0},
     {.move = MOVE_THUNDER_SHOCK, .level = 1},
     {.move = MOVE_SHELTER, .level = 1},
@@ -69885,7 +70072,6 @@ static const struct LevelUpMove sGrimmsnarl0LevelUpLearnset[] = {
     {.move = MOVE_DOOM_DESIRE, .level = 34},
     {.move = MOVE_FIERY_WRATH, .level = 36},
     {.move = MOVE_BLOOD_MOON, .level = 43},
-    {.move = MOVE_COIL, .level = 45},
     {.move = MOVE_NIGHT_DAZE, .level = 47},
     {.move = MOVE_SECRET_SWORD, .level = 47},
     {.move = MOVE_PAYBACK, .level = 50},
@@ -74568,6 +74754,7 @@ static const u16 sSneasler0TeachableLearnset[] = {
     MOVE_SNOWSCAPE,
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
+    MOVE_MEGA_PUNCH,
 
     MOVE_UNAVAILABLE
 };
@@ -76319,13 +76506,12 @@ static const u16 sDudunsparce1TeachableLearnset[] = {
 static const struct LevelUpMove sTarountula0LevelUpLearnset[] = {
     {.move = MOVE_STRING_SHOT, .level = 1},
     {.move = MOVE_SHELTER, .level = 1},
+    {.move = MOVE_ABSORB, .level = 1},
     {.move = MOVE_DEFENSE_CURL, .level = 1},
-    {.move = MOVE_SWITCHEROO, .level = 1},
     {.move = MOVE_STRUGGLE_BUG, .level = 3},
     {.move = MOVE_DOUBLE_HIT, .level = 3},
     {.move = MOVE_INFESTATION, .level = 5},
     {.move = MOVE_WRAP, .level = 5},
-    {.move = MOVE_ABSORB, .level = 8},
     {.move = MOVE_SILK_TRAP, .level = 10},
     {.move = MOVE_STICKY_WEB, .level = 15},
     {.move = MOVE_COUNTER, .level = 40},
@@ -76375,27 +76561,30 @@ static const u16 sTarountula0TeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
+    MOVE_VACUUM_WAVE,
+    MOVE_TRICK,
 
     MOVE_UNAVAILABLE
 };
+
 static const struct LevelUpMove sSpidops0LevelUpLearnset[] = {
-    {.move = MOVE_SPIKES, .level = 0},
     {.move = MOVE_LOW_SWEEP, .level = 0},
-    {.move = MOVE_POUND, .level = 0},
-    {.move = MOVE_FURY_SWIPES, .level = 0},
-    {.move = MOVE_FAKE_OUT, .level = 0},
+    {.move = MOVE_THROAT_CHOP, .level = 0},
     {.move = MOVE_FEINT, .level = 0},
     {.move = MOVE_SHADOW_SNEAK, .level = 0},
+    {.move = MOVE_FURY_SWIPES, .level = 0},
+    {.move = MOVE_POUND, .level = 0},
+    {.move = MOVE_FAKE_OUT, .level = 0},
     {.move = MOVE_ASSURANCE, .level = 0},
-    {.move = MOVE_THROAT_CHOP, .level = 0},
+    {.move = MOVE_SPIKES, .level = 0},
     {.move = MOVE_STRING_SHOT, .level = 1},
     {.move = MOVE_SHELTER, .level = 1},
-    {.move = MOVE_SWITCHEROO, .level = 1},
-    {.move = MOVE_STRUGGLE_BUG, .level = 1},
+    {.move = MOVE_ABSORB, .level = 1},
+    {.move = MOVE_DEFENSE_CURL, .level = 1},
+    {.move = MOVE_STRUGGLE_BUG, .level = 3},
     {.move = MOVE_DOUBLE_HIT, .level = 3},
     {.move = MOVE_INFESTATION, .level = 5},
     {.move = MOVE_WRAP, .level = 5},
-    {.move = MOVE_ABSORB, .level = 8},
     {.move = MOVE_SILK_TRAP, .level = 10},
     {.move = MOVE_STICKY_WEB, .level = 15},
     {.move = MOVE_CIRCLE_THROW, .level = 25},
@@ -76451,7 +76640,6 @@ static const u16 sSpidops0TeachableLearnset[] = {
     MOVE_SEED_BOMB,
     MOVE_X_SCISSOR,
     MOVE_FIRST_IMPRESSION,
-    MOVE_VACUUM_WAVE,
     MOVE_FOCUS_BLAST,
     MOVE_GIGA_IMPACT,
     MOVE_NASTY_PLOT,
@@ -76474,6 +76662,8 @@ static const u16 sSpidops0TeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
+    MOVE_VACUUM_WAVE,
+    MOVE_TRICK,
 
     MOVE_UNAVAILABLE
 };
@@ -76636,13 +76826,16 @@ static const struct LevelUpMove sRellor0LevelUpLearnset[] = {
     {.move = MOVE_SLUDGE, .level = 1},
     {.move = MOVE_ANCIENT_POWER, .level = 1},
     {.move = MOVE_INFESTATION, .level = 5},
-    {.move = MOVE_ABSORB, .level = 10},
+    {.move = MOVE_TOXIC, .level = 7},
+    {.move = MOVE_POUND, .level = 9},
+    {.move = MOVE_TACKLE, .level = 9},
+    {.move = MOVE_EXPANDING_FORCE, .level = 11},
     {.move = MOVE_STRUGGLE_BUG, .level = 15},
-    {.move = MOVE_EXPANDING_FORCE, .level = 20},
-    {.move = MOVE_TOXIC, .level = 25},
-    {.move = MOVE_BUG_BUZZ, .level = 30},
+    {.move = MOVE_BUG_BUZZ, .level = 18},
+    {.move = MOVE_ABSORB, .level = 20},
     {.move = MOVE_SHATTERED_PSYCHE, .level = 35},
-    {.move = MOVE_LUNGE, .level = 45},
+    {.move = MOVE_LUNGE, .level = 35},
+    {.move = MOVE_MUD_SLAP, .level = 40},
     {.move = MOVE_FELL_STINGER, .level = 55},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
@@ -76703,39 +76896,43 @@ static const u16 sRellor0TeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
+    MOVE_ROCK_BLAST,
 
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sRabsca0LevelUpLearnset[] = {
-    {.move = MOVE_TWIN_BEAM, .level = 0},
-    {.move = MOVE_CONFUSION, .level = 0},
-    {.move = MOVE_PSYSHOCK, .level = 0},
+    {.move = MOVE_REVIVAL_BLESSING, .level = 0},
     {.move = MOVE_WISH, .level = 0},
     {.move = MOVE_DISABLE, .level = 0},
     {.move = MOVE_POWER_TRICK, .level = 0},
-    {.move = MOVE_MIRROR_COAT, .level = 0},
     {.move = MOVE_WONDER_ROOM, .level = 0},
+    {.move = MOVE_TWIN_BEAM, .level = 0},
+    {.move = MOVE_CONFUSION, .level = 0},
+    {.move = MOVE_PSYSHOCK, .level = 0},
+    {.move = MOVE_MIRROR_COAT, .level = 0},
     {.move = MOVE_MAGIC_POWDER, .level = 0},
-    {.move = MOVE_REVIVAL_BLESSING, .level = 0},
     {.move = MOVE_RECOVER, .level = 1},
     {.move = MOVE_DEFENSE_CURL, .level = 1},
     {.move = MOVE_SLUDGE, .level = 1},
     {.move = MOVE_ANCIENT_POWER, .level = 1},
     {.move = MOVE_INFESTATION, .level = 5},
-    {.move = MOVE_ABSORB, .level = 10},
+    {.move = MOVE_TOXIC, .level = 7},
+    {.move = MOVE_POUND, .level = 9},
+    {.move = MOVE_TACKLE, .level = 9},
+    {.move = MOVE_EXPANDING_FORCE, .level = 11},
     {.move = MOVE_STRUGGLE_BUG, .level = 15},
-    {.move = MOVE_EXPANDING_FORCE, .level = 20},
-    {.move = MOVE_TOXIC, .level = 25},
-    {.move = MOVE_BUG_BUZZ, .level = 30},
+    {.move = MOVE_BUG_BUZZ, .level = 18},
+    {.move = MOVE_ABSORB, .level = 20},
+    {.move = MOVE_LUNGE, .level = 35},
     {.move = MOVE_HYPNOSIS, .level = 37},
     {.move = MOVE_DREAM_EATER, .level = 37},
     {.move = MOVE_FUTURE_SIGHT, .level = 40},
-    {.move = MOVE_PSYSTRIKE, .level = 43},
-    {.move = MOVE_LUNGE, .level = 45},
+    {.move = MOVE_PSYSTRIKE, .level = 42},
     {.move = MOVE_SPEED_SWAP, .level = 47},
     {.move = MOVE_COSMIC_POWER, .level = 50},
+    {.move = MOVE_TRICK_ROOM, .level = 53},
     {.move = MOVE_PSYCHO_BOOST, .level = 55},
-    {.move = MOVE_TRICK_ROOM, .level = 57},
+    {.move = MOVE_MEAN_LOOK, .level = 58},
     {.move = MOVE_LUMINA_CRASH, .level = 60},
     {.move = MOVE_MYSTICAL_POWER, .level = 100},
 
@@ -76819,6 +77016,7 @@ static const u16 sRabsca0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_TRAILBLAZE,
     MOVE_PSYCHIC_NOISE,
+    MOVE_ROCK_BLAST,
 
     MOVE_UNAVAILABLE
 };
@@ -77580,8 +77778,8 @@ static const u16 sDondozo0TeachableLearnset[] = {
 };
 static const struct LevelUpMove sVeluza0LevelUpLearnset[] = {
     {.move = MOVE_AQUA_RING, .level = 1},
-    {.move = MOVE_FOCUS_ENERGY, .level = 1},
     {.move = MOVE_RECOVER, .level = 1},
+    {.move = MOVE_FOCUS_ENERGY, .level = 1},
     {.move = MOVE_AQUA_JET, .level = 5},
     {.move = MOVE_PLUCK, .level = 10},
     {.move = MOVE_DIVE, .level = 15},
@@ -77590,15 +77788,15 @@ static const struct LevelUpMove sVeluza0LevelUpLearnset[] = {
     {.move = MOVE_NIGHT_SLASH, .level = 30},
     {.move = MOVE_CRUSH_CLAW, .level = 30},
     {.move = MOVE_POWER_TRICK, .level = 35},
-    {.move = MOVE_FINAL_GAMBIT, .level = 40},
-    {.move = MOVE_CEASELESS_EDGE, .level = 45},
+    {.move = MOVE_FINAL_GAMBIT, .level = 35},
+    {.move = MOVE_CEASELESS_EDGE, .level = 40},
+    {.move = MOVE_BEHEMOTH_BLADE, .level = 45},
     {.move = MOVE_WATERFALL, .level = 50},
     {.move = MOVE_FLAIL, .level = 52},
-    {.move = MOVE_BEHEMOTH_BLADE, .level = 54},
-    {.move = MOVE_WAVE_CRASH, .level = 56},
-    {.move = MOVE_PSYBLADE, .level = 58},
-    {.move = MOVE_HYPERSPACE_HOLE, .level = 60},
-    {.move = MOVE_FILLET_AWAY, .level = 100},
+    {.move = MOVE_WAVE_CRASH, .level = 52},
+    {.move = MOVE_PSYBLADE, .level = 54},
+    {.move = MOVE_FILLET_AWAY, .level = 56},
+    {.move = MOVE_HYPERSPACE_HOLE, .level = 58},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -77656,6 +77854,8 @@ static const u16 sVeluza0TeachableLearnset[] = {
     MOVE_SNOWSCAPE,
     MOVE_POUNCE,
     MOVE_CHILLING_WATER,
+    MOVE_TELEPORT,
+    MOVE_ICE_FANG,
 
     MOVE_UNAVAILABLE
 };
@@ -77929,9 +78129,9 @@ static const u16 sPalafin1TeachableLearnset[] = {
 };
 static const struct LevelUpMove sSmoliv0LevelUpLearnset[] = {
     {.move = MOVE_LEECH_SEED, .level = 1},
-    {.move = MOVE_SYNTHESIS, .level = 1},
     {.move = MOVE_WORRY_SEED, .level = 1},
-    {.move = MOVE_TEARFUL_LOOK, .level = 3},
+    {.move = MOVE_SYNTHESIS, .level = 1},
+    {.move = MOVE_TEARFUL_LOOK, .level = 1},
     {.move = MOVE_MAGICAL_LEAF, .level = 5},
     {.move = MOVE_MEGA_DRAIN, .level = 10},
     {.move = MOVE_ROUND, .level = 13},
@@ -78002,9 +78202,9 @@ static const u16 sSmoliv0TeachableLearnset[] = {
 static const struct LevelUpMove sDolliv0LevelUpLearnset[] = {
     {.move = MOVE_RELIC_SONG, .level = 0},
     {.move = MOVE_LEECH_SEED, .level = 1},
-    {.move = MOVE_SYNTHESIS, .level = 1},
     {.move = MOVE_WORRY_SEED, .level = 1},
-    {.move = MOVE_TEARFUL_LOOK, .level = 3},
+    {.move = MOVE_SYNTHESIS, .level = 1},
+    {.move = MOVE_TEARFUL_LOOK, .level = 1},
     {.move = MOVE_MAGICAL_LEAF, .level = 5},
     {.move = MOVE_MEGA_DRAIN, .level = 10},
     {.move = MOVE_ROUND, .level = 13},
@@ -78078,9 +78278,9 @@ static const u16 sDolliv0TeachableLearnset[] = {
 };
 static const struct LevelUpMove sArboliva0LevelUpLearnset[] = {
     {.move = MOVE_LEECH_SEED, .level = 1},
-    {.move = MOVE_SYNTHESIS, .level = 1},
     {.move = MOVE_WORRY_SEED, .level = 1},
-    {.move = MOVE_TEARFUL_LOOK, .level = 3},
+    {.move = MOVE_SYNTHESIS, .level = 1},
+    {.move = MOVE_TEARFUL_LOOK, .level = 1},
     {.move = MOVE_MAGICAL_LEAF, .level = 5},
     {.move = MOVE_MEGA_DRAIN, .level = 10},
     {.move = MOVE_ROUND, .level = 13},
@@ -78794,7 +78994,7 @@ static const u16 sOrthworm0TeachableLearnset[] = {
 };
 static const struct LevelUpMove sTandemaus0LevelUpLearnset[] = {
     {.move = MOVE_ENTRAINMENT, .level = 1},
-    {.move = MOVE_SLACK_OFF, .level = 1},
+    {.move = MOVE_FOCUS_ENERGY, .level = 1},
     {.move = MOVE_SLACK_OFF, .level = 1},
     {.move = MOVE_MIMIC, .level = 1},
     {.move = MOVE_TICKLE, .level = 3},
@@ -78892,12 +79092,13 @@ static const u16 sTandemaus0TeachableLearnset[] = {
     MOVE_TRAILBLAZE,
     MOVE_CHILLING_WATER,
     MOVE_ALLURING_VOICE,
+    MOVE_ROCK_BLAST,
 
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sMaushold0LevelUpLearnset[] = {
     {.move = MOVE_ENTRAINMENT, .level = 1},
-    {.move = MOVE_SLACK_OFF, .level = 1},
+    {.move = MOVE_FOCUS_ENERGY, .level = 1},
     {.move = MOVE_SLACK_OFF, .level = 1},
     {.move = MOVE_MIMIC, .level = 1},
     {.move = MOVE_TICKLE, .level = 3},
@@ -78995,109 +79196,7 @@ static const u16 sMaushold0TeachableLearnset[] = {
     MOVE_TRAILBLAZE,
     MOVE_CHILLING_WATER,
     MOVE_ALLURING_VOICE,
-
-    MOVE_UNAVAILABLE
-};
-static const struct LevelUpMove sMaushold1LevelUpLearnset[] = {
-    {.move = MOVE_ENTRAINMENT, .level = 1},
-    {.move = MOVE_SLACK_OFF, .level = 1},
-    {.move = MOVE_SLACK_OFF, .level = 1},
-    {.move = MOVE_MIMIC, .level = 1},
-    {.move = MOVE_TICKLE, .level = 3},
-    {.move = MOVE_FAKE_TEARS, .level = 3},
-    {.move = MOVE_FOLLOW_ME, .level = 3},
-    {.move = MOVE_FAKE_OUT, .level = 5},
-    {.move = MOVE_QUICK_ATTACK, .level = 5},
-    {.move = MOVE_POPULATION_BOMB, .level = 5},
-    {.move = MOVE_FEINT, .level = 5},
-    {.move = MOVE_ROUND, .level = 7},
-    {.move = MOVE_RELIC_SONG, .level = 7},
-    {.move = MOVE_COVET, .level = 9},
-    {.move = MOVE_BOUNCE, .level = 11},
-    {.move = MOVE_TAIL_SLAP, .level = 13},
-    {.move = MOVE_POUND, .level = 13},
-    {.move = MOVE_TACKLE, .level = 13},
-    {.move = MOVE_FURY_SWIPES, .level = 13},
-    {.move = MOVE_DOUBLE_HIT, .level = 15},
-    {.move = MOVE_HOLD_HANDS, .level = 17},
-    {.move = MOVE_UPROAR, .level = 19},
-    {.move = MOVE_BEAT_UP, .level = 21},
-    {.move = MOVE_COPYCAT, .level = 25},
-    {.move = MOVE_DOUBLE_EDGE, .level = 30},
-    {.move = MOVE_SWEET_KISS, .level = 33},
-    {.move = MOVE_SUPER_FANG, .level = 35},
-    {.move = MOVE_FLAIL, .level = 37},
-    {.move = MOVE_TIDY_UP, .level = 40},
-    {.move = MOVE_CUT, .level = 45},
-
-    {.move = LEVEL_UP_MOVE_END, .level = 0}
-};
-
-static const u16 sMaushold1TeachableLearnset[] = {
-    MOVE_TAKE_DOWN,
-    MOVE_WORK_UP,
-    MOVE_HYPER_BEAM,
-    MOVE_LOW_KICK,
-    MOVE_THUNDER_WAVE,
-    MOVE_DIG,
-    MOVE_AGILITY,
-    MOVE_SWIFT,
-    MOVE_REST,
-    MOVE_RETALIATE,
-    MOVE_SUBSTITUTE,
-    MOVE_THIEF,
-    MOVE_MUD_SLAP,
-    MOVE_ICY_WIND,
-    MOVE_ENDURE,
-    MOVE_CHARM,
-    MOVE_SLEEP_TALK,
-    MOVE_BATON_PASS,
-    MOVE_ENCORE,
-    MOVE_RAIN_DANCE,
-    MOVE_SUNNY_DAY,
-    MOVE_CRUNCH,
-    MOVE_TERRAIN_PULSE,
-    MOVE_FACADE,
-    MOVE_TAUNT,
-    MOVE_TRICK,
-    MOVE_KNOCK_OFF,
-    MOVE_HYPER_VOICE,
-    MOVE_WEATHER_BALL,
-    MOVE_ROCK_TOMB,
-    MOVE_SNORE,
-    MOVE_BULLET_SEED,
-    MOVE_AERIAL_ACE,
-    MOVE_MUD_SHOT,
-    MOVE_WATER_PULSE,
-    MOVE_U_TURN,
-    MOVE_SUCKER_PUNCH,
-    MOVE_SEED_BOMB,
-    MOVE_FIRST_IMPRESSION,
-    MOVE_GIGA_IMPACT,
-    MOVE_NASTY_PLOT,
-    MOVE_SHADOW_CLAW,
-    MOVE_THUNDER_FANG,
-    MOVE_ICE_FANG,
-    MOVE_FIRE_FANG,
-    MOVE_GUNK_SHOT,
-    MOVE_GRASS_KNOT,
-    MOVE_POISON_FANG,
-    MOVE_ACROBATICS,
-    MOVE_SNARL,
-    MOVE_DISARMING_VOICE,
-    MOVE_DRAINING_KISS,
-    MOVE_GRASSY_TERRAIN,
-    MOVE_PLAY_ROUGH,
-    MOVE_SHOCK_WAVE,
-    MOVE_GRASSY_GLIDE,
-    MOVE_SKITTER_SMACK,
-    MOVE_TRIPLE_AXEL,
-    MOVE_TERA_BLAST,
-    MOVE_ICE_SPINNER,
-    MOVE_POUNCE,
-    MOVE_TRAILBLAZE,
-    MOVE_CHILLING_WATER,
-    MOVE_ALLURING_VOICE,
+    MOVE_ROCK_BLAST,
 
     MOVE_UNAVAILABLE
 };
@@ -79125,7 +79224,8 @@ static const struct LevelUpMove sCetoddle0LevelUpLearnset[] = {
     {.move = MOVE_STOCKPILE, .level = 40},
     {.move = MOVE_SUPERPOWER, .level = 45},
     {.move = MOVE_STRENGTH, .level = 50},
-    {.move = MOVE_BEHEMOTH_BASH, .level = 50},
+    {.move = MOVE_BRUTAL_SWING, .level = 50},
+    {.move = MOVE_BEHEMOTH_BASH, .level = 53},
     {.move = MOVE_GLACIAL_LANCE, .level = 55},
     {.move = MOVE_HEADLONG_RUSH, .level = 60},
     {.move = MOVE_ICE_HAMMER, .level = 65},
@@ -79192,6 +79292,7 @@ static const u16 sCetoddle0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_CHILLING_WATER,
     MOVE_HARD_PRESS,
+    MOVE_ICE_FANG,
 
     MOVE_UNAVAILABLE
 };
@@ -79285,6 +79386,7 @@ static const u16 sCetitan0TeachableLearnset[] = {
     MOVE_POUNCE,
     MOVE_CHILLING_WATER,
     MOVE_HARD_PRESS,
+    MOVE_ICE_FANG,
 
     MOVE_UNAVAILABLE
 };
@@ -80255,25 +80357,26 @@ static const struct LevelUpMove sWattrel0LevelUpLearnset[] = {
     {.move = MOVE_PARABOLIC_CHARGE, .level = 15},
     {.move = MOVE_WING_ATTACK, .level = 17},
     {.move = MOVE_MIST_BALL, .level = 19},
-    {.move = MOVE_FEATHER_DANCE, .level = 21},
     {.move = MOVE_EERIE_IMPULSE, .level = 21},
+    {.move = MOVE_FEATHER_DANCE, .level = 21},
     {.move = MOVE_ZING_ZAP, .level = 23},
     {.move = MOVE_OVERDRIVE, .level = 25},
-    {.move = MOVE_DRILL_PECK, .level = 27},
     {.move = MOVE_AIR_SLASH, .level = 27},
+    {.move = MOVE_DRILL_PECK, .level = 27},
     {.move = MOVE_ENDEAVOR, .level = 31},
     {.move = MOVE_FLY, .level = 33},
     {.move = MOVE_UPROAR, .level = 35},
     {.move = MOVE_DUAL_WINGBEAT, .level = 37},
     {.move = MOVE_THUNDER_CAGE, .level = 40},
-    {.move = MOVE_WILDBOLT_STORM, .level = 45},
-    {.move = MOVE_ELECTRO_BALL, .level = 47},
+    {.move = MOVE_HIGH_JUMP_KICK, .level = 42},
+    {.move = MOVE_ELECTRO_SHOT, .level = 45},
+    {.move = MOVE_AEROBLAST, .level = 47},
+    {.move = MOVE_FUSION_BOLT, .level = 47},
     {.move = MOVE_BOLT_STRIKE, .level = 50},
     {.move = MOVE_VOLT_TACKLE, .level = 53},
     {.move = MOVE_ZAP_CANNON, .level = 55},
-    {.move = MOVE_SKY_ATTACK, .level = 58},
-    {.move = MOVE_FUSION_BOLT, .level = 60},
-    {.move = MOVE_AEROBLAST, .level = 60},
+    {.move = MOVE_WILDBOLT_STORM, .level = 58},
+    {.move = MOVE_SKY_ATTACK, .level = 60},
     {.move = MOVE_ELECTRO_BALL, .level = 65},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
@@ -80322,6 +80425,7 @@ static const u16 sWattrel0TeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_CHILLING_WATER,
     MOVE_SUPERCELL_SLAM,
+    MOVE_ENDURE,
 
     MOVE_UNAVAILABLE
 };
@@ -80342,12 +80446,12 @@ static const struct LevelUpMove sKilowattrel0LevelUpLearnset[] = {
     {.move = MOVE_PARABOLIC_CHARGE, .level = 15},
     {.move = MOVE_WING_ATTACK, .level = 17},
     {.move = MOVE_MIST_BALL, .level = 19},
-    {.move = MOVE_FEATHER_DANCE, .level = 21},
     {.move = MOVE_EERIE_IMPULSE, .level = 21},
+    {.move = MOVE_FEATHER_DANCE, .level = 21},
     {.move = MOVE_ZING_ZAP, .level = 23},
     {.move = MOVE_OVERDRIVE, .level = 25},
-    {.move = MOVE_DRILL_PECK, .level = 27},
     {.move = MOVE_AIR_SLASH, .level = 27},
+    {.move = MOVE_DRILL_PECK, .level = 27},
     {.move = MOVE_ENDEAVOR, .level = 31},
     {.move = MOVE_FLY, .level = 33},
     {.move = MOVE_UPROAR, .level = 35},
@@ -80355,8 +80459,8 @@ static const struct LevelUpMove sKilowattrel0LevelUpLearnset[] = {
     {.move = MOVE_THUNDER_CAGE, .level = 40},
     {.move = MOVE_HIGH_JUMP_KICK, .level = 42},
     {.move = MOVE_ELECTRO_SHOT, .level = 45},
-    {.move = MOVE_FUSION_BOLT, .level = 47},
     {.move = MOVE_AEROBLAST, .level = 47},
+    {.move = MOVE_FUSION_BOLT, .level = 47},
     {.move = MOVE_BOLT_STRIKE, .level = 50},
     {.move = MOVE_VOLT_TACKLE, .level = 53},
     {.move = MOVE_ZAP_CANNON, .level = 55},
@@ -80410,6 +80514,7 @@ static const u16 sKilowattrel0TeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_CHILLING_WATER,
     MOVE_SUPERCELL_SLAM,
+    MOVE_ENDURE,
 
     MOVE_UNAVAILABLE
 };
@@ -80493,6 +80598,7 @@ static const u16 sBombirdier0TeachableLearnset[] = {
     MOVE_LASH_OUT,
     MOVE_TERA_BLAST,
     MOVE_POUNCE,
+    MOVE_ROCK_BLAST,
 
     MOVE_UNAVAILABLE
 };
@@ -80573,243 +80679,7 @@ static const u16 sSquawkabilly0TeachableLearnset[] = {
 
     MOVE_UNAVAILABLE
 };
-static const struct LevelUpMove sSquawkabilly1LevelUpLearnset[] = {
-    {.move = MOVE_MIMIC, .level = 1},
-    {.move = MOVE_TORMENT, .level = 1},
-    {.move = MOVE_SCREECH, .level = 1},
-    {.move = MOVE_LEER, .level = 1},
-    {.move = MOVE_SWAGGER, .level = 3},
-    {.move = MOVE_FLATTER, .level = 3},
-    {.move = MOVE_QUICK_ATTACK, .level = 5},
-    {.move = MOVE_PECK, .level = 7},
-    {.move = MOVE_POUND, .level = 7},
-    {.move = MOVE_MIST_BALL, .level = 9},
-    {.move = MOVE_PLUCK, .level = 11},
-    {.move = MOVE_HEADBUTT, .level = 13},
-    {.move = MOVE_BEAT_UP, .level = 15},
-    {.move = MOVE_WHIRLWIND, .level = 17},
-    {.move = MOVE_WING_ATTACK, .level = 19},
-    {.move = MOVE_COPYCAT, .level = 21},
-    {.move = MOVE_FLAIL, .level = 24},
-    {.move = MOVE_NOBLE_ROAR, .level = 26},
-    {.move = MOVE_DUAL_WINGBEAT, .level = 29},
-    {.move = MOVE_SING, .level = 31},
-    {.move = MOVE_FLY, .level = 33},
-    {.move = MOVE_SKY_ATTACK, .level = 35},
-    {.move = MOVE_HIGH_JUMP_KICK, .level = 37},
-    {.move = MOVE_DOUBLE_EDGE, .level = 40},
-    {.move = MOVE_BRAVE_BIRD, .level = 45},
-    {.move = MOVE_SUPERPOWER, .level = 50},
-    {.move = MOVE_FLAIL, .level = 60},
-    {.move = MOVE_REVERSAL, .level = 60},
 
-    {.move = LEVEL_UP_MOVE_END, .level = 0}
-};
-
-static const u16 sSquawkabilly1TeachableLearnset[] = {
-    MOVE_SWORDS_DANCE,
-    MOVE_TAKE_DOWN,
-    MOVE_WORK_UP,
-    MOVE_HYPER_BEAM,
-    MOVE_AGILITY,
-    MOVE_REST,
-    MOVE_RETALIATE,
-    MOVE_SUBSTITUTE,
-    MOVE_THIEF,
-    MOVE_REVERSAL,
-    MOVE_SCARY_FACE,
-    MOVE_ENDURE,
-    MOVE_SLEEP_TALK,
-    MOVE_ENCORE,
-    MOVE_RAIN_DANCE,
-    MOVE_SUNNY_DAY,
-    MOVE_HEAT_WAVE,
-    MOVE_FACADE,
-    MOVE_TAUNT,
-    MOVE_KNOCK_OFF,
-    MOVE_ROOST,
-    MOVE_HYPER_VOICE,
-    MOVE_PARTING_SHOT,
-    MOVE_AERIAL_ACE,
-    MOVE_CLOSE_COMBAT,
-    MOVE_SUCKER_PUNCH,
-    MOVE_FIRST_IMPRESSION,
-    MOVE_GIGA_IMPACT,
-    MOVE_NASTY_PLOT,
-    MOVE_ZEN_HEADBUTT,
-    MOVE_GUNK_SHOT,
-    MOVE_IRON_HEAD,
-    MOVE_FOUL_PLAY,
-    MOVE_ACROBATICS,
-    MOVE_HURRICANE,
-    MOVE_SNARL,
-    MOVE_PLAY_ROUGH,
-    MOVE_FALSE_SURRENDER,
-    MOVE_LASH_OUT,
-    MOVE_TERA_BLAST,
-    MOVE_POUNCE,
-    MOVE_TEMPER_FLARE,
-
-    MOVE_UNAVAILABLE
-};
-static const struct LevelUpMove sSquawkabilly2LevelUpLearnset[] = {
-    {.move = MOVE_MIMIC, .level = 1},
-    {.move = MOVE_TORMENT, .level = 1},
-    {.move = MOVE_SCREECH, .level = 1},
-    {.move = MOVE_LEER, .level = 1},
-    {.move = MOVE_SWAGGER, .level = 3},
-    {.move = MOVE_FLATTER, .level = 3},
-    {.move = MOVE_QUICK_ATTACK, .level = 5},
-    {.move = MOVE_PECK, .level = 7},
-    {.move = MOVE_POUND, .level = 7},
-    {.move = MOVE_MIST_BALL, .level = 9},
-    {.move = MOVE_PLUCK, .level = 11},
-    {.move = MOVE_HEADBUTT, .level = 13},
-    {.move = MOVE_BEAT_UP, .level = 15},
-    {.move = MOVE_WHIRLWIND, .level = 17},
-    {.move = MOVE_WING_ATTACK, .level = 19},
-    {.move = MOVE_COPYCAT, .level = 21},
-    {.move = MOVE_FLAIL, .level = 24},
-    {.move = MOVE_NOBLE_ROAR, .level = 26},
-    {.move = MOVE_DUAL_WINGBEAT, .level = 29},
-    {.move = MOVE_SING, .level = 31},
-    {.move = MOVE_FLY, .level = 33},
-    {.move = MOVE_SKY_ATTACK, .level = 35},
-    {.move = MOVE_HIGH_JUMP_KICK, .level = 37},
-    {.move = MOVE_DOUBLE_EDGE, .level = 40},
-    {.move = MOVE_BRAVE_BIRD, .level = 45},
-    {.move = MOVE_SUPERPOWER, .level = 50},
-    {.move = MOVE_FLAIL, .level = 60},
-    {.move = MOVE_REVERSAL, .level = 60},
-
-    {.move = LEVEL_UP_MOVE_END, .level = 0}
-};
-
-static const u16 sSquawkabilly2TeachableLearnset[] = {
-    MOVE_SWORDS_DANCE,
-    MOVE_TAKE_DOWN,
-    MOVE_WORK_UP,
-    MOVE_HYPER_BEAM,
-    MOVE_AGILITY,
-    MOVE_REST,
-    MOVE_RETALIATE,
-    MOVE_SUBSTITUTE,
-    MOVE_THIEF,
-    MOVE_REVERSAL,
-    MOVE_SCARY_FACE,
-    MOVE_ENDURE,
-    MOVE_SLEEP_TALK,
-    MOVE_ENCORE,
-    MOVE_RAIN_DANCE,
-    MOVE_SUNNY_DAY,
-    MOVE_HEAT_WAVE,
-    MOVE_FACADE,
-    MOVE_TAUNT,
-    MOVE_KNOCK_OFF,
-    MOVE_ROOST,
-    MOVE_HYPER_VOICE,
-    MOVE_PARTING_SHOT,
-    MOVE_AERIAL_ACE,
-    MOVE_CLOSE_COMBAT,
-    MOVE_SUCKER_PUNCH,
-    MOVE_FIRST_IMPRESSION,
-    MOVE_GIGA_IMPACT,
-    MOVE_NASTY_PLOT,
-    MOVE_ZEN_HEADBUTT,
-    MOVE_GUNK_SHOT,
-    MOVE_IRON_HEAD,
-    MOVE_FOUL_PLAY,
-    MOVE_ACROBATICS,
-    MOVE_HURRICANE,
-    MOVE_SNARL,
-    MOVE_PLAY_ROUGH,
-    MOVE_FALSE_SURRENDER,
-    MOVE_LASH_OUT,
-    MOVE_TERA_BLAST,
-    MOVE_POUNCE,
-    MOVE_TEMPER_FLARE,
-
-    MOVE_UNAVAILABLE
-};
-static const struct LevelUpMove sSquawkabilly3LevelUpLearnset[] = {
-    {.move = MOVE_MIMIC, .level = 1},
-    {.move = MOVE_TORMENT, .level = 1},
-    {.move = MOVE_SCREECH, .level = 1},
-    {.move = MOVE_LEER, .level = 1},
-    {.move = MOVE_SWAGGER, .level = 3},
-    {.move = MOVE_FLATTER, .level = 3},
-    {.move = MOVE_QUICK_ATTACK, .level = 5},
-    {.move = MOVE_PECK, .level = 7},
-    {.move = MOVE_POUND, .level = 7},
-    {.move = MOVE_MIST_BALL, .level = 9},
-    {.move = MOVE_PLUCK, .level = 11},
-    {.move = MOVE_HEADBUTT, .level = 13},
-    {.move = MOVE_BEAT_UP, .level = 15},
-    {.move = MOVE_WHIRLWIND, .level = 17},
-    {.move = MOVE_WING_ATTACK, .level = 19},
-    {.move = MOVE_COPYCAT, .level = 21},
-    {.move = MOVE_FLAIL, .level = 24},
-    {.move = MOVE_NOBLE_ROAR, .level = 26},
-    {.move = MOVE_DUAL_WINGBEAT, .level = 29},
-    {.move = MOVE_SING, .level = 31},
-    {.move = MOVE_FLY, .level = 33},
-    {.move = MOVE_SKY_ATTACK, .level = 35},
-    {.move = MOVE_HIGH_JUMP_KICK, .level = 37},
-    {.move = MOVE_DOUBLE_EDGE, .level = 40},
-    {.move = MOVE_BRAVE_BIRD, .level = 45},
-    {.move = MOVE_SUPERPOWER, .level = 50},
-    {.move = MOVE_FLAIL, .level = 60},
-    {.move = MOVE_REVERSAL, .level = 60},
-
-    {.move = LEVEL_UP_MOVE_END, .level = 0}
-};
-
-static const u16 sSquawkabilly3TeachableLearnset[] = {
-    MOVE_SWORDS_DANCE,
-    MOVE_TAKE_DOWN,
-    MOVE_WORK_UP,
-    MOVE_HYPER_BEAM,
-    MOVE_AGILITY,
-    MOVE_REST,
-    MOVE_RETALIATE,
-    MOVE_SUBSTITUTE,
-    MOVE_THIEF,
-    MOVE_REVERSAL,
-    MOVE_SCARY_FACE,
-    MOVE_ENDURE,
-    MOVE_SLEEP_TALK,
-    MOVE_ENCORE,
-    MOVE_RAIN_DANCE,
-    MOVE_SUNNY_DAY,
-    MOVE_HEAT_WAVE,
-    MOVE_FACADE,
-    MOVE_TAUNT,
-    MOVE_KNOCK_OFF,
-    MOVE_ROOST,
-    MOVE_HYPER_VOICE,
-    MOVE_PARTING_SHOT,
-    MOVE_AERIAL_ACE,
-    MOVE_CLOSE_COMBAT,
-    MOVE_SUCKER_PUNCH,
-    MOVE_FIRST_IMPRESSION,
-    MOVE_GIGA_IMPACT,
-    MOVE_NASTY_PLOT,
-    MOVE_ZEN_HEADBUTT,
-    MOVE_GUNK_SHOT,
-    MOVE_IRON_HEAD,
-    MOVE_FOUL_PLAY,
-    MOVE_ACROBATICS,
-    MOVE_HURRICANE,
-    MOVE_SNARL,
-    MOVE_PLAY_ROUGH,
-    MOVE_FALSE_SURRENDER,
-    MOVE_LASH_OUT,
-    MOVE_TERA_BLAST,
-    MOVE_POUNCE,
-    MOVE_TEMPER_FLARE,
-
-    MOVE_UNAVAILABLE
-};
 static const struct LevelUpMove sFlamigo0LevelUpLearnset[] = {
     {.move = MOVE_MIMIC, .level = 1},
     {.move = MOVE_COPYCAT, .level = 1},
@@ -80905,9 +80775,10 @@ static const u16 sFlamigo0TeachableLearnset[] = {
     MOVE_UNAVAILABLE
 };
 static const struct LevelUpMove sKlawf0LevelUpLearnset[] = {
-    {.move = MOVE_SHELTER, .level = 1},
-    {.move = MOVE_NOBLE_ROAR, .level = 1},
+    {.move = MOVE_MOLT, .level = 1},
+    {.move = MOVE_STEALTH_ROCK, .level = 1},
     {.move = MOVE_ANCIENT_POWER, .level = 1},
+    {.move = MOVE_ENDEAVOR, .level = 1},
     {.move = MOVE_SKITTER_SMACK, .level = 1},
     {.move = MOVE_VISE_GRIP, .level = 5},
     {.move = MOVE_POUND, .level = 10},
@@ -80916,14 +80787,13 @@ static const struct LevelUpMove sKlawf0LevelUpLearnset[] = {
     {.move = MOVE_SMACK_DOWN, .level = 20},
     {.move = MOVE_RAZOR_SHELL, .level = 25},
     {.move = MOVE_DOUBLE_EDGE, .level = 30},
-    {.move = MOVE_CRUSH_CLAW, .level = 35},
+    {.move = MOVE_JAGGED_EDGE, .level = 35},
     {.move = MOVE_FLAIL, .level = 40},
-    {.move = MOVE_ENDEAVOR, .level = 40},
+    {.move = MOVE_NOBLE_ROAR, .level = 45},
     {.move = MOVE_ROCK_WRECKER, .level = 45},
     {.move = MOVE_CRABHAMMER, .level = 50},
-    {.move = MOVE_ROCK_POLISH, .level = 55},
-    {.move = MOVE_FLAIL, .level = 55},
     {.move = MOVE_REVERSAL, .level = 55},
+    {.move = MOVE_ROCK_POLISH, .level = 55},
     {.move = MOVE_STRENGTH, .level = 60},
     {.move = MOVE_SHELL_SMASH, .level = 100},
 
@@ -81382,16 +81252,15 @@ static const struct LevelUpMove sShroodle0LevelUpLearnset[] = {
     {.move = MOVE_SLUDGE, .level = 9},
     {.move = MOVE_HEADBUTT, .level = 11},
     {.move = MOVE_TOXIC, .level = 13},
-    {.move = MOVE_TOXIC, .level = 13},
-    {.move = MOVE_TOXIC, .level = 13},
     {.move = MOVE_VENOSHOCK, .level = 18},
     {.move = MOVE_ACID, .level = 20},
     {.move = MOVE_LICK, .level = 27},
     {.move = MOVE_COPYCAT, .level = 29},
     {.move = MOVE_NIGHT_SLASH, .level = 31},
+    {.move = MOVE_SLASH, .level = 33},
     {.move = MOVE_CROSS_POISON, .level = 33},
     {.move = MOVE_SLAM, .level = 38},
-    {.move = MOVE_FLAIL, .level = 40},
+    {.move = MOVE_FLAIL, .level = 60},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
 };
@@ -81479,8 +81348,6 @@ static const struct LevelUpMove sGrafaiai0LevelUpLearnset[] = {
     {.move = MOVE_SLUDGE, .level = 9},
     {.move = MOVE_HEADBUTT, .level = 11},
     {.move = MOVE_TOXIC, .level = 13},
-    {.move = MOVE_TOXIC, .level = 13},
-    {.move = MOVE_TOXIC, .level = 13},
     {.move = MOVE_VENOSHOCK, .level = 18},
     {.move = MOVE_ACID, .level = 20},
     {.move = MOVE_LICK, .level = 27},
@@ -81491,7 +81358,7 @@ static const struct LevelUpMove sGrafaiai0LevelUpLearnset[] = {
     {.move = MOVE_CROSS_POISON, .level = 33},
     {.move = MOVE_POISON_TAIL, .level = 38},
     {.move = MOVE_SLAM, .level = 38},
-    {.move = MOVE_FLING, .level = 50},
+    {.move = MOVE_FLING, .level = 55},
     {.move = MOVE_FLAIL, .level = 60},
 
     {.move = LEVEL_UP_MOVE_END, .level = 0}
@@ -82113,6 +81980,7 @@ static const u16 sGimmighoul0TeachableLearnset[] = {
     MOVE_BODY_PRESS,
     MOVE_SKITTER_SMACK,
     MOVE_TERA_BLAST,
+    MOVE_VOLT_SWITCH,
 
     MOVE_UNAVAILABLE
 };
@@ -82198,6 +82066,7 @@ static const u16 sGimmighoul1TeachableLearnset[] = {
 };
 static const struct LevelUpMove sGholdengo0LevelUpLearnset[] = {
     {.move = MOVE_HOLD_HANDS, .level = 0},
+    {.move = MOVE_FAKE_OUT, .level = 0},
     {.move = MOVE_PAY_DAY, .level = 1},
     {.move = MOVE_CONFIDE, .level = 1},
     {.move = MOVE_NIGHT_SHADE, .level = 1},
@@ -82278,6 +82147,7 @@ static const u16 sGholdengo0TeachableLearnset[] = {
     MOVE_TRIPLE_AXEL,
     MOVE_TERA_BLAST,
     MOVE_POUNCE,
+    MOVE_VOLT_SWITCH,
 
     MOVE_UNAVAILABLE
 };
@@ -85465,6 +85335,7 @@ static const u16 sTinkatink0TeachableLearnset[] = {
     MOVE_HARD_PRESS,
     MOVE_ALLURING_VOICE,
     MOVE_SUPERCELL_SLAM,
+    MOVE_SKILL_SWAP,
 
     MOVE_UNAVAILABLE
 };
@@ -85554,6 +85425,7 @@ static const u16 sTinkatuff0TeachableLearnset[] = {
     MOVE_HARD_PRESS,
     MOVE_ALLURING_VOICE,
     MOVE_SUPERCELL_SLAM,
+    MOVE_SKILL_SWAP,
 
     MOVE_UNAVAILABLE
 };
@@ -85647,6 +85519,7 @@ static const u16 sTinkaton0TeachableLearnset[] = {
     MOVE_HARD_PRESS,
     MOVE_ALLURING_VOICE,
     MOVE_SUPERCELL_SLAM,
+    MOVE_SKILL_SWAP,
 
     MOVE_UNAVAILABLE
 };
@@ -85844,9 +85717,9 @@ static const struct LevelUpMove sCeruledge0LevelUpLearnset[] = {
     {.move = MOVE_SHADOW_SNEAK, .level = 0},
     {.move = MOVE_NIGHT_SHADE, .level = 0},
     {.move = MOVE_CURSE, .level = 0},
-    {.move = MOVE_LEER, .level = 1},
     {.move = MOVE_DISABLE, .level = 1},
     {.move = MOVE_RECOVER, .level = 1},
+    {.move = MOVE_LEER, .level = 1},
     {.move = MOVE_SMOG, .level = 1},
     {.move = MOVE_EMBER, .level = 5},
     {.move = MOVE_FLAME_CHARGE, .level = 5},
@@ -85858,13 +85731,12 @@ static const struct LevelUpMove sCeruledge0LevelUpLearnset[] = {
     {.move = MOVE_DESTINY_BOND, .level = 13},
     {.move = MOVE_INCINERATE, .level = 20},
     {.move = MOVE_COUNTER, .level = 25},
-    {.move = MOVE_CROSS_CHOP, .level = 33},
-    {.move = MOVE_CROSS_POISON, .level = 33},
-    {.move = MOVE_POLTERGEIST, .level = 38},
-    {.move = MOVE_SACRED_SWORD, .level = 43},
-    {.move = MOVE_FLARE_BLITZ, .level = 45},
-    {.move = MOVE_PHANTOM_FORCE, .level = 45},
-    {.move = MOVE_BEHEMOTH_BLADE, .level = 48},
+    {.move = MOVE_CROSS_POISON, .level = 32},
+    {.move = MOVE_POLTERGEIST, .level = 34},
+    {.move = MOVE_SACRED_SWORD, .level = 39},
+    {.move = MOVE_PHANTOM_FORCE, .level = 43},
+    {.move = MOVE_FLARE_BLITZ, .level = 43},
+    {.move = MOVE_BEHEMOTH_BLADE, .level = 45},
     {.move = MOVE_BITTER_BLADE, .level = 50},
     {.move = MOVE_SHADOW_FORCE, .level = 55},
     {.move = MOVE_V_CREATE, .level = 55},
@@ -87226,6 +87098,7 @@ static const u16 sDipplin0TeachableLearnset[] = {
     MOVE_SKITTER_SMACK,
     MOVE_TERA_BLAST,
     MOVE_POUNCE,
+    MOVE_REFLECT,
 
     MOVE_UNAVAILABLE
 };
@@ -87323,6 +87196,7 @@ static const u16 sHydrapple0TeachableLearnset[] = {
     MOVE_TERA_BLAST,
     MOVE_POUNCE,
     MOVE_TEMPER_FLARE,
+    MOVE_REFLECT,
 
     MOVE_UNAVAILABLE
 };

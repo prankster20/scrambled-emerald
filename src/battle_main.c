@@ -3925,7 +3925,7 @@ static void TryDoEventsBeforeFirstTurn(void)
         }
         gBattleStruct->eventsBeforeFirstTurnState++;
         break;
-    case FIRST_TURN_TITAN_CHECK:
+    case FIRST_TURN_TITAN_CHECK: // jimh
         gBattleStruct->eventsBeforeFirstTurnState++;
         if (gBattleTypeFlags & BATTLE_TYPE_TITAN)
         {
@@ -6120,7 +6120,7 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, u8 *ateBoost)
         }
         break;
     case EFFECT_TERA_BLAST:
-        if (GetActiveGimmick(battler) == GIMMICK_TERA)
+        if (GetActiveGimmick(battler) == GIMMICK_TERA && HasTrainerUsedGimmick(battler, GIMMICK_TERA))
             return GetMonData(mon, MON_DATA_TERA_TYPE);
         break;
     case EFFECT_TERA_STARSTORM:

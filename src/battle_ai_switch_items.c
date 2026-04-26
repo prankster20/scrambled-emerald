@@ -977,10 +977,10 @@ bool32 ShouldSwitch(u32 battler)
     // Since the order is sequencial, and some of these functions prompt switch to specific party members.
 
     // These Functions can prompt switch to specific party members that override GetMostSuitableMonToSwitchInto
-    if (FindMonThatHitsWonderGuard(battler))
-        return TRUE;
-    if (FindMonThatAbsorbsOpponentsMove(battler))
-        return TRUE;
+    // if (FindMonThatHitsWonderGuard(battler))
+    //     return TRUE;
+    // if (FindMonThatAbsorbsOpponentsMove(battler))
+    //     return TRUE;
 
     // These Functions can prompt switch to party member returned by GetMostSuitableMonToSwitchInto
     if ((AI_THINKING_STRUCT->aiFlags[battler] & AI_FLAG_SMART_SWITCHING) && (CanMonSurviveHazardSwitchin(battler) == FALSE))
@@ -1215,6 +1215,42 @@ static u32 GetBestMonTypeMatchup(struct Pokemon *party, int firstId, int lastId,
     return PARTY_SIZE;
 }
 
+// static u32 GetBestMonDmg(struct Pokemon *party, int firstId, int lastId, u8 invalidMons, u32 battler, u32 opposingBattler)
+// {
+//     int i, j;
+//     int dmg, bestDmg = 0;
+//     int bestMonId = PARTY_SIZE;
+//     u32 rollType = GetDmgRollType(battler);
+
+//     u32 aiMove;
+
+//     gMoveResultFlags = 0;
+//     // If we couldn't find the best mon in terms of typing, find the one that deals most damage.
+//     for (i = firstId; i < lastId; i++)
+//     {
+//         if ((1 << (i)) & invalidMons)
+//             continue;
+//         InitializeSwitchinCandidate(&party[i]);
+//         for (j = 0; j < MAX_MON_MOVES; j++)
+//         {
+//             aiMove = AI_DATA->switchinCandidate.battleMon.moves[j];
+//             if (aiMove != MOVE_NONE && !IS_MOVE_STATUS(aiMove))
+//             {
+//                 aiMove = GetMonData(&party[i], MON_DATA_MOVE1 + j);
+//                 // dmg = AI_CalcPartyMonDamage(aiMove, battler, opposingBattler, AI_DATA->switchinCandidate.battleMon, TRUE, rollType);
+//                 dmg = GetBasePowerWithEffectiveness(battler, opposingBattler, aiMove);
+//                 if (bestDmg < dmg)
+//                 {
+//                     bestDmg = dmg;
+//                     bestMonId = i;
+//                 }
+//             }
+//         }
+//     }
+
+//     return bestMonId;
+// }
+
 static u32 GetBestMonDmg(struct Pokemon *party, int firstId, int lastId, u8 invalidMons, u32 battler, u32 opposingBattler)
 {
     int i, j;
@@ -1224,13 +1260,20 @@ static u32 GetBestMonDmg(struct Pokemon *party, int firstId, int lastId, u8 inva
 
     u32 aiMove;
 
+    // DebugPrintfLevel(MGBA_LOG_WARN, "GetBestMonDmg called, checking mons %d to %d", firstId, lastId);
+
     gMoveResultFlags = 0;
     // If we couldn't find the best mon in terms of typing, find the one that deals most damage.
     for (i = firstId; i < lastId; i++)
     {
-        if ((1 << (i)) & invalidMons)
+        if ((1 << (i)) & invalidMons) {
+            // DebugPrintfLevel(MGBA_LOG_WARN, "Mon %d is invalid (mask %d)", i, invalidMons);
             continue;
+        }
+        
         InitializeSwitchinCandidate(&party[i]);
+        // DebugPrintfLevel(MGBA_LOG_WARN, "Checking mon %d (%s)", i, GetSpeciesName(GetMonData(&party[i], MON_DATA_SPECIES)));
+        
         for (j = 0; j < MAX_MON_MOVES; j++)
         {
             aiMove = AI_DATA->switchinCandidate.battleMon.moves[j];
@@ -1238,8 +1281,11 @@ static u32 GetBestMonDmg(struct Pokemon *party, int firstId, int lastId, u8 inva
             {
                 aiMove = GetMonData(&party[i], MON_DATA_MOVE1 + j);
                 dmg = GetBasePowerWithEffectiveness(battler, opposingBattler, aiMove);
+                // DebugPrintfLevel(MGBA_LOG_WARN, "Move slot %d: %s deals %d damage", j, gMovesInfo[aiMove].name, dmg);
+                
                 if (bestDmg < dmg)
                 {
+                    // DebugPrintfLevel(MGBA_LOG_WARN, "New best! Mon %d with damage %d (was %d)", i, dmg, bestDmg);
                     bestDmg = dmg;
                     bestMonId = i;
                 }
@@ -1247,6 +1293,7 @@ static u32 GetBestMonDmg(struct Pokemon *party, int firstId, int lastId, u8 inva
         }
     }
 
+    // DebugPrintfLevel(MGBA_LOG_WARN, "Final choice: Mon %d with damage %d", bestMonId, bestDmg);
     return bestMonId;
 }
 
@@ -2025,7 +2072,8 @@ u32 GetMostSuitableMonToSwitchInto(u32 battler, bool32 switchAfterMonKOd)
                 || gBattlerPartyIndexes[battlerIn2] == i
                 || i == gBattleStruct->monToSwitchIntoId[battlerIn1]
                 || i == gBattleStruct->monToSwitchIntoId[battlerIn2]
-                || (GetMonAbility(&party[i]) == ABILITY_TRUANT && IsTruantMonVulnerable(battler, opposingBattler))) // While not really invalid per se, not really wise to switch into this mon.
+                // || (GetMonAbility(&party[i]) == ABILITY_TRUANT && IsTruantMonVulnerable(battler, opposingBattler)) // While not really invalid per se, not really wise to switch into this mon.
+            ) 
             {
                 invalidMons |= 1u << i;
             }
@@ -2040,13 +2088,13 @@ u32 GetMostSuitableMonToSwitchInto(u32 battler, bool32 switchAfterMonKOd)
                 aliveCount++;
             }
         }
-        bestMonId = GetBestMonBatonPass(party, firstId, lastId, invalidMons, aliveCount, battler, opposingBattler);
-        if (bestMonId != PARTY_SIZE)
-            return bestMonId;
+        // bestMonId = GetBestMonBatonPass(party, firstId, lastId, invalidMons, aliveCount, battler, opposingBattler);
+        // if (bestMonId != PARTY_SIZE)
+        //     return bestMonId;
 
-        bestMonId = GetBestMonTypeMatchup(party, firstId, lastId, invalidMons, battler, opposingBattler);
-        if (bestMonId != PARTY_SIZE)
-            return bestMonId;
+        // bestMonId = GetBestMonTypeMatchup(party, firstId, lastId, invalidMons, battler, opposingBattler);
+        // if (bestMonId != PARTY_SIZE)
+        //     return bestMonId;
 
         bestMonId = GetBestMonDmg(party, firstId, lastId, invalidMons, battler, opposingBattler);
         if (bestMonId != PARTY_SIZE)
@@ -2234,30 +2282,29 @@ static u32 GetBasePowerWithEffectiveness(u32 battlerAtk, u32 battlerDef, u32 mov
     // Get the defending mon name
     u32 defSpecies = gBattleMons[battlerDef].species;
 
-    // DebugPrintfLevel(MGBA_LOG_WARN, "%s's %s (power %d, type %d) vs %s (types %d/%d)", 
-        //    GetSpeciesName(atkSpecies), gMovesInfo[move].name, power, moveType, 
-        //    GetSpeciesName(defSpecies), defType1, defType2);
+    DebugPrintfLevel(MGBA_LOG_WARN, "Species %u's Move %u (power %u, type %u) vs Species %u (types %u/%u)",
+       atkSpecies, move, power, moveType, defSpecies, defType1, defType2);
 
     u32 effectiveness;
     
     if (GetActiveGimmick(battlerDef) == GIMMICK_TERA) {
         u32 teraType = GetBattlerTeraType(battlerDef);
         effectiveness = GetTypeModifier(moveType, teraType);
-        // DebugPrintfLevel(MGBA_LOG_WARN, "Tera active on %s, tera type %d, effectiveness %d", 
-            //    GetSpeciesName(defSpecies), teraType, effectiveness);
+        DebugPrintfLevel(MGBA_LOG_WARN, "Tera active on Species %u, tera type %d, effectiveness %d", 
+               defSpecies, teraType, effectiveness);
     }
     else {
         u32 eff1 = GetTypeModifier(moveType, defType1);
         u32 eff2 = (defType1 != defType2) ? GetTypeModifier(moveType, defType2) : UQ_4_12(1.0);
         effectiveness = eff1 * eff2 / UQ_4_12(1.0);
-        // DebugPrintfLevel(MGBA_LOG_WARN, "No tera on %s, type1 eff %d, type2 eff %d, combined %d", 
-        //        GetSpeciesName(defSpecies), eff1, eff2, effectiveness);
+        DebugPrintfLevel(MGBA_LOG_WARN, "No tera on Species %u, type1 eff %d, type2 eff %d, combined %d", 
+               defSpecies, eff1, eff2, effectiveness);
     }
 
     u32 result = power * effectiveness / UQ_4_12(1.0);
-    // DebugPrintfLevel(MGBA_LOG_WARN, "%s vs %s final calc: %d * %d / %d = %d", 
-    //        GetSpeciesName(atkSpecies), GetSpeciesName(defSpecies), 
-    //        power, effectiveness, UQ_4_12(1.0), result);
+    DebugPrintfLevel(MGBA_LOG_WARN, "Species %u vs Species %u final calc: %d * %d / %d = %d", 
+           atkSpecies, defSpecies, 
+           power, effectiveness, UQ_4_12(1.0), result);
     
     return result;
 }

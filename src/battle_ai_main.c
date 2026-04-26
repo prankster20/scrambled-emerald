@@ -2413,7 +2413,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             break;
         case EFFECT_DO_NOTHING:
             if (gMovesInfo[move].numAdditionalEffects == 0)
-                ADJUST_SCORE(-10);
+                ADJUST_SCORE(0);
             break;
         case EFFECT_INSTRUCT:
             {

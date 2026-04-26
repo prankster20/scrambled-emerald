@@ -513,7 +513,7 @@ static inline void SetMoveDamageCategory(u32 battlerAtk, u32 battlerDef, u32 mov
             gBattleStruct->swapDamageCategory = TRUE;
         break;
     case EFFECT_TERA_BLAST:
-        if (GetActiveGimmick(battlerAtk) == GIMMICK_TERA)
+        if (GetActiveGimmick(battlerAtk) == GIMMICK_TERA && HasTrainerUsedGimmick(battlerAtk, GIMMICK_TERA))
             gBattleStruct->swapDamageCategory = GetCategoryBasedOnStats(battlerAtk) == DAMAGE_CATEGORY_PHYSICAL;
         break;
     case EFFECT_TERA_STARSTORM:
@@ -732,6 +732,76 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
             simDamage.expected = GetDamageByRollType(nonCritDmg, rollType);
             simDamage.minimum = LowestRollDmg(nonCritDmg);
         // }
+
+        // Add the berry check:
+        // Check for type-weakening berries on the defender
+        u32 defenderItem = aiData->items[battlerDef];
+        bool32 berryActivated = FALSE;
+
+        switch (moveType)
+        {
+            case TYPE_NORMAL:
+                if (defenderItem == ITEM_CHILAN_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_FIRE:
+                if (defenderItem == ITEM_OCCA_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_WATER:
+                if (defenderItem == ITEM_PASSHO_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_ELECTRIC:
+                if (defenderItem == ITEM_WACAN_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_GRASS:
+                if (defenderItem == ITEM_RINDO_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_ICE:
+                if (defenderItem == ITEM_YACHE_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_FIGHTING:
+                if (defenderItem == ITEM_CHOPLE_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_POISON:
+                if (defenderItem == ITEM_KEBIA_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_GROUND:
+                if (defenderItem == ITEM_SHUCA_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_FLYING:
+                if (defenderItem == ITEM_COBA_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_PSYCHIC:
+                if (defenderItem == ITEM_PAYAPA_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_BUG:
+                if (defenderItem == ITEM_TANGA_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_ROCK:
+                if (defenderItem == ITEM_CHARTI_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_GHOST:
+                if (defenderItem == ITEM_KASIB_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_DRAGON:
+                if (defenderItem == ITEM_HABAN_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_DARK:
+                if (defenderItem == ITEM_COLBUR_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_STEEL:
+                if (defenderItem == ITEM_BABIRI_BERRY) berryActivated = TRUE;
+                break;
+            case TYPE_FAIRY:
+                if (defenderItem == ITEM_ROSELI_BERRY) berryActivated = TRUE;
+                break;
+        }
+
+        // Apply berry damage reduction (halve the damage)
+        if (berryActivated)
+        {
+            simDamage.expected /= 2;
+            simDamage.minimum /= 2;
+        }
 
         if (GetActiveGimmick(battlerAtk) != GIMMICK_Z_MOVE)
         {
@@ -1201,9 +1271,9 @@ u32 GetBestDmgMoveFromBattler(u32 battlerAtk, u32 battlerDef)
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (moves[i] != MOVE_NONE && moves[i] != MOVE_UNAVAILABLE && !(unusable & (1u << i))
-            && bestDmg < AI_DATA->simulatedDmg[battlerAtk][battlerDef][i].expected)
+            && bestDmg < AI_DATA->simulatedDmg[battlerAtk][battlerDef][i].minimum)
         {
-            bestDmg = AI_DATA->simulatedDmg[battlerAtk][battlerDef][i].expected;
+            bestDmg = AI_DATA->simulatedDmg[battlerAtk][battlerDef][i].minimum;
             move = moves[i];
         }
     }

@@ -2105,7 +2105,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .natDexNum = NATIONAL_DEX_ROLYCOLY,
         .categoryName = _("Coal"),
         .height = 3,
-        .weight = 120,
+        .weight = 480,
         .description = COMPOUND_STRING(
             "Most of its body has the same composition\n"
             "as coal. Fittingly, this Pokémon was\n"
@@ -2168,7 +2168,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .natDexNum = NATIONAL_DEX_CARKOL,
         .categoryName = _("Coal"),
         .height = 11,
-        .weight = 780,
+        .weight = 2340,
         .description = COMPOUND_STRING(
             "It forms coal inside its body. Coal\n"
             "dropped by this Pokémon once helped fuel\n"
@@ -2229,7 +2229,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .natDexNum = NATIONAL_DEX_COALOSSAL,
         .categoryName = _("Coal"),
         .height = 28,
-        .weight = 3105,
+        .weight = 6210,
         .description = COMPOUND_STRING(
             "It's usually peaceful, but the vandalism\n"
             "of mines enrages it. Offenders will be\n"

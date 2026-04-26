@@ -3300,7 +3300,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sToxel0LevelUpLearnset,
         .teachableLearnset = sToxel0TeachableLearnset,
         .eggMoveLearnset = sToxelEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL_DAY, 24, SPECIES_TOXTRICITY_AMPED}, {EVO_LEVEL_NIGHT, 24, SPECIES_TOXTRICITY_AMPED_GMAX}),
+        .evolutions = EVOLUTION({EVO_LEVEL_DAY, 24, SPECIES_TOXTRICITY_AMPED}, {EVO_LEVEL_NIGHT, 24, SPECIES_TOXTRICITY_LOW_KEY}),
     },
 
     [SPECIES_TOXTRICITY_AMPED] =
@@ -3422,12 +3422,12 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
 
     [SPECIES_TOXTRICITY_LOW_KEY] =
     {
-        .baseHP        = 75,
-        .baseAttack    = 98,
-        .baseDefense   = 70,
-        .baseSpeed     = 75,
-        .baseSpAttack  = 114,
-        .baseSpDefense = 70,
+        .baseHP        = 81,
+        .baseAttack    = 88,
+        .baseDefense   = 80,
+        .baseSpeed     = 88,
+        .baseSpAttack  = 118,
+        .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_ELECTRIC, TYPE_POISON),
         .catchRate = 45,
         .expYield = 176,
@@ -3437,7 +3437,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_PUNK_ROCK, ABILITY_MINUS, ABILITY_TECHNICIAN },
+        .abilities = { ABILITY_PUNK_ROCK, ABILITY_PRANKSTER, ABILITY_MOTOR_DRIVE },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Toxtricity"),
         .cryId = CRY_TOXTRICITY_LOW_KEY,
@@ -3476,8 +3476,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
             gOverworldPalette_ToxtricityLowKey,
             gShinyOverworldPalette_ToxtricityLowKey
         )
-        .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .levelUpLearnset = sToxtricity1LevelUpLearnset,
+        .teachableLearnset = sToxtricity1TeachableLearnset,
         .formSpeciesIdTable = sToxtricityFormSpeciesIdTable,
         .formChangeTable = sToxtricityAmpedFormChangeTable,
     },

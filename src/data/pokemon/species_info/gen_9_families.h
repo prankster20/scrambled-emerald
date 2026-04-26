@@ -1861,8 +1861,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             gOverworldPalette_SquawkabillyBlue,
             gShinyOverworldPalette_SquawkabillyBlue
         )
-        .levelUpLearnset = sSquawkabilly1LevelUpLearnset,
-        .teachableLearnset = sSquawkabilly1TeachableLearnset,
+        .levelUpLearnset = sSquawkabilly0LevelUpLearnset,
+        .teachableLearnset = sSquawkabilly0TeachableLearnset,
         .eggMoveLearnset = sSquawkabillyEggMoveLearnset,
         .formSpeciesIdTable = sSquawkabillyFormSpeciesIdTable,
         .evolutions = NULL,
@@ -1925,8 +1925,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             gOverworldPalette_SquawkabillyYellow,
             gShinyOverworldPalette_SquawkabillyYellow
         )
-        .levelUpLearnset = sSquawkabilly2LevelUpLearnset,
-        .teachableLearnset = sSquawkabilly2TeachableLearnset,
+        .levelUpLearnset = sSquawkabilly0LevelUpLearnset,
+        .teachableLearnset = sSquawkabilly0TeachableLearnset,
         .eggMoveLearnset = sSquawkabillyEggMoveLearnset,
         .formSpeciesIdTable = sSquawkabillyFormSpeciesIdTable,
         .evolutions = NULL,
@@ -1989,8 +1989,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             gOverworldPalette_SquawkabillyWhite,
             gShinyOverworldPalette_SquawkabillyWhite
         )
-        .levelUpLearnset = sSquawkabilly3LevelUpLearnset,
-        .teachableLearnset = sSquawkabilly3TeachableLearnset,
+        .levelUpLearnset = sSquawkabilly0LevelUpLearnset,
+        .teachableLearnset = sSquawkabilly0TeachableLearnset,
         .eggMoveLearnset = sSquawkabillyEggMoveLearnset,
         .formSpeciesIdTable = sSquawkabillyFormSpeciesIdTable,
         .evolutions = NULL,

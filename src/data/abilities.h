@@ -164,7 +164,7 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_SUCTION_CUPS] =
     {
-        .name = _("Endurance"),
+        .name = _("Suction Cups"),
         .description = COMPOUND_STRING("Prevents forced switching out."),
         .aiRating = 2,
         .breakable = TRUE,
@@ -2099,8 +2099,8 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_GUARD_DOG] =
     {
-        .name = _("Guard Dog"),
-        .description = COMPOUND_STRING("Cannot be intimidated."),
+        .name = _("Endurance"),
+        .description = COMPOUND_STRING("Prevents forced switching out.\nInverts Intimidate."),
         .aiRating = 5,
         .breakable = TRUE,
     },

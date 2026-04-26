@@ -103,6 +103,7 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 LavaridgeTown_Gym_EventScript_VanillaLevelCap::
 	setvar VAR_LEVEL_CAP 38
 	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_GiveBadge4ItemsAndFanfare
 	setflag FLAG_BADGE04_GET
 	return
 

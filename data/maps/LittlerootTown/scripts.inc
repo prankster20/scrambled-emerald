@@ -161,6 +161,8 @@ LittlerootTown_EventScript_GoInsideWithMom::
 
 	// Announce Level Cap
 	call Common_EventScript_NewLevelCapTextAndFanfare
+	// Give items at the start
+	call Common_EventScript_GiveBadge0ItemsAndFanfare
 
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox LittlerootTown_Text_YouGotEverything, MSGBOX_DEFAULT

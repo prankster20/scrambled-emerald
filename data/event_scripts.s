@@ -907,6 +907,7 @@ Common_EventScript_SkipKitakami_LevelCap13_End::
 
 Common_EventScript_SkipKitakami_LevelCap20_End::
 	call Common_Gym2_EventScript_Plotless
+	call Common_EventScript_GiveBadge2ItemsAndFanfare
 	setflag FLAG_BADGE02_GET
 	goto_if_set FLAG_SKIPPING_TEAL_MASK, Common_EventScript_SkipKitakami_LevelCap22_End
 	setvar VAR_LEVEL_CAP 20
@@ -939,6 +940,7 @@ Common_EventScript_SkipKitakami_LevelCap42_End::
 	end
 
 Common_EventScript_NemonaB2B_Badge_LevelCap_End::
+	call Common_EventScript_GiveBadge5ItemsAndFanfare
 	setflag FLAG_BADGE05_GET
 	goto_if_set FLAG_SKIPPING_TEAL_MASK, Common_EventScript_SkipKitakami_LevelCap45_End
 	setvar VAR_LEVEL_CAP 43
@@ -975,6 +977,144 @@ Common_EventScript_NewLevelCapTextAndFanfare::
 	playfanfare MUS_REGISTER_MATCH_CALL
 	buffernumberstring STR_VAR_1, VAR_LEVEL_CAP
 	msgbox Scrambled_Text_LevelCap, MSGBOX_DEFAULT
+	waitfanfare
+	return
+
+Common_EventScript_GiveBadge0ItemsAndFanfare:
+	additem ITEM_QUICK_CLAW, 999
+	additem ITEM_EJECT_BUTTON, 999
+	additem ITEM_EJECT_PACK, 999
+	additem ITEM_RED_CARD, 999
+	additem ITEM_SCOPE_LENS, 999
+	additem ITEM_WIDE_LENS, 999
+	additem ITEM_ZOOM_LENS, 999
+	additem ITEM_LEFTOVERS, 999
+	additem ITEM_TOXIC_ORB, 999
+	additem ITEM_FLAME_ORB, 999
+	additem ITEM_CLEAR_AMULET, 999
+	additem ITEM_COVERT_CLOAK, 999
+	additem ITEM_UTILITY_UMBRELLA, 999
+	additem ITEM_WHITE_HERB, 999
+	additem ITEM_POWER_HERB, 999
+	additem ITEM_AIR_BALLOON, 999
+	additem ITEM_IRON_BALL, 999
+	additem ITEM_STICKY_BARB, 999
+	additem ITEM_NORMAL_GEM, 999
+	additem ITEM_DAMP_ROCK, 999
+	additem ITEM_HEAT_ROCK, 999
+	additem ITEM_SMOOTH_ROCK, 999
+	additem ITEM_ICY_ROCK, 999
+	additem ITEM_TERRAIN_EXTENDER, 999
+	additem ITEM_ELECTRIC_SEED, 999
+	additem ITEM_PSYCHIC_SEED, 999
+	additem ITEM_MISTY_SEED, 999
+	additem ITEM_GRASSY_SEED, 999
+	additem ITEM_ROOM_SERVICE, 999
+	additem ITEM_SITRUS_BERRY, 999
+	additem ITEM_LUM_BERRY, 999
+	additem ITEM_KEE_BERRY, 999
+	additem ITEM_MARANGA_BERRY, 999
+	additem ITEM_LIECHI_BERRY, 999
+	additem ITEM_PETAYA_BERRY, 999
+	additem ITEM_SALAC_BERRY, 999
+	additem ITEM_CUSTAP_BERRY, 999
+	additem ITEM_CHILAN_BERRY, 999
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox Scrambled_Text_BadgeItemsReceived, MSGBOX_DEFAULT
+	waitfanfare
+	return
+
+Common_EventScript_GiveBadge1ItemsAndFanfare:
+	additem ITEM_SHELL_BELL, 999
+	additem ITEM_LUMINOUS_MOSS, 999
+	additem ITEM_ABSORB_BULB, 999
+	additem ITEM_CELL_BATTERY, 999
+	additem ITEM_SNOWBALL, 999
+	additem ITEM_SILVER_POWDER, 999
+	additem ITEM_DRAGON_FANG, 999
+	additem ITEM_SILK_SCARF, 999
+	additem ITEM_FLAME_PLATE, 999
+	additem ITEM_SPLASH_PLATE, 999
+	additem ITEM_ZAP_PLATE, 999
+	additem ITEM_MEADOW_PLATE, 999
+	additem ITEM_ICICLE_PLATE, 999
+	additem ITEM_FIST_PLATE, 999
+	additem ITEM_TOXIC_PLATE, 999
+	additem ITEM_EARTH_PLATE, 999
+	additem ITEM_SKY_PLATE, 999
+	additem ITEM_MIND_PLATE, 999
+	additem ITEM_STONE_PLATE, 999
+	additem ITEM_SPOOKY_PLATE, 999
+	additem ITEM_DREAD_PLATE, 999
+	additem ITEM_IRON_PLATE, 999
+	additem ITEM_PIXIE_PLATE, 999
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox Scrambled_Text_BadgeItemsReceived, MSGBOX_DEFAULT
+	waitfanfare
+	return
+
+Common_EventScript_GiveBadge2ItemsAndFanfare:
+	additem ITEM_EXPERT_BELT, 999
+	additem ITEM_LIGHT_CLAY, 999
+	additem ITEM_ROCKY_HELMET, 999
+	additem ITEM_LOADED_DICE, 999
+	additem ITEM_BIG_ROOT, 999
+	additem ITEM_OCCA_BERRY, 999
+	additem ITEM_PASSHO_BERRY, 999
+	additem ITEM_WACAN_BERRY, 999
+	additem ITEM_RINDO_BERRY, 999
+	additem ITEM_YACHE_BERRY, 999
+	additem ITEM_CHOPLE_BERRY, 999
+	additem ITEM_KEBIA_BERRY, 999
+	additem ITEM_SHUCA_BERRY, 999
+	additem ITEM_COBA_BERRY, 999
+	additem ITEM_PAYAPA_BERRY, 999
+	additem ITEM_TANGA_BERRY, 999
+	additem ITEM_CHARTI_BERRY, 999
+	additem ITEM_KASIB_BERRY, 999
+	additem ITEM_HABAN_BERRY, 999
+	additem ITEM_COLBUR_BERRY, 999
+	additem ITEM_BABIRI_BERRY, 999
+	additem ITEM_ROSELI_BERRY, 999
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox Scrambled_Text_BadgeItemsReceived, MSGBOX_DEFAULT
+	waitfanfare
+	return
+
+Common_EventScript_GiveBadge3ItemsAndFanfare:
+	additem ITEM_BLACK_SLUDGE, 999
+	additem ITEM_ASSAULT_VEST, 999
+	additem ITEM_EVIOLITE, 999
+	additem ITEM_LIFE_ORB, 999
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox Scrambled_Text_BadgeItemsReceived, MSGBOX_DEFAULT
+	waitfanfare
+	return
+
+Common_EventScript_GiveBadge4ItemsAndFanfare:
+	additem ITEM_CHOICE_BAND, 999
+	additem ITEM_CHOICE_SPECS, 999
+	additem ITEM_CHOICE_SCARF, 999
+	additem ITEM_FOCUS_SASH, 999
+	additem ITEM_DUBIOUS_DISC, 999
+	additem ITEM_UPGRADE, 999
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox Scrambled_Text_BadgeItemsReceived, MSGBOX_DEFAULT
+	waitfanfare
+	return
+
+Common_EventScript_GiveBadge5ItemsAndFanfare:
+	additem ITEM_WEAKNESS_POLICY, 999
+	additem ITEM_BOOSTER_ENERGY, 999
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox Scrambled_Text_BadgeItemsReceived, MSGBOX_DEFAULT
+	waitfanfare
+	return
+
+Common_EventScript_GiveBadge7ItemsAndFanfare:
+	additem ITEM_THROAT_SPRAY, 999
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox Scrambled_Text_BadgeItemsReceived, MSGBOX_DEFAULT
 	waitfanfare
 	return
 
@@ -1503,13 +1643,13 @@ Common_EventScript_4Badge_ShopList::
 
 Common_EventScript_3Badge_ShopList::
 	.2byte ITEM_BLACK_SLUDGE
-	.2byte ITEM_BIG_ROOT
 	.2byte ITEM_ASSAULT_VEST
 	.2byte ITEM_EVIOLITE
 	.2byte ITEM_LIFE_ORB
-	.2byte ITEM_LOADED_DICE
 
 Common_EventScript_2Badge_ShopList::
+	.2byte ITEM_LOADED_DICE
+	.2byte ITEM_BIG_ROOT
 	.2byte ITEM_EXPERT_BELT
 	.2byte ITEM_LIGHT_CLAY
 	.2byte ITEM_ROCKY_HELMET

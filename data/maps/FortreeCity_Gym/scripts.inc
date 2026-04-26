@@ -74,6 +74,7 @@ FortreeCity_Gym_EventScript_VanillaLevelCap::
 
 FortreeCity_Gym_EventScript_ReverseLevelCap::
 	call Common_Gym3_EventScript_Plotless
+	call Common_EventScript_GiveBadge3ItemsAndFanfare
 	setflag FLAG_BADGE03_GET
 	goto_if_set FLAG_SKIPPING_TEAL_MASK, Common_EventScript_SkipKitakami_LevelCap33_End
 	setvar VAR_LEVEL_CAP 32

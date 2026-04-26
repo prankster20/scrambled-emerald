@@ -126,6 +126,7 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 DewfordTown_Gym_EventScript_ReverseLevelCap::
 	setvar VAR_LEVEL_CAP 58
 	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_GiveBadge7ItemsAndFanfare
 	setflag FLAG_BADGE07_GET
 	return
 

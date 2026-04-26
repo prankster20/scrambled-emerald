@@ -114,6 +114,7 @@ MossdeepCity_Gym_EventScript_TateAndLizaDefeated::
 MossdeepCity_Gym_EventScript_VanillaLevelCap::
 	setvar VAR_LEVEL_CAP 54
 	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_GiveBadge7ItemsAndFanfare
 	setflag FLAG_BADGE07_GET
 	return
 

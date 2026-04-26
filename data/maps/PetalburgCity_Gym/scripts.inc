@@ -403,6 +403,7 @@ PetalburgCity_Gym_EventScript_NormanBattleReverse::
 	trainerbattle_no_intro SCRAMBLED_LARRY_REVERSE, PetalburgCity_Gym_Text_NormanDefeat
 	call PetalburgCity_Gym_EventScript_Norman_PostGymFight_Plotless
 	setvar VAR_PETALBURG_CITY_STATE 5
+	call Common_EventScript_GiveBadge4ItemsAndFanfare
 	setflag FLAG_BADGE04_GET
 	goto_if_set FLAG_SKIPPING_TEAL_MASK, Common_EventScript_SkipKitakami_LevelCap36_End
 	setvar VAR_LEVEL_CAP 35

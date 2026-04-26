@@ -140,6 +140,7 @@ SootopolisCity_Gym_1F_EventScript_VanillaLevelCap::
 SootopolisCity_Gym_1F_EventScript_ReverseLevelCap::
 	setvar VAR_LEVEL_CAP 15
 	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_GiveBadge1ItemsAndFanfare
 	setflag FLAG_BADGE01_GET
 	return
 

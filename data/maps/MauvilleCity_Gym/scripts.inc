@@ -127,6 +127,7 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 	end
 
 MauvilleCity_Gym_EventScript_VanillaLevelCap::
+	call Common_EventScript_GiveBadge3ItemsAndFanfare
 	setflag FLAG_BADGE03_GET
 	setvar VAR_LEVEL_CAP 30
 	call Common_EventScript_NewLevelCapTextAndFanfare

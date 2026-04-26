@@ -46,7 +46,7 @@ Optional fields for Pokemon:
           (Order does not matter)
     - EVs (252 HP / 128 Spe / 48 Def, defaults to all 0, is not capped at 512 total)
           (Order does not matter)
-    - Ball (Poke Ball or ITEM_POKE_BALL, defaults to Poke Ball
+    - Ball (Poke Ball or ITEM_POKE_BALL, defaults to Poke Ball)
     - Happiness (Number between 1 and 255)
     - Nature (Rash or NATURE_RASH, defaults to Hardy)
     - Shiny (Yes/No, defaults to No)
@@ -1610,7 +1610,7 @@ EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 Nature: Jolly
 - MOVE_PSYCHIC_FANGS
 - MOVE_AQUA_TAIL
-- MOVE_LUNGE
+- MOVE_POUNCE
 - MOVE_SWEET_KISS
 
 SPECIES_SLOWBRO_GALAR @ ITEM_ASSAULT_VEST
@@ -17941,7 +17941,7 @@ Nature: Timid
 - MOVE_EARTH_POWER
 - MOVE_QUIVER_DANCE
 
-SPECIES_IRON_JUGULIS @ ITEM_NONE
+SPECIES_IRON_JUGULIS @ ITEM_QUICK_CLAW
 Level: 100
 Ability: ABILITY_MEGA_LAUNCHER
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -18157,7 +18157,7 @@ Level: 29
 Ability: ABILITY_FLUFFY
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Nature: Jolly
+Nature: Adamant
 - MOVE_CIRCLE_THROW
 - MOVE_THUNDER_PUNCH
 - MOVE_ICE_PUNCH
@@ -18879,7 +18879,6 @@ Nature: Jolly
 - MOVE_RISING_VOLTAGE
 - MOVE_SNARL
 - MOVE_SLACK_OFF
-- MOVE_SNARL
 
 SPECIES_DUCKLETT @ ITEM_DAMP_ROCK
 Level: 11
@@ -19065,8 +19064,7 @@ EVs: 252 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 Nature: Jolly
 - MOVE_POWER_TRIP
 - MOVE_STUFF_CHEEKS
-- MOVE_PROTECT
-- MOVE_POWER_TRIP
+- MOVE_DETECT
 
 SPECIES_MIENSHAO @ ITEM_LIFE_ORB
 Level: 50
@@ -19394,7 +19392,7 @@ Nature: Serious
 - MOVE_BLAZING_TORQUE_REVERSE
 - MOVE_HEAVY_SLAM
 - MOVE_EARTHQUAKE
-- MOVE_DOUBLE_SHOCK
+- MOVE_FUSION_BOLT
 
 
 === SCRAMBLED_GIACOMO_REVERSE ===
@@ -19423,7 +19421,7 @@ Ability: ABILITY_SNIPER
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe
 Nature: Timid
-- MOVE_DOUBLE_SHOCK
+- MOVE_FUSION_BOLT
 - MOVE_NIGHT_DAZE
 - MOVE_ROAR
 - MOVE_MEAN_LOOK
@@ -19470,4 +19468,4 @@ Nature: Serious
 - MOVE_WICKED_TORQUE_REVERSE
 - MOVE_HEAVY_SLAM
 - MOVE_EARTHQUAKE
-- MOVE_DOUBLE_SHOCK
+- MOVE_FUSION_BOLT

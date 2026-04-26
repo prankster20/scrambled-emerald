@@ -2739,7 +2739,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .palette = gMonPalette_Hydrapple,
         .shinyPalette = gMonShinyPalette_Hydrapple,
         .iconSprite = gMonIcon_Hydrapple,
-        .iconPalIndex = 5,
+        .iconPalIndex = 1,
         SHADOW(1, 12, SHADOW_SIZE_L)
         FOOTPRINT(Hydrapple)
         OVERWORLD(

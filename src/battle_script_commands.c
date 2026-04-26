@@ -12383,6 +12383,8 @@ static void Cmd_forcerandomswitch(void)
             battler1PartyId = gBattlerPartyIndexes[gBattlerTarget];
         }
 
+        // Build the full valid mon pool first, tracking whether any non-Starmobile exists
+        bool32 hasNonStarmobile = FALSE;
         for (i = firstMonId; i < lastMonId; i++)
         {
             if (GetMonData(&party[i], MON_DATA_SPECIES) != SPECIES_NONE
@@ -12390,10 +12392,49 @@ static void Cmd_forcerandomswitch(void)
              && GetMonData(&party[i], MON_DATA_HP) != 0
              && i != battler1PartyId
              && i != battler2PartyId)
-             {
-                 validMons[validMonsCount++] = i;
-             }
+            {
+                if (!IsStarmobileSpecies(GetMonData(&party[i], MON_DATA_SPECIES)))
+                    hasNonStarmobile = TRUE;
+                validMons[validMonsCount++] = i;
+            }
         }
+
+        // Log all valid (phasable) mons before Starmobile filtering
+        // DebugPrintfLevel(MGBA_LOG_WARN, "Phasable pool (%d mons):", validMonsCount);
+        for (i = 0; i < validMonsCount; i++)
+        {
+            u16 species = GetMonData(&party[validMons[i]], MON_DATA_SPECIES);
+            u16 hp = GetMonData(&party[validMons[i]], MON_DATA_HP);
+            // DebugPrintfLevel(MGBA_LOG_WARN, "  [%d] slot=%d species=%u hp=%u isStarmobile=%d",
+            //     i, validMons[i], species, hp, IsStarmobileSpecies(species));
+        }
+
+        // If non-Starmobile mons are available, filter Starmobiles out of the pool
+        // so they can only be roared out as a last resort
+        if (hasNonStarmobile)
+        {
+            s32 filteredCount = 0;
+            u8 filteredMons[PARTY_SIZE];
+            for (i = 0; i < validMonsCount; i++)
+            {
+                if (!IsStarmobileSpecies(GetMonData(&party[validMons[i]], MON_DATA_SPECIES)))
+                    filteredMons[filteredCount++] = validMons[i];
+            }
+            memcpy(validMons, filteredMons, filteredCount);
+            validMonsCount = filteredCount;
+
+            // Log filtered pool after Starmobiles removed
+            // DebugPrintfLevel(MGBA_LOG_WARN, "Filtered pool (%d mons, Starmobiles removed):", validMonsCount);
+            // for (i = 0; i < validMonsCount; i++)
+            // {
+            //     u16 species = GetMonData(&party[validMons[i]], MON_DATA_SPECIES);
+            //     DebugPrintfLevel(MGBA_LOG_WARN, "  [%d] slot=%d species=%u", i, validMons[i], species);
+            // }
+        }
+        // else
+        // {
+        //     DebugPrintfLevel(MGBA_LOG_WARN, "No non-Starmobile mons found, pool unchanged");
+        // }
 
         if (validMonsCount == 0)
         {

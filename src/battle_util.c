@@ -11978,14 +11978,16 @@ u32 GetMoveType(u32 move)
     return gMovesInfo[move].type;
 }
 
-bool8 IsStarmobile(u32 battler) {
-    u16 species = gBattleMons[battler].species;
+bool8 IsStarmobileSpecies(u16 species) {
+    // primarily used to check if a species is Starmobile to add a bunch of immunities to them 
+    // recently also used for checking Roar/Whirlwind, so as to not bring out Starmobiles unless they are the last remaining Pokemon
     switch (species) {
         case SPECIES_STARMOBILE_DARK:
         case SPECIES_STARMOBILE_FIRE:
         case SPECIES_STARMOBILE_POISON:
         case SPECIES_STARMOBILE_FAIRY:
         case SPECIES_STARMOBILE_FIGHTING:
+        // Reverse
         case SPECIES_STARMOBILE_FIGHTING_REVERSE:
         case SPECIES_STARMOBILE_FAIRY_REVERSE:
         case SPECIES_STARMOBILE_FIRE_REVERSE:
@@ -11994,4 +11996,8 @@ bool8 IsStarmobile(u32 battler) {
         default:
             return FALSE;
     }
+}
+
+bool8 IsStarmobile(u32 battler) {
+    return IsStarmobileSpecies(gBattleMons[battler].species);
 }

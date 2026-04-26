@@ -444,7 +444,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .effect = EFFECT_HIT,
         .power = 20,
         .type = TYPE_NORMAL,
-        .accuracy = 90,
+        .accuracy = 95,
         .pp = 2,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -821,7 +821,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
         .contestEffect = CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -1086,7 +1085,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_LEER] =
     {
         .name = COMPOUND_STRING("Leer"),
-        .description = COMPOUND_STRING("The user gives opposing Pokémon an intimidating\nleer, lowering Defense AND Speed by -1."),
+        .description = COMPOUND_STRING("The user gives opposing Pokémon an intimidating\nleer, lowering Defense AND Speed by 1."),
         .effect = EFFECT_DO_NOTHING,
         .power = 0,
         .type = TYPE_DARK,
@@ -2441,7 +2440,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 5,
-        .target = MOVE_TARGET_SELECTED,
+        .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_ATK_UP_1 },
@@ -4611,18 +4610,16 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_DETECT] =
     {
         .name = COMPOUND_STRING("Detect"),
-        .description = COMPOUND_STRING("DOESN'T EXIST IN SCRAMBLED SCARLET."),
+        .description = COMPOUND_STRING("This move enables the user to protect itself from\nall attacks. Its chance of failing rises if it is used\nin succession. AI Only."),
         .effect = EFFECT_PROTECT,
         .power = 0,
         .type = TYPE_FIGHTING,
         .accuracy = 0,
-        .pp = 5,
+        .pp = 10,
         .target = MOVE_TARGET_USER,
-        .priority = B_UPDATED_MOVE_DATA >= GEN_5 ? 4 : 3,
+        .priority = 6,
         .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_EVSN_UP_1 },
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
         .metronomeBanned = TRUE,
         .copycatBanned = TRUE,
         .assistBanned = TRUE,
@@ -6176,9 +6173,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 100,
-        .pp = 20,
+        .pp = 5,
         .target = MOVE_TARGET_USER,
-        .priority = B_UPDATED_MOVE_DATA >= GEN_6 ? 2 : 3,
+        // .priority = B_UPDATED_MOVE_DATA >= GEN_6 ? 2 : 3,
+        .priority = 6,
         .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_RESET_STATS },
         .ignoresProtect = TRUE,
@@ -7202,7 +7200,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 1,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .makesContact = TRUE,
         .minimizeDoubleDamage = B_UPDATED_MOVE_FLAGS < GEN_4,
         .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
         .contestCategory = CONTEST_CATEGORY_SMART,
@@ -10324,7 +10321,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_BUG_BITE] =
     {
         .name = COMPOUND_STRING("Bug Biting"),
-        .description = COMPOUND_STRING("The user nibbles at the foe. If the foe is holding a\nBerry, the user eats it and gains its effect. Contact.\nThis has a 15% flinch rate per hit, and hits twice."),
+        .description = COMPOUND_STRING("The user nibbles at the foe. HITS TWICE, and if the foe has a\nBerry, the user steals its effect. 15% flinch rate per hit. 27% overall. Contact."),
         .effect = EFFECT_HIT,
         .power = 35,
         .type = TYPE_BUG,
@@ -11352,7 +11349,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_ROUND] =
     {
         .name = COMPOUND_STRING("Harmonize"),
-        .description = COMPOUND_STRING("The user attacks the target with it's voice. Others can\nharmonize to increase the power of the voice.\nThis ALWAYS drops the foe's attacking stats by 1."),
+        .description = COMPOUND_STRING("The user attacks with its voice. Others can\nharmonize to increase the power of the voice.\nThis ALWAYS drops the foe's attacking stats by 1."),
         .effect = EFFECT_ROUND,
         .power = 60,
         .type = TYPE_NORMAL,
@@ -12508,7 +12505,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_SECRET_SWORD] =
     {
         .name = COMPOUND_STRING("Radiant Edge"),
-        .description = COMPOUND_STRING("The user tears at the target with light in the shape of a blade.\nThis ALWAYS crits, and uses the foe's Defense stat\ninstead of Sp. Def. Can't be used 2x in a row."),
+        .description = COMPOUND_STRING("The user conjures up a blade of light, then slashes.\nThis ALWAYS crits, and uses the foe's Defense stat\ninstead of Sp. Def. Can't be used 2x in a row."),
         .effect = EFFECT_PSYSHOCK,
         .power = 80,
         .type = TYPE_FAIRY,
@@ -12672,7 +12669,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_SNARL] =
     {
         .name = COMPOUND_STRING("Dismal Cry"),
-        .description = COMPOUND_STRING("The user unleashes a horrible sound imbued with dark\nfeelings. This demoralizes all foes who hear it,\nALWAYS dropping the foe's attacking stats by 1."),
+        .description = COMPOUND_STRING("The user unleashes a horrible sound imbued with dark\nfeelings. This demoralizes ALL FOES who hear it,\nALWAYS dropping their attacking stats by 1."),
         .effect = EFFECT_HIT,
         .power = 60,
         .type = TYPE_DARK,
@@ -12998,7 +12995,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .type = TYPE_FIGHTING,
         .accuracy = 100,
         .pp = 2,
-        .target = MOVE_TARGET_SELECTED,
+        .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_DEF_UP_1 },
@@ -13131,7 +13128,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .effect = EFFECT_HIT,
         .power = 60,
         .type = TYPE_FAIRY,
-        .accuracy = 0,
+        .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
@@ -15085,7 +15082,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_FLEUR_CANNON] =
     {
         .name = COMPOUND_STRING("Eternal Beam"),
-        .description = COMPOUND_STRING("The user unleashes a perilous beam fueled by its own\nlife force. This deals 1/3 recoil, and has a 50%\nchance to drop the foe's Sp. Def stat after use."),
+        .description = COMPOUND_STRING("The user unleashes a perilous beam fueled by its own\nlife force. This deals 1/3 recoil, and has a 50%\nchance to drop the foe's Sp. Def stat."),
         .effect = EFFECT_HIT,
         .power = 120,
         .type = TYPE_FAIRY,
@@ -15114,7 +15111,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .power = 85,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -16778,7 +16775,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_TERRAIN_PULSE] =
     {
         .name = COMPOUND_STRING("Terrain Pulse"),
-        .description = COMPOUND_STRING("The user utilizes the energy of the terrain to attack.\nThis move's type and power change depending on\nthe terrain. 50% Sp. Def drop rate."),
+        .description = COMPOUND_STRING("The user utilizes the energy of the terrain to attack.\nIts type changes and power doubles depending on\nthe terrain. 50% Sp. Def drop rate."),
         .effect = EFFECT_TERRAIN_PULSE,
         .power = 50,
         .type = TYPE_NORMAL,
@@ -16850,7 +16847,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .power = 50,
         .type = TYPE_DARK,
         .accuracy = 100,
-        .pp = 5,
+        .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -17092,7 +17089,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_THUNDER_CAGE] =
     {
         .name = COMPOUND_STRING("Thunder Cage"),
-        .description = COMPOUND_STRING("The user traps the target in an electrified 'cage' from\nabove. This traps the target for 6 turns, preventing\nswitching, and dealing 12% damage per turn."),
+        .description = COMPOUND_STRING("The user traps the foe in an electrified cage, trapping the target for 6 turns, preventing switching, and dealing 12% damage per turn."),
         .effect = EFFECT_HIT,
         .power = 95,
         .type = TYPE_ELECTRIC,
@@ -17732,7 +17729,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_TERA_BLAST] =
     {
         .name = COMPOUND_STRING("Tera Blast"),
-        .description = COMPOUND_STRING("If the user has Terastallized, it unleashes energy of its\nTera Type. This move inflicts damage using Attack or\nSp. Atk-whichever's higher. 50/50 to drop Defenses."),
+        .description = COMPOUND_STRING("If the user has Terastallized, unleashes energy of its\nTera Type and uses Attack or Sp. Atk - whichever higher. 50% to drop both Defenses."),
         .effect = EFFECT_TERA_BLAST,
         .power = 80,
         .type = TYPE_NORMAL,
@@ -17755,7 +17752,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .power = 0,
         .type = TYPE_BUG,
         .accuracy = 0,
-        .pp = 10,
+        .pp = 5,
         .target = MOVE_TARGET_USER,
         .priority = 6,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -17928,7 +17925,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .argument = ARG_TRY_REMOVE_TERRAIN_HIT, // Remove the active field terrain if there is one.
         .skyBattleBanned = B_EXTRAPOLATED_MOVE_FLAGS,
         .battleAnimScript = gBattleAnimMove_IceSpinner,
-        .additionalEffects = ADDITIONAL_EFFECTS({.moveEffect = MOVE_EFFECT_SPD_PLUS_1,.chance = 100,.self = TRUE,},),
+        .additionalEffects = ADDITIONAL_EFFECTS(
+            {
+                .moveEffect = MOVE_EFFECT_SPD_PLUS_1,
+                .self = TRUE,
+                .chance = 100,
+            }
+        ),
     },
 
     [MOVE_GLAIVE_RUSH] =
@@ -18776,7 +18779,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .encoreBanned = TRUE,
         .assistBanned = TRUE,
         .sketchBanned = (B_SKETCH_BANS >= GEN_9),
-        .additionalEffects = ADDITIONAL_EFFECTS({ .moveEffect = MOVE_EFFECT_YAWN, }),
+        .additionalEffects = ADDITIONAL_EFFECTS({ .moveEffect = MOVE_EFFECT_YAWN, .argument = 2, .chance = 100,}),
         .battleAnimScript = gBattleAnimMove_MagicalTorque,
         .makesContact = TRUE,
         .criticalHitStage = 3,
@@ -18804,7 +18807,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .encoreBanned = TRUE,
         .assistBanned = TRUE,
         .sketchBanned = (B_SKETCH_BANS >= GEN_9),
-        .additionalEffects = ADDITIONAL_EFFECTS({ .moveEffect = MOVE_EFFECT_YAWN, }),
+        .additionalEffects = ADDITIONAL_EFFECTS({ .moveEffect = MOVE_EFFECT_YAWN, .argument = 2, .chance = 100,}),
         .battleAnimScript = gBattleAnimMove_MagicalTorque,
         .makesContact = TRUE,
     },
@@ -18868,7 +18871,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_MATCHA_GOTCHA] =
     {
         .name = COMPOUND_STRING("Matcha Gotcha"),
-        .description = COMPOUND_STRING("Poltchageist fires a blast of hot matcha.\nThis ALWAYS burns, and heals the user by\n50% of damage dealt."),
+        .description = COMPOUND_STRING("Poltchageist fires a blast of hot matcha.\nThis ALWAYS burns, and heals the user by\nALL of the damage dealt."),
         .effect = EFFECT_ABSORB,
         .power = 60,
         .type = TYPE_GRASS,
@@ -18883,7 +18886,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
         .healingMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_BURN,
-            .chance = 20,
+            .chance = 100,
         }),
         .battleAnimScript = gBattleAnimMove_MatchaGotcha,
         .cantUseTwice = TRUE,
@@ -19019,7 +19022,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_THUNDERCLAP] =
     {
         .name = COMPOUND_STRING("Thunderclap"),
-        .description = COMPOUND_STRING("The user catches the foe off-guard with a quick, loud\nshockwave. This ALWAYS crits, and has +2 priority,\nbut will fail if the target is not readying an attack."),
+        .description = COMPOUND_STRING("Catches the foe off-guard with a quick shockwave. This ALWAYS crits, and has +2 priority,\nbut fails if the target is not readying an attack."),
         .effect = EFFECT_SUCKER_PUNCH,
         .power = 50,
         .type = TYPE_ELECTRIC,

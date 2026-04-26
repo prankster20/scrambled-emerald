@@ -6516,7 +6516,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sStantler0LevelUpLearnset,
         .teachableLearnset = sStantler0TeachableLearnset,
         .eggMoveLearnset = sStantlerEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_MOVE_35, MOVE_SHATTERED_PSYCHE, SPECIES_WYRDEER}),
+        .evolutions = EVOLUTION({EVO_MOVE_35, MOVE_SUBZERO_SLAMMER, SPECIES_WYRDEER}),
     },
 
     [SPECIES_WYRDEER] =

@@ -10516,7 +10516,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sZweilous0LevelUpLearnset,
         .teachableLearnset = sZweilous0TeachableLearnset,
         .evolutions = EVOLUTION(
-            {EVO_MOVE_45, MOVE_BLACK_HOLE_ECLIPSE, SPECIES_HYDREIGON},
+            {EVO_MOVE_45, MOVE_DEVASTATING_DRAKE, SPECIES_HYDREIGON},
             {EVO_MOVE_45, MOVE_EXTREME_EVOBOOST, SPECIES_IRON_JUGULIS}
         ),
     },

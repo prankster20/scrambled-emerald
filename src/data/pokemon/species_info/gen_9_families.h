@@ -1422,8 +1422,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             gOverworldPalette_MausholdFour,
             gShinyOverworldPalette_MausholdFour
         )
-        .levelUpLearnset = sMaushold1LevelUpLearnset,
-        .teachableLearnset = sMaushold1TeachableLearnset,
+        .levelUpLearnset = sMaushold0LevelUpLearnset,
+        .teachableLearnset = sMaushold0TeachableLearnset,
         .formSpeciesIdTable = sMausholdFormSpeciesIdTable,
         .evolutions = NULL,
     },

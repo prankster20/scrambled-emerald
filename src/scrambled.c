@@ -8,7 +8,7 @@
 const struct EggPool gEggPools[] = {
     [SCRAMBLED_EGG_STARTER] = {
         .name = _("Starter Egg"),
-        .description = COMPOUND_STRING("Contains a Grass, Fire, or Water-type starter Pokémon."),
+        .description = COMPOUND_STRING("Holds a Starter Pokémon. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_QUAXLY,
             SPECIES_SNIVY,
@@ -42,7 +42,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_NORMAL] = {
         .name = _("Everyday Egg"),
-        .description = COMPOUND_STRING("Holds a Normal-type Pokémon."),
+        .description = COMPOUND_STRING("Holds a Normal-type Pokémon. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_SMEARGLE,
             SPECIES_YUNGOOS,
@@ -64,7 +64,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_BIRD] = {
         .name = _("Skybound Egg"),
-        .description = COMPOUND_STRING("Holds a Flying-type Pokémon."),
+        .description = COMPOUND_STRING("Holds a Flying-type Pokémon. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_ROOKIDEE,
             SPECIES_VULLABY,
@@ -83,7 +83,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_BUG] = {
         .name = _("Crawler Egg"),
-        .description = COMPOUND_STRING("Holds a Bug-type Pokémon."),
+        .description = COMPOUND_STRING("Holds a Bug-type Pokémon. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_TAROUNTULA,
             SPECIES_GRUBBIN,
@@ -105,7 +105,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_GRASS] = {
         .name = _("Verdant Egg"),
-        .description = COMPOUND_STRING("Holds a Grass-type Pokémon."),
+        .description = COMPOUND_STRING("Holds a Grass-type Pokémon. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_LOTAD,
             SPECIES_APPLIN,
@@ -130,7 +130,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_CITY] = {
         .name = _("Urban Egg"),
-        .description = COMPOUND_STRING("Holds a city-dwelling Pokémon."),
+        .description = COMPOUND_STRING("Holds a city-dwelling Pokémon. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_TOXEL,
             SPECIES_PAWNIARD,
@@ -162,7 +162,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_DESERT] = {
         .name = _("Arid Egg"),
-        .description = COMPOUND_STRING("Holds a desert-dwelling Pokémon."),
+        .description = COMPOUND_STRING("Holds desert-dwelling Pokémon. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_BLITZLE,
             SPECIES_LITLEO,
@@ -189,7 +189,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_ICY] = {
         .name = _("Frosted Egg"),
-        .description = COMPOUND_STRING("Holds an Ice-type Pokémon."),
+        .description = COMPOUND_STRING("Holds an Ice-type Pokémon. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_VULPIX_ALOLA,
             SPECIES_SNOVER,
@@ -210,7 +210,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_CAVE] = {
         .name = _("Rocky Egg"),
-        .description = COMPOUND_STRING("Holds a cave-dwelling Pokémon."),
+        .description = COMPOUND_STRING("Holds a cave-dwelling Pokémon. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_BONSLY,
             SPECIES_GOLETT,
@@ -245,7 +245,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_WATER] = {
         .name = _("Aquatic Egg"),
-        .description = COMPOUND_STRING("Holds an aquatic Pokémon."),
+        .description = COMPOUND_STRING("Holds an aquatic Pokémon. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_TENTACOOL,
             SPECIES_MAREANIE,
@@ -282,7 +282,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_FAIRY] = {
         .name = _("Enchanted Egg"),
-        .description = COMPOUND_STRING("Holds a Fairy or Psychic-type Pokémon."),
+        .description = COMPOUND_STRING("Holds Psychic or Fairy Pokémon. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_CLEFFA,
             SPECIES_SPOINK,
@@ -310,7 +310,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_GHOST] = {
         .name = _("Phantom Egg"),
-        .description = COMPOUND_STRING("Holds a Ghost-type Pokémon."),
+        .description = COMPOUND_STRING("Holds a Ghost-type Pokémon. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_DUSKULL,
             SPECIES_POLTCHAGEIST,
@@ -330,7 +330,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_LV20] = {
         .name = _("Journey Egg"),
-        .description = COMPOUND_STRING("Holds Pokémon that start a bit strong. Minimum Lv20."),
+        .description = COMPOUND_STRING("Holds somewhat strong Pokémon. {LV}20+. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_SNEASEL_HISUI,
             SPECIES_GLIGAR,
@@ -379,7 +379,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_LV30] = {
         .name = _("Explorer Egg"),
-        .description = COMPOUND_STRING("Holds Pokémon that start quite strong. Minimum Lv30."),
+        .description = COMPOUND_STRING("Holds stronger Pokémon. {LV}30+. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_FALINKS,
             SPECIES_TAUROS_PALDEA_COMBAT,
@@ -408,7 +408,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_LV35] = {
         .name = _("Apex Egg"),
-        .description = COMPOUND_STRING("Holds immediately powerful Pokémon. Minimum Lv35."),
+        .description = COMPOUND_STRING("Holds very powerful Pokémon. {LV}35+. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_KELDEO,
             SPECIES_STONJOURNER,
@@ -430,7 +430,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_LV40] = {
         .name = _("Mystic Egg"),
-        .description = COMPOUND_STRING("Holds Legendary Pokémon. Minimum Lv40."),
+        .description = COMPOUND_STRING("Holds Legendary Pokémon. {LV}40+. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_SPECTRIER,
             SPECIES_GLASTRIER,
@@ -447,7 +447,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_LV45] = {
         .name = _("Legendary Egg"),
-        .description = COMPOUND_STRING("Holds stronger Legendary Pokémon. Minimum Lv45."),
+        .description = COMPOUND_STRING("Holds stronger Legends. {LV}45+. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_RAIKOU,
             SPECIES_WALKING_WAKE,
@@ -490,7 +490,7 @@ const struct EggPool gEggPools[] = {
     },
     [SCRAMBLED_EGG_LV50] = {
         .name = _("Titan Egg"),
-        .description = COMPOUND_STRING("Holds the most powerful Legends. Minimum Lv50."),
+        .description = COMPOUND_STRING("Holds most powerful Legends. {LV}50+. {COLOR RED}{SHADOW LIGHT_GRAY}{SELECT_BUTTON}{COLOR RED}{SHADOW LIGHT_GRAY} Choose."),
         .species = (const u16[]) {
             SPECIES_ETERNATUS,
             SPECIES_MEWTWO,

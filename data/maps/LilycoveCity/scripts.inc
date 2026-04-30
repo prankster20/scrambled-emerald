@@ -402,7 +402,7 @@ LilycoveCity_EventScript_RivalFlyAway::
 
 LilycoveCity_EventScript_RivalReverseLevelCap::
 	setvar VAR_LEVEL_CAP 57
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 LilycoveCity_EventScript_SchoolKidM::
@@ -445,12 +445,12 @@ LilycoveCity_EventScript_OrtegaReverse::
 
 LilycoveCity_EventScript_Ortega_Defeated::
 	setvar VAR_LEVEL_CAP 58
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 LilycoveCity_EventScript_Ortega_ReverseDefeated::
 	setvar VAR_LEVEL_CAP 29
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 LilycoveCity_Text_OrtegaIntro:

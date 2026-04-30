@@ -105,7 +105,7 @@ VictoryRoad_1F_EventScript_Penny::
 	
 VictoryRoad_1F_EventScript_Penny_Defeat::
 	setvar VAR_LEVEL_CAP 100
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 VictoryRoad_1F_EventScript_Albert::
@@ -128,7 +128,7 @@ VictoryRoad_1F_EventScript_Clavell::
 
 VictoryRoad_1F_EventScript_Clavell_Defeat::
 	setvar VAR_LEVEL_CAP 65
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 VictoryRoad_1F_EventScript_Arven::

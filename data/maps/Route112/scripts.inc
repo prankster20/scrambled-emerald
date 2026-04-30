@@ -85,13 +85,13 @@ Route112_EventScript_MelaReverse::
 Route112_EventScript_MelaVanilla_Defeated::
 	goto_if_set FLAG_SKIPPING_TEAL_MASK, Common_EventScript_SkipKitakami_LevelCap33_End
 	setvar VAR_LEVEL_CAP 32
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 
 Route112_EventScript_MelaReverse_Defeated::
 	setvar VAR_LEVEL_CAP 47
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 

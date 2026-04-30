@@ -76,16 +76,15 @@ RustboroCity_Gym_EventScript_GiveRockTomb::
 	end
 
 RustboroCity_Gym_EventScript_VanillaLevelCap::
-	setvar VAR_LEVEL_CAP 15
-	call Common_EventScript_NewLevelCapTextAndFanfare
-	call Common_EventScript_GiveBadge1ItemsAndFanfare
 	setflag FLAG_BADGE01_GET
+	setvar VAR_LEVEL_CAP 15
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 RustboroCity_Gym_EventScript_ReverseLevelCap::
-	setvar VAR_LEVEL_CAP 63
-	call Common_EventScript_NewLevelCapTextAndFanfare
 	setflag FLAG_BADGE08_GET
+	setvar VAR_LEVEL_CAP 63
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 RustboroCity_Gym_EventScript_RoxanneRematch::

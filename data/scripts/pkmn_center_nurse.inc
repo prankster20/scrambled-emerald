@@ -21,6 +21,7 @@ EventScript_PkmnCenterNurse_HealPkmn::
 	// call_if_eq VAR_0x8004, 1, EventScript_PkmnCenterNurse_IllTakeYourPkmn2
 	// waitmessage
 	call EventScript_PkmnCenterNurse_TakeAndHealPkmn
+	call Common_EventScript_TopUpItemsAndFanfare
 	goto_if_unset FLAG_POKERUS_EXPLAINED, EventScript_PkmnCenterNurse_CheckPokerus
 	goto EventScript_PkmnCenterNurse_CheckTrainerHillAndUnionRoom
 	end

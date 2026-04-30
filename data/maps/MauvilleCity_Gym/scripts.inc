@@ -127,17 +127,16 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 	end
 
 MauvilleCity_Gym_EventScript_VanillaLevelCap::
-	call Common_EventScript_GiveBadge3ItemsAndFanfare
 	setflag FLAG_BADGE03_GET
 	setvar VAR_LEVEL_CAP 30
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 MauvilleCity_Gym_EventScript_ReverseLevelCap::
 	setflag FLAG_BADGE06_GET
 	goto_if_set FLAG_SKIPPING_TEAL_MASK, Common_EventScript_SkipKitakami_LevelCap52_End
 	setvar VAR_LEVEL_CAP 50
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 MauvilleCity_Gym_EventScript_CompletedNewMauville::

@@ -685,7 +685,7 @@ Route119_EventScript_TryRemoveLoyal3:
 	fadescreen FADE_FROM_BLACK
 	call Common_EventScript_AddMoneyScrambledTitanFights
 	setvar VAR_LEVEL_CAP 45
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 

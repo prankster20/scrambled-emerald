@@ -61,7 +61,7 @@ PacifidlogTown_EventScript_Kieran4_Skipped::
 
 PacifidlogTown_EventScript_Kieran4_Defeated::
 	setvar VAR_LEVEL_CAP 42
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 PacifidlogTown_EventScript_Carmine3::
@@ -83,7 +83,7 @@ PacifidlogTown_EventScript_Carmine3_Skipped::
 
 PacifidlogTown_EventScript_Carmine3_Defeated::
 	setvar VAR_LEVEL_CAP 52
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 PacifidlogTown_Text_Carmine3Intro:

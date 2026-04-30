@@ -159,10 +159,8 @@ LittlerootTown_EventScript_GoInsideWithMom::
 	call_if_eq VAR_RESULT, 1, LittlerootTown_EventScript_ScrambledReversePath
 	msgbox LittlerootTown_Text_CheckPath, MSGBOX_DEFAULT
 
-	// Announce Level Cap
-	call Common_EventScript_NewLevelCapTextAndFanfare
-	// Give items at the start
-	call Common_EventScript_GiveBadge0ItemsAndFanfare
+	// Announce Level Cap and Top Up Items at start
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox LittlerootTown_Text_YouGotEverything, MSGBOX_DEFAULT

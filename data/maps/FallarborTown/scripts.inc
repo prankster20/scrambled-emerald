@@ -76,12 +76,12 @@ FallarborTown_EventScript_Reverse::
 
 FallarborTown_EventScript_EriDefeated::
 	setvar VAR_LEVEL_CAP 63
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 FallarborTown_EventScript_ReverseDefeated::
 	setvar VAR_LEVEL_CAP 24
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 FallarborTown_Text_EriIntro:

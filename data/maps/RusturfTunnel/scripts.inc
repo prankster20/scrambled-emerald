@@ -446,7 +446,7 @@ RusturfTunnel_EventScript_Kieran2::
 
 RusturfTunnel_EventScript_Kieran2_Defeated::
 	setvar VAR_LEVEL_CAP 22
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 RusturfTunnel_EventScript_Kieran2_Skipped::

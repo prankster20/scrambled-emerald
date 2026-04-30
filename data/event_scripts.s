@@ -901,62 +901,60 @@ Common_Gym3_EventScript_Plotless::
 
 Common_EventScript_SkipKitakami_LevelCap13_End::
 	setvar VAR_LEVEL_CAP 13
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 
 Common_EventScript_SkipKitakami_LevelCap20_End::
 	call Common_Gym2_EventScript_Plotless
-	call Common_EventScript_GiveBadge2ItemsAndFanfare
 	setflag FLAG_BADGE02_GET
 	goto_if_set FLAG_SKIPPING_TEAL_MASK, Common_EventScript_SkipKitakami_LevelCap22_End
 	setvar VAR_LEVEL_CAP 20
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 
 Common_EventScript_SkipKitakami_LevelCap22_End::
 	setvar VAR_LEVEL_CAP 22
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 
 Common_EventScript_SkipKitakami_LevelCap33_End::
 	setvar VAR_LEVEL_CAP 33
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 
 Common_EventScript_SkipKitakami_LevelCap36_End::
 	setvar VAR_LEVEL_CAP 36
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 
 Common_EventScript_SkipKitakami_LevelCap42_End::
 	setvar VAR_LEVEL_CAP 42
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 
 Common_EventScript_NemonaB2B_Badge_LevelCap_End::
-	call Common_EventScript_GiveBadge5ItemsAndFanfare
 	setflag FLAG_BADGE05_GET
 	goto_if_set FLAG_SKIPPING_TEAL_MASK, Common_EventScript_SkipKitakami_LevelCap45_End
 	setvar VAR_LEVEL_CAP 43
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 
 Common_EventScript_SkipKitakami_LevelCap45_End::
 	setvar VAR_LEVEL_CAP 45
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 
 Common_EventScript_SkipKitakami_LevelCap52_End::
 	setvar VAR_LEVEL_CAP 52
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 
@@ -973,149 +971,140 @@ Common_EventScript_CheckIfLevelCapTooLow::
 	release
 	end
 
-Common_EventScript_NewLevelCapTextAndFanfare::
+Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare::
 	playfanfare MUS_REGISTER_MATCH_CALL
 	buffernumberstring STR_VAR_1, VAR_LEVEL_CAP
 	msgbox Scrambled_Text_LevelCap, MSGBOX_DEFAULT
 	waitfanfare
+	call Common_EventScript_TopUpItemsAndFanfare
 	return
 
-Common_EventScript_GiveBadge0ItemsAndFanfare:
-	additem ITEM_QUICK_CLAW, 999
-	additem ITEM_EJECT_BUTTON, 999
-	additem ITEM_EJECT_PACK, 999
-	additem ITEM_RED_CARD, 999
-	additem ITEM_SCOPE_LENS, 999
-	additem ITEM_WIDE_LENS, 999
-	additem ITEM_ZOOM_LENS, 999
-	additem ITEM_LEFTOVERS, 999
-	additem ITEM_TOXIC_ORB, 999
-	additem ITEM_FLAME_ORB, 999
-	additem ITEM_CLEAR_AMULET, 999
-	additem ITEM_COVERT_CLOAK, 999
-	additem ITEM_UTILITY_UMBRELLA, 999
-	additem ITEM_WHITE_HERB, 999
-	additem ITEM_POWER_HERB, 999
-	additem ITEM_AIR_BALLOON, 999
-	additem ITEM_IRON_BALL, 999
-	additem ITEM_STICKY_BARB, 999
-	additem ITEM_NORMAL_GEM, 999
-	additem ITEM_DAMP_ROCK, 999
-	additem ITEM_HEAT_ROCK, 999
-	additem ITEM_SMOOTH_ROCK, 999
-	additem ITEM_ICY_ROCK, 999
-	additem ITEM_TERRAIN_EXTENDER, 999
-	additem ITEM_ELECTRIC_SEED, 999
-	additem ITEM_PSYCHIC_SEED, 999
-	additem ITEM_MISTY_SEED, 999
-	additem ITEM_GRASSY_SEED, 999
-	additem ITEM_ROOM_SERVICE, 999
-	additem ITEM_SITRUS_BERRY, 999
-	additem ITEM_LUM_BERRY, 999
-	additem ITEM_KEE_BERRY, 999
-	additem ITEM_MARANGA_BERRY, 999
-	additem ITEM_LIECHI_BERRY, 999
-	additem ITEM_PETAYA_BERRY, 999
-	additem ITEM_SALAC_BERRY, 999
-	additem ITEM_CUSTAP_BERRY, 999
-	additem ITEM_CHILAN_BERRY, 999
+Common_EventScript_TopUpItemsAndFanfare:
 	playfanfare MUS_OBTAIN_ITEM
-	msgbox Scrambled_Text_BadgeItemsReceived, MSGBOX_DEFAULT
+	msgbox Scrambled_Text_HeldItemsToppedOff, MSGBOX_DEFAULT
+	call Common_EventScript_GiveBadge0Items
+	call_if_set FLAG_BADGE01_GET, Common_EventScript_GiveBadge1Items
+	call_if_set FLAG_BADGE02_GET, Common_EventScript_GiveBadge2Items
+	call_if_set FLAG_BADGE03_GET, Common_EventScript_GiveBadge3Items
+	call_if_set FLAG_BADGE04_GET, Common_EventScript_GiveBadge4Items
+	call_if_set FLAG_BADGE05_GET, Common_EventScript_GiveBadge5Items
+	call_if_set FLAG_BADGE07_GET, Common_EventScript_GiveBadge7Items
 	waitfanfare
 	return
 
-Common_EventScript_GiveBadge1ItemsAndFanfare:
-	additem ITEM_SHELL_BELL, 999
-	additem ITEM_LUMINOUS_MOSS, 999
-	additem ITEM_ABSORB_BULB, 999
-	additem ITEM_CELL_BATTERY, 999
-	additem ITEM_SNOWBALL, 999
-	additem ITEM_SILVER_POWDER, 999
-	additem ITEM_DRAGON_FANG, 999
-	additem ITEM_SILK_SCARF, 999
-	additem ITEM_FLAME_PLATE, 999
-	additem ITEM_SPLASH_PLATE, 999
-	additem ITEM_ZAP_PLATE, 999
-	additem ITEM_MEADOW_PLATE, 999
-	additem ITEM_ICICLE_PLATE, 999
-	additem ITEM_FIST_PLATE, 999
-	additem ITEM_TOXIC_PLATE, 999
-	additem ITEM_EARTH_PLATE, 999
-	additem ITEM_SKY_PLATE, 999
-	additem ITEM_MIND_PLATE, 999
-	additem ITEM_STONE_PLATE, 999
-	additem ITEM_SPOOKY_PLATE, 999
-	additem ITEM_DREAD_PLATE, 999
-	additem ITEM_IRON_PLATE, 999
-	additem ITEM_PIXIE_PLATE, 999
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox Scrambled_Text_BadgeItemsReceived, MSGBOX_DEFAULT
-	waitfanfare
+Common_EventScript_GiveBadge0Items:
+	topupitem ITEM_QUICK_CLAW, 990
+	topupitem ITEM_EJECT_BUTTON, 990
+	topupitem ITEM_EJECT_PACK, 990
+	topupitem ITEM_RED_CARD, 990
+	topupitem ITEM_SCOPE_LENS, 990
+	topupitem ITEM_WIDE_LENS, 990
+	topupitem ITEM_ZOOM_LENS, 990
+	topupitem ITEM_LEFTOVERS, 990
+	topupitem ITEM_TOXIC_ORB, 990
+	topupitem ITEM_FLAME_ORB, 990
+	topupitem ITEM_CLEAR_AMULET, 990
+	topupitem ITEM_COVERT_CLOAK, 990
+	topupitem ITEM_UTILITY_UMBRELLA, 990
+	topupitem ITEM_WHITE_HERB, 990
+	topupitem ITEM_POWER_HERB, 990
+	topupitem ITEM_AIR_BALLOON, 990
+	topupitem ITEM_IRON_BALL, 990
+	topupitem ITEM_STICKY_BARB, 990
+	topupitem ITEM_NORMAL_GEM, 990
+	topupitem ITEM_DAMP_ROCK, 990
+	topupitem ITEM_HEAT_ROCK, 990
+	topupitem ITEM_SMOOTH_ROCK, 990
+	topupitem ITEM_ICY_ROCK, 990
+	topupitem ITEM_TERRAIN_EXTENDER, 990
+	topupitem ITEM_ELECTRIC_SEED, 990
+	topupitem ITEM_PSYCHIC_SEED, 990
+	topupitem ITEM_MISTY_SEED, 990
+	topupitem ITEM_GRASSY_SEED, 990
+	topupitem ITEM_ROOM_SERVICE, 990
+	topupitem ITEM_SITRUS_BERRY, 990
+	topupitem ITEM_LUM_BERRY, 990
+	topupitem ITEM_KEE_BERRY, 990
+	topupitem ITEM_MARANGA_BERRY, 990
+	topupitem ITEM_LIECHI_BERRY, 990
+	topupitem ITEM_PETAYA_BERRY, 990
+	topupitem ITEM_SALAC_BERRY, 990
+	topupitem ITEM_CUSTAP_BERRY, 990
+	topupitem ITEM_CHILAN_BERRY, 990
 	return
 
-Common_EventScript_GiveBadge2ItemsAndFanfare:
-	additem ITEM_EXPERT_BELT, 999
-	additem ITEM_LIGHT_CLAY, 999
-	additem ITEM_ROCKY_HELMET, 999
-	additem ITEM_LOADED_DICE, 999
-	additem ITEM_BIG_ROOT, 999
-	additem ITEM_OCCA_BERRY, 999
-	additem ITEM_PASSHO_BERRY, 999
-	additem ITEM_WACAN_BERRY, 999
-	additem ITEM_RINDO_BERRY, 999
-	additem ITEM_YACHE_BERRY, 999
-	additem ITEM_CHOPLE_BERRY, 999
-	additem ITEM_KEBIA_BERRY, 999
-	additem ITEM_SHUCA_BERRY, 999
-	additem ITEM_COBA_BERRY, 999
-	additem ITEM_PAYAPA_BERRY, 999
-	additem ITEM_TANGA_BERRY, 999
-	additem ITEM_CHARTI_BERRY, 999
-	additem ITEM_KASIB_BERRY, 999
-	additem ITEM_HABAN_BERRY, 999
-	additem ITEM_COLBUR_BERRY, 999
-	additem ITEM_BABIRI_BERRY, 999
-	additem ITEM_ROSELI_BERRY, 999
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox Scrambled_Text_BadgeItemsReceived, MSGBOX_DEFAULT
-	waitfanfare
+Common_EventScript_GiveBadge1Items:
+	topupitem ITEM_SHELL_BELL, 990
+	topupitem ITEM_LUMINOUS_MOSS, 990
+	topupitem ITEM_ABSORB_BULB, 990
+	topupitem ITEM_CELL_BATTERY, 990
+	topupitem ITEM_SNOWBALL, 990
+	topupitem ITEM_SILVER_POWDER, 990
+	topupitem ITEM_DRAGON_FANG, 990
+	topupitem ITEM_SILK_SCARF, 990
+	topupitem ITEM_FLAME_PLATE, 990
+	topupitem ITEM_SPLASH_PLATE, 990
+	topupitem ITEM_ZAP_PLATE, 990
+	topupitem ITEM_MEADOW_PLATE, 990
+	topupitem ITEM_ICICLE_PLATE, 990
+	topupitem ITEM_FIST_PLATE, 990
+	topupitem ITEM_TOXIC_PLATE, 990
+	topupitem ITEM_EARTH_PLATE, 990
+	topupitem ITEM_SKY_PLATE, 990
+	topupitem ITEM_MIND_PLATE, 990
+	topupitem ITEM_STONE_PLATE, 990
+	topupitem ITEM_SPOOKY_PLATE, 990
+	topupitem ITEM_DREAD_PLATE, 990
+	topupitem ITEM_IRON_PLATE, 990
+	topupitem ITEM_PIXIE_PLATE, 990
 	return
 
-Common_EventScript_GiveBadge3ItemsAndFanfare:
-	additem ITEM_BLACK_SLUDGE, 999
-	additem ITEM_ASSAULT_VEST, 999
-	additem ITEM_EVIOLITE, 999
-	additem ITEM_LIFE_ORB, 999
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox Scrambled_Text_BadgeItemsReceived, MSGBOX_DEFAULT
-	waitfanfare
+Common_EventScript_GiveBadge2Items:
+	topupitem ITEM_EXPERT_BELT, 990
+	topupitem ITEM_LIGHT_CLAY, 990
+	topupitem ITEM_ROCKY_HELMET, 990
+	topupitem ITEM_LOADED_DICE, 990
+	topupitem ITEM_BIG_ROOT, 990
+	topupitem ITEM_OCCA_BERRY, 990
+	topupitem ITEM_PASSHO_BERRY, 990
+	topupitem ITEM_WACAN_BERRY, 990
+	topupitem ITEM_RINDO_BERRY, 990
+	topupitem ITEM_YACHE_BERRY, 990
+	topupitem ITEM_CHOPLE_BERRY, 990
+	topupitem ITEM_KEBIA_BERRY, 990
+	topupitem ITEM_SHUCA_BERRY, 990
+	topupitem ITEM_COBA_BERRY, 990
+	topupitem ITEM_PAYAPA_BERRY, 990
+	topupitem ITEM_TANGA_BERRY, 990
+	topupitem ITEM_CHARTI_BERRY, 990
+	topupitem ITEM_KASIB_BERRY, 990
+	topupitem ITEM_HABAN_BERRY, 990
+	topupitem ITEM_COLBUR_BERRY, 990
+	topupitem ITEM_BABIRI_BERRY, 990
+	topupitem ITEM_ROSELI_BERRY, 990
 	return
 
-Common_EventScript_GiveBadge4ItemsAndFanfare:
-	additem ITEM_CHOICE_BAND, 999
-	additem ITEM_CHOICE_SPECS, 999
-	additem ITEM_CHOICE_SCARF, 999
-	additem ITEM_FOCUS_SASH, 999
-	additem ITEM_DUBIOUS_DISC, 999
-	additem ITEM_UPGRADE, 999
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox Scrambled_Text_BadgeItemsReceived, MSGBOX_DEFAULT
-	waitfanfare
+Common_EventScript_GiveBadge3Items:
+	topupitem ITEM_BLACK_SLUDGE, 990
+	topupitem ITEM_ASSAULT_VEST, 990
+	topupitem ITEM_EVIOLITE, 990
+	topupitem ITEM_LIFE_ORB, 990
 	return
 
-Common_EventScript_GiveBadge5ItemsAndFanfare:
-	additem ITEM_WEAKNESS_POLICY, 999
-	additem ITEM_BOOSTER_ENERGY, 999
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox Scrambled_Text_BadgeItemsReceived, MSGBOX_DEFAULT
-	waitfanfare
+Common_EventScript_GiveBadge4Items:
+	topupitem ITEM_CHOICE_BAND, 990
+	topupitem ITEM_CHOICE_SPECS, 990
+	topupitem ITEM_CHOICE_SCARF, 990
+	topupitem ITEM_FOCUS_SASH, 990
 	return
 
-Common_EventScript_GiveBadge7ItemsAndFanfare:
-	additem ITEM_THROAT_SPRAY, 999
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox Scrambled_Text_BadgeItemsReceived, MSGBOX_DEFAULT
-	waitfanfare
+Common_EventScript_GiveBadge5Items:
+	topupitem ITEM_WEAKNESS_POLICY, 990
+	topupitem ITEM_BOOSTER_ENERGY, 990
+	return
+
+Common_EventScript_GiveBadge7Items:
+	topupitem ITEM_THROAT_SPRAY, 990
 	return
 
 	.include "data/scripts/elite_four.inc"
@@ -1371,8 +1360,8 @@ Common_EventScript_Reroll::
 	msgbox Common_Text_HiChooseAPokemon, MSGBOX_DEFAULT
 	special ChoosePartyMon
 	waitstate
-	goto_if_ge VAR_0x8004, PARTY_SIZE, Common_EventScript_NoPokemon
-	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Common_EventScript_NoPokemon
+	goto_if_ge VAR_0x8004, PARTY_SIZE, Common_Script_PleaseComeAgain
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Common_Script_PleaseComeAgain
 	special IsSelectedMonEgg
 	goto_if_eq VAR_RESULT, TRUE, Common_EventScript_EggChosen
 	bufferpartymonnick STR_VAR_1, VAR_0x8004
@@ -1405,6 +1394,7 @@ Common_EventScript_RerollLoop::
 
 Common_Script_PleaseComeAgain::
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	closemessage
 	release
 	end
 
@@ -1505,7 +1495,8 @@ Common_EventScript_RefundHatch::
 	waitfanfare
 	waitmessage
 	hidemoneybox
-	return
+	closemessage
+	goto Common_Script_PleaseComeAgain
 
 Common_EventScript_RefundHatchNotLv1::
 	msgbox Common_Text_RefundNotLevel1, MSGBOX_DEFAULT
@@ -1595,33 +1586,33 @@ Common_EventScript_EditItemShop::
 
 Common_EventScript_BadgeMart::
 	goto_if_set FLAG_BADGE07_GET, Common_EventScript_BadgeMart7
+	goto_if_set FLAG_BADGE06_GET, Common_EventScript_BadgeMart6
 	goto_if_set FLAG_BADGE05_GET, Common_EventScript_BadgeMart5
 	goto_if_set FLAG_BADGE04_GET, Common_EventScript_BadgeMart4
 	goto_if_set FLAG_BADGE03_GET, Common_EventScript_BadgeMart3
 	goto_if_set FLAG_BADGE02_GET, Common_EventScript_BadgeMart2
-	goto_if_set FLAG_BADGE01_GET, Common_EventScript_BadgeMart1
 	goto Common_EventScript_BadgeMart0
 
 Common_EventScript_BadgeMart7:
-	pokemart Common_EventScript_7Badge_ShopList
+	pokemart Common_EventScript_7Badge_SignatureItems_ShopList
+	return
+Common_EventScript_BadgeMart6:
+	pokemart Common_EventScript_6Badge_SignatureItems_ShopList
 	return
 Common_EventScript_BadgeMart5:
-	pokemart Common_EventScript_5Badge_ShopList
+	pokemart Common_EventScript_5Badge_SignatureItems_ShopList
 	return
 Common_EventScript_BadgeMart4:
-	pokemart Common_EventScript_4Badge_ShopList
+	pokemart Common_EventScript_4Badge_SignatureItems_ShopList
 	return
 Common_EventScript_BadgeMart3:
-	pokemart Common_EventScript_3Badge_ShopList
+	pokemart Common_EventScript_3Badge_SignatureItems_ShopList
 	return
 Common_EventScript_BadgeMart2:
-	pokemart Common_EventScript_2Badge_ShopList
-	return
-Common_EventScript_BadgeMart1:
-	pokemart Common_EventScript_1Badge_ShopList
+	pokemart Common_EventScript_2Badge_SignatureItems_ShopList
 	return
 Common_EventScript_BadgeMart0:
-	pokemart Common_EventScript_0Badge_ShopList
+	pokemart Common_EventScript_0Badge_SignatureItems_ShopList
 	return
 	
 	.align 2
@@ -1780,7 +1771,36 @@ Common_EventScript_EditItems_ShopList:
 	.2byte ITEM_STELLAR_TERA_SHARD
 	pokemartlistend
 
+Common_EventScript_7Badge_SignatureItems_ShopList:
+	.2byte ITEM_PRISON_BOTTLE
 
+Common_EventScript_6Badge_SignatureItems_ShopList:
+	.2byte ITEM_GRISEOUS_CORE
+	.2byte ITEM_METEORITE
+
+Common_EventScript_5Badge_SignatureItems_ShopList:
+	.2byte ITEM_REVEAL_GLASS
+
+Common_EventScript_4Badge_SignatureItems_ShopList:
+	.2byte ITEM_UPGRADE
+	.2byte ITEM_DUBIOUS_DISC
+
+Common_EventScript_3Badge_SignatureItems_ShopList:
+	.2byte ITEM_LIGHT_BALL
+	.2byte ITEM_GRACIDEA
+	.2byte ITEM_ROTOM_CATALOG
+	.2byte ITEM_HEARTHFLAME_MASK
+	.2byte ITEM_CORNERSTONE_MASK
+	.2byte ITEM_WELLSPRING_MASK
+
+Common_EventScript_2Badge_SignatureItems_ShopList:
+	.2byte ITEM_RED_NECTAR
+	.2byte ITEM_YELLOW_NECTAR
+	.2byte ITEM_PINK_NECTAR
+	.2byte ITEM_PURPLE_NECTAR
+
+Common_EventScript_0Badge_SignatureItems_ShopList:
+	pokemartlistend
 
 	.include "data/scripts/pc_transfer.inc"
 	.include "data/scripts/questionnaire.inc"

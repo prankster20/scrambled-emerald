@@ -4789,5 +4789,5 @@ Scrambled_Text_LevelCapTooLow:
 	.string "Your current LEVEL CAP is {COLOR RED}{STR_VAR_1}{COLOR DARK_GRAY}…\n"
 	.string "Come back when your LEVEL CAP is {COLOR RED}{STR_VAR_2}{COLOR DARK_GRAY}.$"
 
-Scrambled_Text_BadgeItemsReceived:
-	.string "You received {COLOR RED}new Held Items{COLOR DARK_GRAY}!$"
+Scrambled_Text_HeldItemsToppedOff:
+	.string "You received and replenished\nyour supply of {COLOR RED}Held Items{COLOR DARK_GRAY}!$"

@@ -152,7 +152,7 @@ Route113_EventScript_Kieran3_Skipped::
 
 Route113_EventScript_Kieran3_LevelCap:
 	setvar VAR_LEVEL_CAP 36
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 

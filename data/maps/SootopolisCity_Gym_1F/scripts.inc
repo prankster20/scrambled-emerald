@@ -133,14 +133,13 @@ SootopolisCity_Gym_1F_EventScript_JuanDefeated::
 
 SootopolisCity_Gym_1F_EventScript_VanillaLevelCap::
 	setvar VAR_LEVEL_CAP 56
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	setflag FLAG_BADGE08_GET
 	return
 
 SootopolisCity_Gym_1F_EventScript_ReverseLevelCap::
 	setvar VAR_LEVEL_CAP 15
-	call Common_EventScript_NewLevelCapTextAndFanfare
-	call Common_EventScript_GiveBadge1ItemsAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	setflag FLAG_BADGE01_GET
 	return
 

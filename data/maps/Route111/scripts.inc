@@ -664,7 +664,7 @@ Route111_EventScript_TitanDefeated::
 	call Common_EventScript_AddMoneyScrambledTitanFights
 	goto_if_set FLAG_SKIPPING_TEAL_MASK, Common_EventScript_SkipKitakami_LevelCap52_End
 	setvar VAR_LEVEL_CAP 50
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 
@@ -677,7 +677,7 @@ Route111_EventScript_TitanReverseDefeated::
 	fadescreen FADE_FROM_BLACK
 	call Common_EventScript_AddMoneyScrambledTitanFights
 	setvar VAR_LEVEL_CAP 27
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 

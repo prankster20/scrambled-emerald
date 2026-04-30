@@ -967,12 +967,12 @@ SlateportCity_EventScript_GiacomoReverse::
 
 SlateportCity_EventScript_Giacomo_Defeated::
 	setvar VAR_LEVEL_CAP 26
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 SlateportCity_EventScript_GiacomoReverse_Defeated::
 	setvar VAR_LEVEL_CAP 54
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 SlateportCity_Text_GiacomoIntro:

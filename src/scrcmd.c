@@ -529,6 +529,25 @@ bool8 ScrCmd_checkitem(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_topupitem(struct ScriptContext *ctx)
+{
+    u16 itemId = VarGet(ScriptReadHalfword(ctx));
+    u32 targetCount = VarGet(ScriptReadHalfword(ctx));
+    bool8 hasItem = CheckBagHasItem(itemId, 1);
+    u16 currentCount;
+    if (!hasItem)
+        AddBagItem(itemId, targetCount);
+    else {
+        currentCount = CountTotalItemQuantityInBag(itemId);
+        if (currentCount <= targetCount)
+            AddBagItem(itemId, targetCount - currentCount);
+        else
+            RemoveBagItem(itemId, currentCount - targetCount);
+    }
+    gSpecialVar_Result = TRUE;
+    return FALSE;
+}
+
 bool8 ScrCmd_checkitemtype(struct ScriptContext *ctx)
 {
     u16 itemId = VarGet(ScriptReadHalfword(ctx));

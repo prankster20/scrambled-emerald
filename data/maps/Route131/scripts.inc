@@ -76,7 +76,7 @@ Route131_EventScript_TitanDondozo::
 	fadescreen FADE_FROM_BLACK
 	call Common_EventScript_AddMoneyScrambledTitanFights
 	setvar VAR_LEVEL_CAP 60
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 
@@ -98,6 +98,6 @@ Route131_EventScript_TitanDondozoReverse::
 	fadescreen FADE_FROM_BLACK
 	call Common_EventScript_AddMoneyScrambledTitanFights
 	setvar VAR_LEVEL_CAP 18
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end

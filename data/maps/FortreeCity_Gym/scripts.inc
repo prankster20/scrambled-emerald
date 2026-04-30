@@ -69,16 +69,15 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 FortreeCity_Gym_EventScript_VanillaLevelCap::
 	setflag FLAG_BADGE06_GET
 	setvar VAR_LEVEL_CAP 47
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 FortreeCity_Gym_EventScript_ReverseLevelCap::
 	call Common_Gym3_EventScript_Plotless
-	call Common_EventScript_GiveBadge3ItemsAndFanfare
 	setflag FLAG_BADGE03_GET
 	goto_if_set FLAG_SKIPPING_TEAL_MASK, Common_EventScript_SkipKitakami_LevelCap33_End
 	setvar VAR_LEVEL_CAP 32
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 

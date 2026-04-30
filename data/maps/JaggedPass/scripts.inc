@@ -173,7 +173,7 @@ JaggedPass_EventScript_TitanOrthworm::
 	call Common_EventScript_AddMoneyScrambledTitanFights
 	goto_if_set FLAG_SKIPPING_TEAL_MASK, Common_EventScript_SkipKitakami_LevelCap36_End 
 	setvar VAR_LEVEL_CAP 35
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 
@@ -196,7 +196,7 @@ JaggedPass_EventScript_TitanOrthwormReverse::
 	call Common_EventScript_AddMoneyScrambledTitanFights
 	goto_if_set FLAG_SKIPPING_TEAL_MASK, Common_EventScript_SkipKitakami_LevelCap42_End
 	setvar VAR_LEVEL_CAP 40
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 

@@ -245,6 +245,7 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_DYNMULTICHOICE                ScrCmd_dynmultichoice                 @ 0xe3
 	script_cmd_table_entry SCR_OP_DYNMULTIPUSH                  ScrCmd_dynmultipush                   @ 0xe4
 	script_cmd_table_entry SCR_OP_ADDMONEY_SCRAMBLED            ScrCmd_addmoneyscrambled              @ 0xe5
+	script_cmd_table_entry SCR_OP_TOPUPITEM                     ScrCmd_topupitem                      @ 0xe6
 
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 gScriptCmdTableEnd::

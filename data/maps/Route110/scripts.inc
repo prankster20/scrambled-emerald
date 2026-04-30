@@ -490,13 +490,13 @@ Route110_EventScript_RivalExitFly::
 
 Route110_EventScript_VanillaLevelCap::
 	setvar VAR_LEVEL_CAP 27
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	return
 
 Route110_EventScript_ReverseLevelCap::
 	setvar VAR_LEVEL_CAP 30
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	return
 

@@ -393,7 +393,7 @@ Route120_EventScript_TitanBombirdier::
 	fadescreen FADE_FROM_BLACK
 	call Common_EventScript_AddMoneyScrambledTitanFights
 	setvar VAR_LEVEL_CAP 24
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 
@@ -415,7 +415,7 @@ Route120_EventScript_TitanBombirdierReverse::
 	fadescreen FADE_FROM_BLACK
 	call Common_EventScript_AddMoneyScrambledTitanFights
 	setvar VAR_LEVEL_CAP 56
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	release
 	end
 

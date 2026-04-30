@@ -403,7 +403,7 @@ OldaleTown_EventScript_Carmine1_SkipKitakamiAww::
 
 OldaleTown_EventScript_Carmine1_Defeated::
 	setvar VAR_LEVEL_CAP 12
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 OldaleTown_EventScript_Carmine2::
@@ -425,7 +425,7 @@ OldaleTown_EventScript_Carmine2_Skipped::
 
 OldaleTown_EventScript_Carmine2_Defeated::
 	setvar VAR_LEVEL_CAP 33
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	return
 
 OldaleTown_EventScript_Kieran1::
@@ -447,7 +447,7 @@ OldaleTown_EventScript_Kieran1_Skipped::
 
 OldaleTown_EventScript_Kieran1_Defeated::
 	setvar VAR_LEVEL_CAP 13
-	call Common_EventScript_NewLevelCapTextAndFanfare
+	call Common_EventScript_NewLevelCapTextAndTopupItemsAndFanfare
 	giveitem ITEM_FLYING_TAXI_TICKET
 	return
 

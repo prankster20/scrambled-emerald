@@ -16444,7 +16444,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_DYNAMAX] =
     [MOVE_LIFE_DEW] =
     {
         .name = COMPOUND_STRING("Life Dew"),
-        .description = COMPOUND_STRING("The user refreshes itself with healing water.\nThis heals to FULL HP, and has +4 priority."),
+        .description = COMPOUND_STRING("The user refreshes itself and allies with healing water.\nThis heals them to FULL HP, and has +4 priority."),
         .effect = EFFECT_JUNGLE_HEALING,
         .argument = 100,
         .power = 0,

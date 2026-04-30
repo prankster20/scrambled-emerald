@@ -1979,7 +1979,10 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     for (j = 0; j < MAX_MON_MOVES; ++j)
     {
         SetMonData(mon, MON_DATA_MOVE1 + j, &partyEntry->moves[j]);
-        SetMonData(mon, MON_DATA_PP1 + j, &gMovesInfo[partyEntry->moves[j]].pp);
+        u8 pp = gMovesInfo[partyEntry->moves[j]].pp;
+        if (pp >= 5)
+            pp = pp * 8 / 5;
+        SetMonData(mon, MON_DATA_PP1 + j, &pp);
     }
 }
 

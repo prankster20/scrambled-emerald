@@ -545,6 +545,15 @@
 	.2byte \quantity
 	.endm
 
+	@ by Pranks for Scrambled
+	@ Adds enough of the specified item to bring the player's total up to quantity.
+	@ If the player already has quantity or more, nothing happens.
+	.macro topupitem itemId:req, quantity=990
+    .byte SCR_OP_TOPUPITEM
+    .2byte \itemId
+    .2byte \quantity
+    .endm
+
 	@ Checks which Bag pocket the specified item belongs in, and writes the pocket value (POCKET_*) to VAR_RESULT.
 	@ This is used to show the name of the proper Bag pocket when the player receives an item via callstd.
 	.macro checkitemtype itemId:req
